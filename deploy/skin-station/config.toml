@@ -1,0 +1,49 @@
+# Canonical HTTPS endpoint. The IP also has a separately renewed certificate.
+Domain = "skin.duskrain.cn"
+BaseURL = "https://skin.duskrain.cn"
+ApplicationName = "DuskRain 衣冠阁"
+InstanceName = "DuskRain · 烟雨仙途"
+ApplicationOwner = "DuskRain"
+DefaultAdmins = ["DuskRainDirector"]
+DataDirectory = "/opt/duskrain-assets"
+StateDirectory = "/var/lib/drasl"
+ListenAddress = "0.0.0.0:25585"
+PlayerUUIDGeneration = "offline"
+DefaultPreferredLanguage = "zh"
+DefaultMaxPlayerCount = 1
+AllowChangingPlayerName = false
+AllowSkins = true
+AllowCapes = true
+AllowTextureFromURL = false
+SkinSizeLimit = 512
+MinPasswordLength = 12
+SignPublicKeys = true
+EnableBackgroundEffect = false
+LogRequests = false
+TokenStaleSec = 86400
+TokenExpireSec = 2592000
+PreMigrationBackups = true
+
+[CreateNewPlayer]
+Allow = false
+AllowChoosingUUID = false
+
+[RegistrationUsernamePassword.CreateNewPlayer]
+Allow = true
+# Invite-only until the administrator and existing character are secured.
+RequireInvite = true
+AllowChoosingUUID = false
+
+[BodyLimit]
+Enable = true
+SizeLimitKiB = 4096
+
+[RateLimit]
+Enable = true
+RequestsPerSecond = 2.0
+Burst = 30
+
+[RequestCache]
+NumCounters = 10000
+MaxCost = 16777216
+BufferItems = 64

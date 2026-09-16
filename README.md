@@ -8,6 +8,8 @@ DuskRain 是基于 **Minecraft Java 1.20.1 / Forge 47.4.10** 制作的中式修�
 
 [下载体验版](https://github.com/ETO-ze/duskrain-mc-1.20.1/releases/tag/v2.1.0-preview) · [中文指令手册](docs/中文指令手册.md) · [58页入世指南](docs/入世手册.md) · [验收记录](docs/V14-验收记录.md)
 
+**皮肤站现已开放：[DuskRain 衣冠阁](https://skin.duskrain.cn)**。支持账号注册、皮肤与披风管理，以及游戏服外置登录验证。[登录说明](docs/账号与外置登录.md) · [皮肤站部署与维护](deploy/skin-station/README.md)
+
 ![DuskRain 实机主城：青瓦楼阁、花木步道与浮空仙宫](docs/github/city.png)
 
 > 图片来自当前游戏实机。项目处于体验版阶段，已完成的自动测试、客户端抽查与尚未完成的验收分别记录；尚未宣称通过20名真人长期联机压测。
@@ -42,6 +44,16 @@ DuskRain 是基于 **Minecraft Java 1.20.1 / Forge 47.4.10** 制作的中式修�
 | ![实机曲桥与池岸连接](docs/github/guild-bridge.png) | ![关闭光影下的原创附魔师](docs/github/enchanter.png) |
 
 ## 开始体验
+
+### 登录现有服务器
+
+游戏地址：**`nbc.rainplay.cn:42741`**。先在 [衣冠阁注册账号](https://skin.duskrain.cn/web/registration)，再为 PCL2 / HMCL 添加外置认证地址：
+
+```text
+https://skin.duskrain.cn/authlib-injector
+```
+
+启动器使用皮肤站账号密码登录；服务器验证登录会话后允许进入。原角色使用稳定 UUID 保留进度。旧发行 ZIP 的模组与地图仍适用；外置登录是额外的启动器配置，具体步骤与 PCL2 示例见 [登录说明](docs/账号与外置登录.md)。账户密码不随仓库或发行包提供。
 
 ### 下载客户端与服务端包
 

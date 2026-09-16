@@ -1,0 +1,23 @@
+name: duskrain-skin
+services:
+  skin:
+    image: unmojang/drasl@sha256:5646d68dc458431d6c2a4a757b77472d50e3881eeac51f68f76d88cbb7a13b37
+    container_name: duskrain-skin
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:25585:25585"
+    volumes:
+      - ./config:/etc/drasl:ro
+      - ./data:/var/lib/drasl
+      - ./branding:/opt/duskrain-branding:ro
+      - ./assets:/opt/duskrain-assets:ro
+    mem_limit: 256m
+    cpus: 0.5
+    pids_limit: 100
+    security_opt:
+      - no-new-privileges:true
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "3"

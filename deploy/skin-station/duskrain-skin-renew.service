@@ -1,0 +1,7 @@
+[Unit]
+Description=Renew DuskRain skin site HTTPS certificates
+After=network-online.target
+Wants=network-online.target
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /srv/duskrain-skin/renew-certificates.sh

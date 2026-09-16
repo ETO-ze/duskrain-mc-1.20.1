@@ -1,0 +1,8 @@
+[Unit]
+Description=Check DuskRain skin site certificates twice daily
+[Timer]
+OnCalendar=*-*-* 03,15:17:00
+RandomizedDelaySec=900
+Persistent=true
+[Install]
+WantedBy=timers.target

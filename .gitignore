@@ -13,6 +13,8 @@ backups/
 docs/qa/
 WORKLOG.md
 .private/
+.playwright-cli/
+output/playwright/
 .idea/
 .vscode/
 mod/bin/

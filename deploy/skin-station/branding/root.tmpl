@@ -1,0 +1,38 @@
+{{ template "layout" . }}
+{{ define "title" }}DuskRain 衣冠阁 · 皮肤与通行{{ end }}
+{{ define "content" }}
+{{ template "header" . }}
+<section class="dr-hero">
+  <div class="dr-eyebrow">DUSKRAIN / 烟雨仙途</div>
+  <h1>衣冠映山河<br><span>一笺入仙途</span></h1>
+  <p>管理你的皮肤与披风，用同一个账号启程 DuskRain。</p>
+  <div class="dr-meta">Minecraft 1.20.1 · Forge 47.4.10 · 群号 205255670</div>
+</section>
+<div class="dr-columns">
+  <section class="dr-card">
+    <span class="dr-number">壹 / 通行</span><h2>登录衣冠阁</h2>
+    {{ if .User }}
+    <p>道友 {{ .User.Username }}，欢迎归来。</p>
+    <p><a class="dr-button" href="{{ .App.FrontEndURL }}/web/user">打开我的衣柜</a></p>
+    {{ else }}
+    <form class="dr-login" action="{{ .App.FrontEndURL }}/web/login" method="post">
+      <label>账号<input type="text" name="username" autocomplete="username" placeholder="你的账号名" required /></label>
+      <input hidden name="returnUrl" value="{{ .URL }}" />
+      <input hidden name="destination" value="{{ .Destination }}" />
+      <label>密码<input type="password" name="password" autocomplete="current-password" placeholder="输入站点密码" required /></label>
+      <input type="submit" value="登入仙籍" />
+    </form>
+    <p class="dr-note">初来此地？<a href="{{ .App.FrontEndURL }}/web/registration">注册账号</a>。{{ if .App.Config.RegistrationUsernamePassword.CreateNewPlayer.RequireInvite }}请在服务器群领取邀请。{{ else }}请使用英文字母、数字或下划线，密码至少 12 位。{{ end }}</p>
+    {{ end }}
+  </section>
+  <section class="dr-card">
+    <span class="dr-number">贰 / 入世</span><h2>在启动器中接入</h2>
+    <ol class="dr-steps"><li>安装 DuskRain 配套客户端，使用 Java 17。</li><li>PCL2 在版本设置中选择 Authlib-Injector；HMCL 在账号管理中添加外置登录，填写下方地址。</li><li>使用衣冠阁账号登录，启动游戏后加入服务器。</li></ol>
+    <label>认证服务器<code class="dr-address">{{ .App.AuthlibInjectorURL }}</code></label>
+    <label>游戏服务器<code class="dr-address">nbc.rainplay.cn:42741</code></label>
+    <p class="dr-note">皮肤站账号与游戏角色关联。已有角色请先由管理员确认名字与 UUID，再开始游玩。</p>
+  </section>
+</div>
+<section class="dr-strip"><div><h3>皮肤与披风</h3><p>登录后打开角色页面，上传 PNG 并选择宽臂或细臂模型。标准皮肤推荐 64×64。</p></div><div><h3>仙途相伴</h3><p>保留角色、装备、修为与宗门。账号问题可在群 205255670 联系服主。</p></div></section>
+{{ template "footer" . }}
+{{ end }}
