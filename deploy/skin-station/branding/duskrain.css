@@ -5,3 +5,5 @@ a{color:#275e62;text-underline-offset:4px}a:hover{color:#936434}h1,h2,h3,h4{colo
 @media(max-width:720px){#content{padding:16px}.dr-columns,.dr-strip{grid-template-columns:1fr;gap:16px}.dr-card{padding:22px}.dr-hero{padding:26px 0}.dr-hero:after{right:0;top:40px}.header-nav{align-items:flex-start;font-size:13px}.logo{font-size:16px}.header-nav>div:last-child{max-width:48%}.dr-meta{max-width:75%}table{display:block;overflow-x:auto}input,select{max-width:100%}}
 
 input::placeholder,textarea::placeholder{color:#6b817c!important;opacity:1}
+
+@media(max-width:720px){.header-nav{flex-wrap:wrap;gap:14px}.header-nav>div{min-width:0;white-space:normal}.header-nav>div:last-child{max-width:100%;display:flex;flex-wrap:wrap;gap:12px;align-items:center}.header-nav a{margin-left:0;overflow-wrap:anywhere}h1{overflow-wrap:anywhere}}

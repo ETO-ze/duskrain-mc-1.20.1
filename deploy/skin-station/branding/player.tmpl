@@ -15,12 +15,12 @@
   </p>
 
   <h1 style="text-align: center;">{{ .Player.Name }}</h1>
-  <span id="dr-player-state" data-local-cape="{{ .Player.CapeHash.Valid }}" hidden></span>
+  <span id="dr-player-state" data-local-skin="{{ .Player.SkinHash.Valid }}" data-local-cape="{{ .Player.CapeHash.Valid }}" hidden></span>
   <h6 style="text-align: center;">{{ .Player.UUID }}<br />{{ .PlayerID }}</h6>
-  {{ if .SkinURL }}
+  {{ if or .SkinURL .CapeURL }}
     <div id="skin-container" style="min-height: 300px;">
       <noscript>
-        <img class="texture-preview" src="{{ .SkinURL }}">
+        {{ if .SkinURL }}<img class="texture-preview" src="{{ .SkinURL }}">{{ end }}
         {{ if .CapeURL }}
           <img class="texture-preview" src="{{ .CapeURL }}">
         {{ end }}
@@ -56,7 +56,7 @@
     {{ end }}
     {{ if or .App.Config.AllowSkins .User.IsAdmin }}
       <h4>{{ call .T "Skin" }}</h4>
-      <p><a class="dr-button" href="{{ .App.FrontEndURL }}/library/?player={{ .Player.UUID }}">浏览皮肤库 · 3D 试衣</a></p>
+      <p><a class="dr-button" href="{{ .App.FrontEndURL }}/library/?player={{ .Player.UUID }}">浏览皮肤与披风库 · 3D 试衣</a></p>
       {{ if .SkinURL }}
         <p>
           <span style="vertical-align: top">{{ call .T "Current skin:" }}</span>
@@ -140,7 +140,7 @@
       <p>
         <label for="fallback-player">跟随正版皮肤（玩家名或 UUID）</label>
         <br>
-        <small>没有本地皮肤和披风时，显示该正版角色的外观；约 10 分钟缓存后更新。保留本地披风时，请在皮肤库选择复制皮肤。跟随需先自行处理本地皮肤与披风，本站不会替你删除披风。</small>
+        <small>没有本地皮肤和披风时，显示该正版角色的整套外观，包含当前穿戴的披风；约 10 分钟缓存。可在皮肤库选择“跟随整套外观”明确替换两项，或只复制其中一项以保留另一项。</small>
         <br>
         <input
           class="long"
@@ -185,7 +185,7 @@
     </p>
   {{ end }}
 
-  {{ if .SkinURL }}
+  {{ if or .SkinURL .CapeURL }}
 <script type="module">
 	import { skinview3d } from "{{.App.PublicURL}}/bundle.js"
 	const skinCanvas = document.getElementById("skin-canvas");
@@ -195,11 +195,16 @@
 		height: skinCanvas.parentElement.clientHeight,
 	});
 	skinViewer.controls.enableZoom = false;
+	{{if .SkinURL}}
 	skinViewer.loadSkin({{.SkinURL}}, {
 		model: "{{.Player.SkinModel}}",
 	});
+	{{else}}
+	skinViewer.playerObject.skin.visible = false;
+	{{end}}
 	{{if .CapeURL}}
 		skinViewer.loadCape({{.CapeURL}});
+		skinViewer.playerObject.rotation.y = Math.PI;
 	{{end}}
 	skinViewer.render();
 </script>
