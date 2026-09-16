@@ -1,0 +1,173 @@
+{
+  "project": {
+    "client_side": "required",
+    "server_side": "unsupported",
+    "game_versions": [
+      "1.20",
+      "1.20.1",
+      "1.21.1",
+      "1.21.4",
+      "1.21.5"
+    ],
+    "environment": [
+      "client_only"
+    ],
+    "id": "PxQSWIcD",
+    "slug": "sodium-dynamic-lights",
+    "project_type": "mod",
+    "team": "hBGCPeKZ",
+    "organization": null,
+    "title": "Sodium Dynamic Lights",
+    "description": "Multiloader port of LambDynLights that adds Sodium options integration",
+    "body": "![banner](https://cdn.modrinth.com/data/cached_images/56ae9d34e07794c183a3c9c89b57b6b6043e3b2e.png)\n\nAn unofficial Forge/multiloader port of LambDynamicLights that integrates with Sodium and Embeddium.\n\nYou may also enjoy [Sodium/Embeddium Extras](https://modrinth.com/mod/sodium-extras)\n\n![sodium options](https://cdn.modrinth.com/data/cached_images/4f224929dc5c2a0cfca922dcbb918ae9d87000db.png)\n\n![demo](https://cdn.modrinth.com/data/cached_images/14bdbab8f5aae99193fb0be2d36d872da17d96aa.png)",
+    "body_url": null,
+    "published": "2024-08-26T14:26:07.157981Z",
+    "updated": "2025-04-10T21:19:54.842919Z",
+    "approved": "2024-08-27T23:14:23.618914Z",
+    "queued": "2024-09-07T18:08:42.938011Z",
+    "status": "approved",
+    "requested_status": "approved",
+    "moderator_message": null,
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "downloads": 18401457,
+    "followers": 1115,
+    "categories": [
+      "decoration",
+      "optimization"
+    ],
+    "additional_categories": [
+      "utility"
+    ],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge"
+    ],
+    "versions": [
+      "6FqNL1Dw",
+      "67IEqds3",
+      "z57UcDuv",
+      "KvkDc6wx",
+      "fFYg3XhS",
+      "nXZIQIRI",
+      "5RCjQ3wv",
+      "QNs8b2AW",
+      "Aswrgl8V",
+      "KDxYKZfj",
+      "FRTYj04H",
+      "wTyO0ol0",
+      "VThb5jhr",
+      "7nSLH6FC",
+      "KyZ5utFn",
+      "guXfVSht",
+      "LElCllwJ",
+      "qj3fBGvq",
+      "A0jE156m",
+      "VB0tTPBH",
+      "lJh8QP5i",
+      "63Nxw7Hj",
+      "cqlNcfN9",
+      "npBdEWUD",
+      "ICS39k7F",
+      "hiAUnekX",
+      "QyYBd2yE",
+      "kSSa3FvO",
+      "5VTwEmls",
+      "qAxhsq8f",
+      "ESdY1Pem",
+      "HSCYNr5X",
+      "VZme8Hhh",
+      "aruAwiAC",
+      "XI0WLXdn",
+      "K1JyJpov",
+      "VAUPePoi",
+      "EYnKyLWV",
+      "I156ee3A",
+      "BsbJhy7W",
+      "USYRWaaH",
+      "IqgZM27b"
+    ],
+    "icon_url": "https://cdn.modrinth.com/data/PxQSWIcD/a5ab5515213391934e18baaf487c87e4b24ebfa3_96.webp",
+    "raw_icon_url": "https://cdn.modrinth.com/data/PxQSWIcD/c316061b4d5a4ac311f4144cc7e0d809b800abe9.png",
+    "issues_url": "https://github.com/txnimc/SodiumDynamicLights/issues",
+    "source_url": "https://github.com/txnimc/SodiumDynamicLights",
+    "wiki_url": null,
+    "discord_url": "https://discord.gg/kS7auUeYmc",
+    "donation_urls": [],
+    "gallery": [
+      {
+        "url": "https://cdn.modrinth.com/data/PxQSWIcD/images/bf198f89bf08b1e43a67d8da3038c5b32c8f7ce3_350.webp",
+        "raw_url": "https://cdn.modrinth.com/data/PxQSWIcD/images/56ae9d34e07794c183a3c9c89b57b6b6043e3b2e.png",
+        "featured": false,
+        "title": null,
+        "description": null,
+        "created": "2024-08-26T14:50:40.557804Z",
+        "ordering": 0
+      }
+    ],
+    "color": 6874264,
+    "thread_id": "qmVD5csq",
+    "monetization_status": "monetized"
+  },
+  "release": {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "environment": "client_only",
+    "id": "I156ee3A",
+    "project_id": "PxQSWIcD",
+    "author_id": "dSn53j6E",
+    "featured": false,
+    "name": "SodiumDynamicLights Forge 1.0.10 for 1.20.1",
+    "version_number": "forge-1.20.1-1.0.10",
+    "changelog": "fix crash with mods using the new LambDynLights API",
+    "changelog_url": null,
+    "date_published": "2025-01-02T01:22:44.551718Z",
+    "downloads": 10158473,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "id": "K7ZsMvls",
+        "hashes": {
+          "sha512": "b8527199be5a8b4bc758a4f320586b5886e6ff657718f52d464386b1e3c695d7bfe644e2ef9487a869c93c0866818995ecd47b9e1a19054929242682e37f58b7",
+          "sha1": "d27524e85bed0f0af83c03be46f9ca3eb02a1be9"
+        },
+        "url": "https://cdn.modrinth.com/data/PxQSWIcD/versions/I156ee3A/sodiumdynamiclights-forge-1.0.10-1.20.1.jar",
+        "filename": "sodiumdynamiclights-forge-1.0.10-1.20.1.jar",
+        "primary": true,
+        "size": 511601,
+        "file_type": null
+      },
+      {
+        "id": "g2hdoGJF",
+        "hashes": {
+          "sha512": "420f86aece82e9351269627027db80c582912e4d97a56c0c293ca8d60b5283f48b0ebf048fd53d4780d6a44b4071f9d39d5a5555951e6d92f894d6195abbf453",
+          "sha1": "868e0044585f3f2a5d530b3a0377f5e69c49dda6"
+        },
+        "url": "https://cdn.modrinth.com/data/PxQSWIcD/versions/I156ee3A/sodiumdynamiclights-forge-1.0.10-1.20.1-sources.jar",
+        "filename": "sodiumdynamiclights-forge-1.0.10-1.20.1-sources.jar",
+        "primary": false,
+        "size": 280930,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "Es5v4eyq",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  }
+}

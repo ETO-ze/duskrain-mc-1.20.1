@@ -1,0 +1,136 @@
+{
+  "date": "2026-09-16",
+  "version": "2.1.0-preview",
+  "protocol": 7,
+  "game_tests": {
+    "required": 48,
+    "passed": 48,
+    "evidence": "docs/qa/v14-final-build-tests.log in full release"
+  },
+  "resources": {
+    "passed": true,
+    "armor_items": 84,
+    "armor_textures": 42,
+    "texture_size": [
+      512,
+      512
+    ],
+    "sculpted_artifact_models": 21,
+    "resident_textures": 11,
+    "guide_pages": 58,
+    "source_and_jar_assets_identical": true,
+    "jar_sha256": "73924320f3b1524d1df02cae7eaec48358a16ff45d0e82e0d918dade3b9ea9fc",
+    "method": "PNG dimensions and signatures, all equipment IDs, sculpted model texture references and byte-for-byte final JAR resources; 57 content pages plus native start page; visual poses require separate native review"
+  },
+  "installed_server": {
+    "installed_in_new_directory": true,
+    "publisher_hashed_cached_dependencies": 64,
+    "cycles": [
+      {
+        "cycle": 1,
+        "exit": 0,
+        "status": true,
+        "resource_pack_hash_matches": true,
+        "saved_cleanly": true,
+        "mod_sha256": "73924320f3b1524d1df02cae7eaec48358a16ff45d0e82e0d918dade3b9ea9fc"
+      },
+      {
+        "cycle": 2,
+        "exit": 0,
+        "status": true,
+        "resource_pack_hash_matches": true,
+        "saved_cleanly": true,
+        "mod_sha256": "73924320f3b1524d1df02cae7eaec48358a16ff45d0e82e0d918dade3b9ea9fc"
+      }
+    ]
+  },
+  "performance": {
+    "method": "20 simulated server players plus one actual observer; fixed preloaded region; all presets measured on RTX4060; nominal TPS capped at 20, raw catch-up rate retained",
+    "runs": [
+      {
+        "preset": "rtx2060",
+        "width": 1280,
+        "height": 720,
+        "server": "v14-load-rtx2060-1280x720.json",
+        "frames": "1789549684059-v14-20actors-rtx2060-1280x720.json",
+        "gpu": "NVIDIA GeForce RTX 4060/PCIe/SSE2",
+        "visual": {
+          "profile": "rtx2060",
+          "pack": "ComplementaryReimagined_r5.3.zip",
+          "inUse": true,
+          "fallback": false,
+          "error": "Optional.empty"
+        },
+        "vsync": true,
+        "client_duration_seconds": 30.013617200000002,
+        "tps": 20,
+        "raw_ticks_per_wall_second": 20.157350562994466,
+        "tick_p95_ms": 11.8855,
+        "tick_max_ms": 24.9903,
+        "mean_fps": 104.219360804002,
+        "frame_p95_ms": 14.2598,
+        "frame_max_ms": 35.5092,
+        "unfocused_frames": 0,
+        "menu_frames": 0
+      },
+      {
+        "preset": "rtx4060",
+        "width": 1920,
+        "height": 1080,
+        "server": "v14-load-rtx4060-1920x1080.json",
+        "frames": "1789551439455-v14-20actors-rtx4060-1920x1080.json",
+        "gpu": "NVIDIA GeForce RTX 4060/PCIe/SSE2",
+        "visual": {
+          "profile": "rtx4060",
+          "pack": "ComplementaryReimagined_r5.3.zip",
+          "inUse": true,
+          "fallback": false,
+          "error": "Optional.empty"
+        },
+        "vsync": true,
+        "client_duration_seconds": 30.0116659,
+        "tps": 19.721435317779427,
+        "raw_ticks_per_wall_second": 19.721435317779427,
+        "tick_p95_ms": 14.5733,
+        "tick_max_ms": 94.7413,
+        "mean_fps": 107.42489306466656,
+        "frame_p95_ms": 14.2177,
+        "frame_max_ms": 26.5448,
+        "unfocused_frames": 0,
+        "menu_frames": 0
+      },
+      {
+        "preset": "rtx5070",
+        "width": 2560,
+        "height": 1440,
+        "server": "v14-load-rtx5070-2560x1440.json",
+        "frames": "1789551885771-v14-20actors-rtx5070-2560x1440.json",
+        "gpu": "NVIDIA GeForce RTX 4060/PCIe/SSE2",
+        "visual": {
+          "profile": "rtx5070",
+          "pack": "ComplementaryReimagined_r5.3.zip",
+          "inUse": true,
+          "fallback": false,
+          "error": "Optional.empty"
+        },
+        "vsync": true,
+        "client_duration_seconds": 30.021290099999998,
+        "tps": 20,
+        "raw_ticks_per_wall_second": 20.394768966102653,
+        "tick_p95_ms": 14.5408,
+        "tick_max_ms": 48.1861,
+        "mean_fps": 60.157308163115886,
+        "frame_p95_ms": 24.2175,
+        "frame_max_ms": 66.0975,
+        "unfocused_frames": 0,
+        "menu_frames": 0
+      }
+    ]
+  },
+  "gaps": [
+    "All equipment and NPC animation/mixed-armor visual combinations",
+    "Complete real-player progression through all three ascension tiers",
+    "20 real remote players and long-duration exploration",
+    "Complete display preset and resolution combinations"
+  ]
+}

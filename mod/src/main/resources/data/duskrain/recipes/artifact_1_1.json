@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " G ",
+    "GMG",
+    " S "
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:iron_ingot"
+    },
+    "M": {
+      "item": "duskrain:artifact_1_0"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "duskrain:artifact_1_1"
+  }
+}

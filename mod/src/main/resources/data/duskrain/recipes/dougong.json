@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TTT",
+    " T ",
+    " T "
+  ],
+  "key": {
+    "T": {
+      "item": "minecraft:dark_oak_planks"
+    }
+  },
+  "result": {
+    "item": "duskrain:dougong",
+    "count": 4
+  }
+}

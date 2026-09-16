@@ -1,0 +1,17 @@
+{
+  "display": {
+    "icon": {
+      "item": "duskrain:artifact_1_0"
+    },
+    "title": "DuskRain · 烟雨仙途",
+    "description": "群号 205255670 · 六境问道，烟雨长行",
+    "background": "minecraft:textures/block/deepslate_tiles.png",
+    "show_toast": true,
+    "announce_to_chat": false
+  },
+  "criteria": {
+    "join": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

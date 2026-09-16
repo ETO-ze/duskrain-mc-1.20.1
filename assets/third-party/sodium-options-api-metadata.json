@@ -1,0 +1,171 @@
+{
+  "project": {
+    "client_side": "required",
+    "server_side": "unsupported",
+    "game_versions": [
+      "1.20",
+      "1.20.1",
+      "1.21.1",
+      "1.21.4",
+      "1.21.5"
+    ],
+    "environment": [
+      "client_only"
+    ],
+    "id": "Es5v4eyq",
+    "slug": "sodium-options-api",
+    "project_type": "mod",
+    "team": "e91KMn8w",
+    "organization": null,
+    "title": "Sodium Options API",
+    "description": "Config API for adding Sodium options with a better categories menu",
+    "body": "![banner](https://cdn.modrinth.com/data/cached_images/877ea5f59871975101d1d3d907a4e7c78681b389_0.webp)\n\nThis mod adds cross-platform events for adding Sodium/Embeddium options menu integration. For example, you can add an option page to Embeddium on Forge, Fabric Sodium 0.5 on 1.20.1, and Fabric/NeoForge Sodium 0.6 on 1.21.1 with one event:\n\n\n```\nOptionGUIConstruction.EVENT.register((pages) -> pages.add(new TestOptionPage()));\n```\n\nIf you're an end user, and you don't have this mod installed already as a library for another Sodium addon, you can install it alongside Reese's Options to get improved category menu, with drop-down support so that it's easier to navigate. This will take effect even for mods that don't use this API and inject into Sodium options directly.\n\n![demo](https://cdn.modrinth.com/data/cached_images/3768c862c279cb47278855c2d99aeb568e68573b_0.webp)\n\nThis mod is partially a fork of the Embeddium categories API and options events, with heavy changes to support upstream Sodium. While it makes changes to the Reese's Sodium Options menu, it does so via mixin for compatibility reasons, so you will need to install both.\n\n## Using the API\n\nFirst, you will need to add this mod to your dev environment, using the Maven release for Curseforge or Modrinth.\n\n```\nmodImplementation(\"maven.modrinth:sodium-options-api:version\")\n```\n\nThen, this mod provides three events in `toni.sodiumoptionsapi.api`:\n\n- `OptionGUIConstruction.EVENT`, called once in the GUI constructor, allows adding entire pages. This is probably the one you want.\n- `OptionPageConstruction.EVENT`, called for each OptionPage. Use this if you want to add a group of toggles to the performance tab or something.\n- `OptionGroupConstruction.EVENT`, called for each group of options. Use this if you want to insert a single option into an existing group, or modify the vanilla ones.",
+    "body_url": null,
+    "published": "2024-09-15T16:51:05.628905Z",
+    "updated": "2025-04-10T17:03:36.805094Z",
+    "approved": "2024-09-20T18:45:08.850673Z",
+    "queued": "2024-09-18T09:37:50.418091Z",
+    "status": "approved",
+    "requested_status": "approved",
+    "moderator_message": null,
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "downloads": 20166847,
+    "followers": 501,
+    "categories": [
+      "optimization",
+      "utility"
+    ],
+    "additional_categories": [],
+    "loaders": [
+      "fabric",
+      "forge",
+      "neoforge"
+    ],
+    "versions": [
+      "3QRpcmup",
+      "newXPTAb",
+      "PalQMwBl",
+      "iKsckq2S",
+      "nD6iGcEU",
+      "3tMrKnAt",
+      "p3k6wqkd",
+      "3G9Nkvuw",
+      "gYwIyWTS",
+      "rngNO66x",
+      "4Qz1muwz",
+      "UH3P7wPo",
+      "5EV3zJs4",
+      "r39JK20H",
+      "49htvzbI",
+      "OgSAYwMo",
+      "cg82VLCn",
+      "9mH6wdMJ",
+      "eryI8I4M",
+      "NGReCiHv",
+      "qFD08jfR",
+      "D72Dqsl3",
+      "JoAYiXki",
+      "41HjMVFQ",
+      "Lm9hPdyx",
+      "eCebYVhU",
+      "iffT6iAE",
+      "PurZvdnv",
+      "TtBxzDsa",
+      "snBEY6aG",
+      "BETRmHf5",
+      "OeQvdVsV",
+      "GDMZ0er5",
+      "gjPKRTS7",
+      "nww69hqs",
+      "lrsX3TMS",
+      "RR1lyQmh",
+      "d0EFLitO",
+      "dMzvef0h",
+      "iHnIE3TX",
+      "Lx38JA4J",
+      "jF76bc57"
+    ],
+    "icon_url": "https://cdn.modrinth.com/data/Es5v4eyq/7bff17babb498584c0edd74211d97435b651c11f_96.webp",
+    "raw_icon_url": "https://cdn.modrinth.com/data/Es5v4eyq/7bff17babb498584c0edd74211d97435b651c11f.png",
+    "issues_url": "https://github.com/txnimc/SodiumOptionsAPI/issues",
+    "source_url": "https://github.com/txnimc/SodiumOptionsAPI",
+    "wiki_url": null,
+    "discord_url": "https://discord.com/invite/kS7auUeYmc",
+    "donation_urls": [],
+    "gallery": [
+      {
+        "url": "https://cdn.modrinth.com/data/Es5v4eyq/images/3768c862c279cb47278855c2d99aeb568e68573b_350.webp",
+        "raw_url": "https://cdn.modrinth.com/data/Es5v4eyq/images/3768c862c279cb47278855c2d99aeb568e68573b.png",
+        "featured": true,
+        "title": "Better Options Menu",
+        "description": null,
+        "created": "2024-09-15T17:25:23.513431Z",
+        "ordering": 0
+      }
+    ],
+    "color": 7659424,
+    "thread_id": "ATrsDssv",
+    "monetization_status": "monetized"
+  },
+  "release": {
+    "game_versions": [
+      "1.20",
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge"
+    ],
+    "environment": "client_only",
+    "id": "d0EFLitO",
+    "project_id": "Es5v4eyq",
+    "author_id": "dSn53j6E",
+    "featured": false,
+    "name": "SodiumOptionsAPI Forge 1.0.10 for 1.20.1",
+    "version_number": "forge-1.20.1-1.0.10",
+    "changelog": "Fixed compat with latest Reese's Options\r\nAdded blacklist for Flashback, Axiom, and Dynamic FPS showing up incorrectly in the Options menu",
+    "changelog_url": null,
+    "date_published": "2025-01-18T20:48:20.566320Z",
+    "downloads": 3574928,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "id": "dJMM6SgN",
+        "hashes": {
+          "sha512": "20b11f1582df3df3d351e0cffcfc8b97453e2d73164fbad46d3f4eb960cab57d8f708d84b818782ef019d5cd9494ce001161f753623680516a191d6f510ebb79",
+          "sha1": "7529fbf938787ed13a251cbf40936f8c29ec4b6c"
+        },
+        "url": "https://cdn.modrinth.com/data/Es5v4eyq/versions/d0EFLitO/sodiumoptionsapi-forge-1.0.10-1.20.1.jar",
+        "filename": "sodiumoptionsapi-forge-1.0.10-1.20.1.jar",
+        "primary": true,
+        "size": 443978,
+        "file_type": null
+      },
+      {
+        "id": "ld7TQCzs",
+        "hashes": {
+          "sha1": "5ce4a1d658031e723f6460116b62e9e09a83858f",
+          "sha512": "e193bcc62179230da9c406592f710bcac77dcf2cdd90b5d688f5fd1194b46004a51e3b1212f7a3c05519690fdb390cf59315d1f136d0a9679dec7a154bf0327d"
+        },
+        "url": "https://cdn.modrinth.com/data/Es5v4eyq/versions/d0EFLitO/sodiumoptionsapi-forge-1.0.10-1.20.1-sources.jar",
+        "filename": "sodiumoptionsapi-forge-1.0.10-1.20.1-sources.jar",
+        "primary": false,
+        "size": 214253,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "sk9rgfiA",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  }
+}

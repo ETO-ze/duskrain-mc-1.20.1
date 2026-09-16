@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "duskrain:block/ridge_beast",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "duskrain:block/ridge_beast",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "duskrain:block/ridge_beast",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "duskrain:block/ridge_beast",
+      "y": 270
+    }
+  }
+}

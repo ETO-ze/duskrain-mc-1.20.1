@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "duskrain:block/eave_tip",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "duskrain:block/eave_tip",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "duskrain:block/eave_tip",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "duskrain:block/eave_tip",
+      "y": 270
+    }
+  }
+}

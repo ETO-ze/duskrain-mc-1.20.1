@@ -1,0 +1,8 @@
+DuskRain Jade City 2.0
+Original pixel artwork and height fields authored for DuskRain.
+Created from shapes and palettes by tools/generate_pbr.py.
+No vanilla or third-party texture images were used as inputs.
+These original textures: CC0-1.0.
+LabPBR 1.3 specification: https://shaderlabs.org/wiki/LabPBR_Material_Standard
+Recommended renderer: Oculus + Complementary Reimagined r5.3 (RP_MODE=3).
+Complementary by EminGT: https://www.complementary.dev/

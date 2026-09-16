@@ -1,0 +1,11 @@
+{
+  "type": "duskrain:trial",
+  "generator": {
+    "type": "duskrain:city",
+    "kind": "trial",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:cherry_grove"
+    }
+  }
+}

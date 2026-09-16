@@ -1,0 +1,37 @@
+{
+  "game_versions": [
+    "1.20.1"
+  ],
+  "loaders": [
+    "forge"
+  ],
+  "environment": "client_only",
+  "id": "4oWvC9eo",
+  "project_id": "zV5r3pPn",
+  "author_id": "Qnt13hO8",
+  "featured": false,
+  "name": "1.11.2-1.20.1 - Forge",
+  "version_number": "1.11.2",
+  "changelog": "## What's Changed\r\n* Add 26.2.x Fabric\r\n* Add 26.1.x NeoForge\r\n* Added debugging for #280 \r\n* Update pl_pl.json by @Fhilips613 in https://github.com/tr7zw/3d-Skin-Layers/pull/308\r\n* Update zh-cn by @NumberSir in https://github.com/tr7zw/3d-Skin-Layers/pull/306\r\n\r\n## Known issues\r\n* 26.2.x NeoForge will be released at a later point, it is so broken right now, that I can't even boot it\r\n\r\n## New Contributors\r\n* @Fhilips613 made their first contribution in https://github.com/tr7zw/3d-Skin-Layers/pull/308\r\n* @NumberSir made their first contribution in https://github.com/tr7zw/3d-Skin-Layers/pull/306\r\n\r\n**Full Changelog**: https://github.com/tr7zw/3d-Skin-Layers/compare/1.11.1...1.11.2\n",
+  "changelog_url": null,
+  "date_published": "2026-06-18T18:52:25.550652Z",
+  "downloads": 2206669,
+  "version_type": "release",
+  "status": "listed",
+  "requested_status": null,
+  "files": [
+    {
+      "id": "sjPaLhsy",
+      "hashes": {
+        "sha512": "87f06a52665d5eec7cf7d9dcd73a94ba9aa2d0f1651578d3852afab128e17836cff76e40aa5661915ba106910cef0104a00ef04883977af74de1acc02bcecc1d",
+        "sha1": "473b49e775f4c9dd746929f20c33f8132b86f235"
+      },
+      "url": "https://cdn.modrinth.com/data/zV5r3pPn/versions/4oWvC9eo/skinlayers3d-forge-1.11.2-mc1.20.1.jar",
+      "filename": "skinlayers3d-forge-1.11.2-mc1.20.1.jar",
+      "primary": true,
+      "size": 2168901,
+      "file_type": null
+    }
+  ],
+  "dependencies": []
+}

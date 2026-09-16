@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "duskrain:block/roof_end",
+      "y": 0
+    },
+    "facing=east": {
+      "model": "duskrain:block/roof_end",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "duskrain:block/roof_end",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "duskrain:block/roof_end",
+      "y": 270
+    }
+  }
+}

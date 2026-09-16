@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " T ",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "minecraft:dark_prismarine"
+    }
+  },
+  "result": {
+    "item": "duskrain:ridge_tile",
+    "count": 4
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " G ",
+    "GMG",
+    " S "
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:nether_star"
+    },
+    "M": {
+      "item": "duskrain:artifact_3_4"
+    },
+    "S": {
+      "item": "minecraft:blaze_powder"
+    }
+  },
+  "result": {
+    "item": "duskrain:artifact_3_5"
+  }
+}

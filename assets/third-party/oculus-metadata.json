@@ -1,0 +1,144 @@
+{
+  "project": {
+    "client_side": "required",
+    "server_side": "unsupported",
+    "game_versions": [
+      "1.16.5",
+      "1.18.2",
+      "1.19",
+      "1.19.1",
+      "1.19.2",
+      "1.19.4",
+      "1.20",
+      "1.20.1"
+    ],
+    "environment": [
+      "client_only"
+    ],
+    "id": "GchcoXML",
+    "slug": "oculus",
+    "project_type": "mod",
+    "team": "zFcUWaYx",
+    "organization": null,
+    "title": "Oculus",
+    "description": "Unofficial Fork of \"Iris\", made to work with FML",
+    "body": "Unofficial Fork of \"Iris\", made to work with FML\n\nFeatures\n\n<details>\n  <summary>Features</summary>\n\n- Performance. Oculus should fully utilize your graphics card when paired with optimization mods like Rubidium.\n- Mod compatibility. Oculus should make a best effort to be compatible with modded environments.\n- Backwards compatibility. All existing ShadersMod / OptiFine shader packs should just work on Iris, without any modifications required.\n- A well-organized codebase. I'd like for working with Iris code to be a pleasant experience overall.\n</details>\n\n \nPlease, don't report Oculus' issues to the official Iris Github.",
+    "body_url": null,
+    "published": "2022-07-02T10:02:12.932789Z",
+    "updated": "2024-12-24T23:47:00.856809Z",
+    "approved": "2022-07-02T10:02:12.932789Z",
+    "queued": null,
+    "status": "approved",
+    "requested_status": null,
+    "moderator_message": null,
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "downloads": 35830696,
+    "followers": 1362,
+    "categories": [
+      "decoration",
+      "optimization"
+    ],
+    "additional_categories": [],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "versions": [
+      "Ti8TJ58B",
+      "rhj7Nexq",
+      "sl4bJ9He",
+      "E7vz516D",
+      "ZjN0wxRC",
+      "rR8ZrdCw",
+      "zxDW8JVW",
+      "9KaQ8Nei",
+      "YM91QDuZ",
+      "A6aEs4bJ",
+      "nApEYsZi",
+      "uNDmEO4n",
+      "zuJ1306r",
+      "KyxZ315g",
+      "mGoSRprD",
+      "Af4brqYV",
+      "HxUtDCCe",
+      "UynWw2df",
+      "Uz28Wi1p",
+      "4lE9D01D",
+      "6xfXhsvf",
+      "yUsIHXQX",
+      "ZFTuwymb",
+      "KexKV6k0",
+      "Bj8M79wL",
+      "SPCLqJn1",
+      "vVuYfukI",
+      "iQ1SwGc3",
+      "Mw8aFpWF"
+    ],
+    "icon_url": "https://cdn.modrinth.com/data/GchcoXML/09ef853cdfd3d467dead4faef37102535a2185d5_96.webp",
+    "raw_icon_url": "https://cdn.modrinth.com/data/GchcoXML/icon.png",
+    "issues_url": "https://github.com/Asek3/Oculus/issues",
+    "source_url": "https://github.com/Asek3/Oculus",
+    "wiki_url": null,
+    "discord_url": "https://discord.com/invite/UCsyn5RS4s",
+    "donation_urls": [
+      {
+        "id": "patreon",
+        "platform": "Patreon",
+        "url": "https://www.patreon.com/asek3"
+      }
+    ],
+    "gallery": [],
+    "color": 14825925,
+    "thread_id": "GchcoXML",
+    "monetization_status": "monetized"
+  },
+  "release": {
+    "game_versions": [
+      "1.20.1"
+    ],
+    "loaders": [
+      "forge",
+      "neoforge"
+    ],
+    "environment": "client_only",
+    "id": "iQ1SwGc3",
+    "project_id": "GchcoXML",
+    "author_id": "OGBzw79h",
+    "featured": false,
+    "name": "Oculus mc1.20.1-1.8.0",
+    "version_number": "1.20.1-1.8.0",
+    "changelog": "### **Fixed compatibility with Distant Horizons 2.2+**\n### **Fixed renderer of MekaSuit from Mekanism**",
+    "changelog_url": null,
+    "date_published": "2024-12-24T23:33:42.216148Z",
+    "downloads": 23801947,
+    "version_type": "release",
+    "status": "listed",
+    "requested_status": null,
+    "files": [
+      {
+        "id": "7aacZyV2",
+        "hashes": {
+          "sha512": "1bb4ac77400d6684347988ed298a692c2cb15cf7923693607eb8739b171a20fef7412259e9e157111d9ce21779badab386029956f7d2283a9e611722a373e9d5",
+          "sha1": "984f774e71790deaec674c7587bd24e0711871b2"
+        },
+        "url": "https://cdn.modrinth.com/data/GchcoXML/versions/iQ1SwGc3/oculus-mc1.20.1-1.8.0.jar",
+        "filename": "oculus-mc1.20.1-1.8.0.jar",
+        "primary": true,
+        "size": 2851119,
+        "file_type": null
+      }
+    ],
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "sk9rgfiA",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ]
+  }
+}

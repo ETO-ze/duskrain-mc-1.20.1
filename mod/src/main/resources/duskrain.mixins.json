@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "cn.duskrain.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "FireGuard",
+    "FluidGuard",
+    "FirePlacementGuard",
+    "CityAirControl",
+    "CityJumpMomentum",
+    "DivineHealth",
+    "LocalQaListener",
+    "FlightShift"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

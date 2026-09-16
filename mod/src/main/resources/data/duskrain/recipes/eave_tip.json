@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  T",
+    " TT",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "minecraft:dark_prismarine"
+    }
+  },
+  "result": {
+    "item": "duskrain:eave_tip",
+    "count": 4
+  }
+}
