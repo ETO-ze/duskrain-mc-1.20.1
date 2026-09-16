@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DuskRain 衣冠阁：浏览古风皮肤、3D 试穿，按正版玩家名或 UUID 识别皮肤。">
+  <title>百衣藏 · DuskRain 皮肤库</title>
+  <link rel="icon" href="/web/public/logo.svg"><link rel="stylesheet" href="/library/library.css">
+  <script type="module" src="/library/library.js"></script>
+</head>
+<body>
+<header class="top"><a class="brand" href="/"><img src="/web/public/logo.svg" alt="">DuskRain <span>衣冠阁</span></a><nav aria-label="站点导航"><a href="/library/" aria-current="page">百衣藏</a><a href="/web/user">我的衣柜</a><a href="/">返回首页</a></nav></header>
+<main>
+  <section class="hero"><div><p class="eyebrow">DUSKRAIN / 衣冠映山河</p><h1>百衣藏<span>择一身风雅，赴一场仙途。</span></h1><p class="intro">古风衣裳、江湖行装与万千角色。在此试穿，为你的下一次启程换一副模样。</p></div><div class="seal" aria-hidden="true">衣<br>藏</div></section>
+  <div class="tabs" role="tablist" aria-label="皮肤来源"><button id="library-tab" role="tab" aria-selected="true" aria-controls="library-panel">壹 · 社区皮肤库</button><button id="official-tab" role="tab" aria-selected="false" aria-controls="official-panel">贰 · 正版皮肤识别</button></div>
+  <section id="library-panel" role="tabpanel" aria-labelledby="library-tab">
+    <form id="search-form" class="search"><label class="search-box"><span>寻衣</span><input id="keyword" name="keyword" maxlength="48" value="古风" placeholder="古风、汉服、剑客……" aria-label="搜索皮肤"></label><label><span class="sr-only">模型</span><select id="model" aria-label="模型"><option value="skin">全部模型</option><option value="steve">经典 · 宽臂</option><option value="alex">纤细 · 细臂</option></select></label><label><span class="sr-only">排序</span><select id="sort" aria-label="排序"><option value="likes">人气优先</option><option value="time">最近上架</option></select></label><button class="primary" type="submit">搜索</button></form>
+    <div class="chips" aria-label="常用主题"><button data-keyword="古风" class="active">古风</button><button data-keyword="汉服">汉服</button><button data-keyword="仙侠">仙侠</button><button data-keyword="武侠">武侠</button><button data-keyword="" >全部</button></div>
+    <div class="section-meta"><p>来自 LittleSkin · 基于开源 Blessing Skin</p><a href="https://littleskin.cn/skinlib" target="_blank" rel="noopener noreferrer">浏览原站 ↗</a></div>
+    <p id="catalog-status" role="status" aria-live="polite"></p><div id="catalog" class="grid" aria-label="皮肤列表"></div>
+    <nav class="pagination" aria-label="皮肤库翻页"><button id="prev-page">← 上一页</button><span id="page-label">第 1 页</span><button id="next-page">下一页 →</button></nav>
+    <p class="footnote">每款皮肤均保留原站与上传者信息。开源的是皮肤站程序；皮肤作品的权利依原作者说明。仅展示公开材质，受保护或禁止下载的材质请在原站查看。</p>
+  </section>
+  <section id="official-panel" role="tabpanel" aria-labelledby="official-tab" hidden>
+    <div class="official-card"><div class="official-copy"><p class="eyebrow">MOJANG / 正版档案</p><h2>寻回熟悉的模样</h2><p>输入 Java 正版玩家名或 UUID，识别当前皮肤与宽臂／细臂模型。可复制当前外观，或选择跟随后续更新。</p><p class="quiet">选择“跟随”后，未上传本地皮肤和披风时会自动显示该正版角色的外观。查询外观不代表验证该正版账号的所有权。</p></div><form id="official-form"><label for="official-name">正版玩家名 / UUID</label><input id="official-name" maxlength="36" placeholder="例如 Notch，或 32 / 36 位 UUID" required autocomplete="off"><button class="primary" type="submit">识别并预览</button><p id="official-status" role="status" aria-live="polite"></p></form></div>
+  </section>
+</main>
+<footer><span>DuskRain · 烟雨仙途</span><span>群号 205255670</span><a href="https://github.com/ETO-ze/duskrain-mc-1.20.1/tree/main/deploy/skin-station" target="_blank" rel="noopener noreferrer">项目源码 ↗</a></footer>
+<dialog id="preview-dialog" aria-labelledby="preview-title"><button id="close-preview" class="close" aria-label="关闭预览">×</button><div class="preview-layout"><div class="viewer"><canvas id="skin-canvas" aria-label="皮肤 3D 预览"></canvas><img id="preview-fallback" alt="皮肤平面预览" hidden><span class="viewer-note">拖动旋转 · 滚轮缩放</span></div><section class="details"><p class="eyebrow" id="preview-source"></p><h2 id="preview-title">试衣</h2><p id="preview-author"></p><div class="tags"><span id="preview-model"></span><span id="preview-resolution"></span></div><a id="source-link" target="_blank" rel="noopener noreferrer">查看来源与说明 ↗</a><hr><div id="account-state" role="status">正在读取衣柜……</div><label for="player-select">应用到角色</label><select id="player-select" aria-label="应用到角色" disabled></select><label class="follow" id="follow-label" hidden><input type="checkbox" id="follow-official">跟随此正版玩家的后续皮肤更新</label><p id="apply-note" class="quiet">应用后替换该角色当前皮肤，保留名字、UUID、披风与游戏进度。</p><button id="apply-skin" class="primary" disabled>应用此皮肤</button><p id="preview-status" role="status" aria-live="polite"></p></section></div></dialog>
+</body></html>

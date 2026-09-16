@@ -36,9 +36,20 @@ for name in ('config', 'branding', 'assets', 'tls'):
     if (root / name).is_dir():
         shutil.copytree(root / name, snapshot / name, symlinks=True)
 for name in ('compose.yaml', 'renew-certificates.sh', 'duskrain-skin-renew.service',
-             'duskrain-skin-renew.timer', 'nginx-ip.conf', 'nginx-domain.conf'):
+             'duskrain-skin-renew.timer', 'nginx-ip.conf', 'nginx-domain.conf',
+             'nginx-library-upstreams.conf', 'nginx-library-proxy.conf', 'nginx-library-locations.conf'):
     if (root / name).is_file():
         shutil.copy2(root / name, snapshot / name)
+# Preserve the deployed gallery and actual virtual hosts; do not archive regenerable proxy caches.
+gallery = Path('/www/wwwroot/duskrain-skin-public/library')
+if gallery.is_dir():
+    shutil.copytree(gallery, snapshot / 'library')
+vhosts = snapshot / 'nginx-vhosts'
+vhosts.mkdir()
+for name in ('duskrain-skin-domain.conf', 'duskrain-skin-ip.conf', 'duskrain-skin-library-upstreams.conf'):
+    deployed = Path('/www/server/panel/vhost/nginx') / name
+    if deployed.is_file():
+        shutil.copy2(deployed, vhosts / name)
 archive = backup_root / (stamp + '.tar.gz')
 with tarfile.open(archive, 'x:gz') as tar:
     tar.add(snapshot, arcname='duskrain-skin')

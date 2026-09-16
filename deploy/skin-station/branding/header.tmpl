@@ -1,0 +1,42 @@
+{{ define "header" }}
+  <nav class="header-nav">
+    <div>
+      <a class="logo" href="{{ .App.FrontEndURL }}">
+        <img
+          src="{{ .App.PublicURL }}/logo.svg"
+          alt="{{ .App.Config.ApplicationName }} logo"
+        />{{ .App.Config.ApplicationName }}
+      </a>
+    </div>
+    <div style="text-align: right">
+      <a href="{{ .App.FrontEndURL }}/library/">皮肤库</a>
+      {{ if .User }}
+        {{ if .User.IsAdmin }}
+          <a href="{{ .App.FrontEndURL }}/web/admin">{{ call .T "Admin" }}</a>
+        {{ end }}
+        <a href="{{ .App.FrontEndURL }}/web/user"
+          >{{ call .T "%s's Account" .User.Username }}</a
+        >
+        <form
+          style="display: inline"
+          action="{{ .App.FrontEndURL }}/web/logout"
+          method="post"
+        >
+          <input type="submit" value="{{ call .T "Log out" }}" />
+        </form>
+      {{ else }}
+        <a href="{{ .App.FrontEndURL }}/web/registration">{{ call .T "Registration" }}</a>
+      {{ end }}
+    </div>
+  </nav>
+
+  {{ if .ErrorMessage }}
+    <p class="error-message">{{ .ErrorMessage }}</p>
+  {{ end }}
+  {{ if .SuccessMessage }}
+    <p class="success-message">{{ .SuccessMessage }}</p>
+  {{ end }}
+  {{ if .WarningMessage }}
+    <p class="warning-message">{{ .WarningMessage }}</p>
+  {{ end }}
+{{ end }}

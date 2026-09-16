@@ -47,3 +47,15 @@ Burst = 30
 NumCounters = 10000
 MaxCost = 16777216
 BufferItems = 64
+
+# Cosmetic fallback only. Account/session authentication remains with DuskRain.
+[[FallbackAPIServers]]
+Nickname = "Mojang"
+AccountURL = "https://api.mojang.com"
+SessionURL = "https://sessionserver.mojang.com"
+ServicesURL = "https://api.minecraftservices.com"
+SkinDomains = ["textures.minecraft.net"]
+EnableAuthentication = false
+ForwardSkins = true
+CacheTTLSeconds = 600
+SetSkinURL = "https://www.minecraft.net/msaprofile/mygames/editskin"

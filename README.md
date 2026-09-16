@@ -8,7 +8,7 @@ DuskRain 是基于 **Minecraft Java 1.20.1 / Forge 47.4.10** 制作的中式修�
 
 [下载体验版](https://github.com/ETO-ze/duskrain-mc-1.20.1/releases/tag/v2.1.0-preview) · [中文指令手册](docs/中文指令手册.md) · [58页入世指南](docs/入世手册.md) · [验收记录](docs/V14-验收记录.md)
 
-**皮肤站现已开放：[DuskRain 衣冠阁](https://skin.duskrain.cn)**。支持账号注册、皮肤与披风管理，以及游戏服外置登录验证。[登录说明](docs/账号与外置登录.md) · [皮肤站部署与维护](deploy/skin-station/README.md)
+**皮肤站现已开放：[DuskRain 衣冠阁](https://skin.duskrain.cn)**。支持账号注册、皮肤与披风管理，以及游戏服外置登录验证。[百衣藏皮肤库](https://skin.duskrain.cn/library/) 提供 LittleSkin 社区皮肤搜索、3D 试衣和应用，也可按正版玩家名或 UUID 复制、跟随 Mojang 皮肤。[登录说明](docs/账号与外置登录.md) · [皮肤站部署与维护](deploy/skin-station/README.md)
 
 ![DuskRain 实机主城：青瓦楼阁、花木步道与浮空仙宫](docs/github/city.png)
 
