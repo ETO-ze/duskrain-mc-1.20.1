@@ -37,6 +37,20 @@ $env:DUSKRAIN_USERNAME='DuskRainDev'
 
 ## 运行与升级
 
-新启动器实例和独立服务端安装优先参考发行包README。模组版本2.1.0-preview，协议7，客户端与服务端同步升级。正式开服前备份世界和配置；不要用体验包里的测试角色账本覆盖自己的生产账本。
+新启动器实例和独立服务端安装优先参考发行包README。模组版本2.2.0-preview，协议8，客户端与服务端同步升级。正式开服前备份世界和配置；不要用体验包里的测试角色账本覆盖自己的生产账本。
 
-本轮48项必要GameTests、两次成品服务端启动与三档短时模拟负载已通过，完整真人试玩矩阵仍有未完成项。仓库中的精选数据在 `docs/github/validation.json`；发行包保留 `docs/qa` 原始记录。
+当前构建65项必要GameTests通过；历史性能样本和本次客户端交付检查分开记录。最新边界见 `docs/releases/2.2.0-preview.md`，原始本机记录位于忽略的 `docs/qa`；不随客户端包公开。
+
+## 轻量客户端打包
+
+需要 Python 3（打包器使用标准库）、已构建自研 JAR 和仓库锁文件；输出文件存在时拒绝覆盖。
+
+```powershell
+python tools/package-mrpack.py --output dist/release-r3/DuskRain-2.2.0-PCL2-Visual-r3.mrpack
+python tools/package-v22.py --output dist/release-r3/DuskRain-2.2.0-client-Visual-r3
+python -m unittest discover -s tools/qa -p test_*.py
+```
+
+`client_visual_bundle.py` 为两种包统一选择默认模组与光影，并从自研模组的 `visual-profiles.json` 生成首次启动参数。`modrinth-lock.json` 的光影 `default=false` 是底层通用模组栈选择标记；客户端发行选择器明确纳入此光影，服务端选择器继续排除它。`.mrpack` 的光影条目必须写入 `shaderpacks/`，不能写入 `mods/`。发行检查读取最终 ZIP/导入包并比对 JAR 内画质定义，覆盖此前漏装回归。
+
+第三方文件通过固定官方 URL 与哈希获取。不要将安装完成后的暂存目录重新压包，否则会混入第三方二进制和本机运行数据；上传打包器最初生成的只读归档。

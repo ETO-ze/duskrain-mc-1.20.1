@@ -4,9 +4,11 @@
 
 DuskRain 是基于 **Minecraft Java 1.20.1 / Forge 47.4.10** 制作的中式修仙服务器项目。原创仙城、人物衣装、水墨界面与修炼玩法围绕同一世界设计：从安全主城启程，进入生存世界探索、经营住宅和商铺，结伴挑战试炼，建立宗门洞天。
 
-**当前版本：2.1.0-preview · 协议 7 · Java 17 · 交流群 205255670**
+**当前版本：2.2.0-preview · 协议 8 · Java 17 · 交流群 205255670**
 
-[下载体验版](https://github.com/ETO-ze/duskrain-mc-1.20.1/releases/tag/v2.1.0-preview) · [中文指令手册](docs/中文指令手册.md) · [58页入世指南](docs/入世手册.md) · [验收记录](docs/V14-验收记录.md)
+**推荐下载：[PCL2 客户端导入包（Visual r3）](https://github.com/ETO-ze/duskrain-mc-1.20.1/releases/download/v2.2.0-preview/DuskRain-2.2.0-PCL2-Visual-r3.mrpack)**。导入时自动安装光影、地图与依赖，原创中式模型和材质随自研模组提供。Release 只交付客户端，不含世界或服务端。
+
+[安装与使用说明](docs/客户端使用说明.md) · [更新日志](CHANGELOG.md) · [中文指令手册](docs/中文指令手册.md) · [入世指南](docs/入世手册.md) · [本次发行检查](docs/releases/2.2.0-preview.md)
 
 **皮肤站现已开放：[DuskRain 衣冠阁](https://skin.duskrain.cn)**。支持账号注册、皮肤与披风管理，以及游戏服外置登录验证。[百衣藏皮肤与披风库](https://skin.duskrain.cn/library/) 提供 LittleSkin 社区作品搜索、3D 试衣与独立混搭；也可按正版玩家名或 UUID 识别皮肤和当前披风，单独复制或跟随整套外观。[登录说明](docs/账号与外置登录.md) · [皮肤站部署与维护](deploy/skin-station/README.md)
 
@@ -53,27 +55,27 @@ DuskRain 是基于 **Minecraft Java 1.20.1 / Forge 47.4.10** 制作的中式修�
 https://skin.duskrain.cn/authlib-injector
 ```
 
-启动器使用皮肤站账号密码登录；服务器验证登录会话后允许进入。原角色使用稳定 UUID 保留进度。旧发行 ZIP 的模组与地图仍适用；外置登录是额外的启动器配置，具体步骤与 PCL2 示例见 [登录说明](docs/账号与外置登录.md)。账户密码不随仓库或发行包提供。
+启动器使用皮肤站账号密码登录；服务器验证登录会话后允许进入。原角色使用稳定 UUID 保留进度。请使用协议 8 的本次客户端；外置登录需要在启动器配置，具体步骤与 PCL2 示例见 [登录说明](docs/账号与外置登录.md)。账户密码不随仓库或发行包提供。
 
-### 下载客户端与服务端包
+### 客户端下载
 
-前往 [Releases](https://github.com/ETO-ze/duskrain-mc-1.20.1/releases)。完整ZIP包含客户端配置、服务端、预生成世界、独立Java17运行时、源码、原创资源及验收文件；同时提供单独模组JAR与SHA-256校验文件。
+推荐将上方 `.mrpack` 拖入 **PCL2**，新建独立实例，选择 **Java 17**，使用衣冠阁账号登录。启动器会自动下载 Minecraft 1.20.1、Forge 47.4.10、锁定模组和 **Complementary Reimagined r5.3**，并校验哈希；不需要手动找光影文件。
 
-1. 在正常启动器安装 **Minecraft 1.20.1 + Forge 47.4.10**，使用 **Java 17**。
-2. 将包内 `client/mods`、`resourcepacks`、`shaderpacks` 放入对应实例。已有实例先备份，并只保留一个版本的 `duskrain` 模组。
-3. 按需应用 `client/config` 和画质预设。服务端与客户端必须同时使用协议7版本。
-4. 新开服务端先在解压根目录运行 `setup-server.ps1`，再运行 `server/start-server.bat`；安装脚本下载并校验官方依赖。
+已有 Forge 实例可使用 Release 的备用客户端 ZIP 和 `install-client-mods.ps1`。两种方式选一种即可。完整步骤、升级保留配置和登录错误处理见 [客户端使用说明](docs/客户端使用说明.md)。首次安装需要联网，不能将小体积导入包理解为离线整合包。
 
-完整包包含当前体验世界和原角色数据，仅供仓库授权成员使用。不要直接覆盖其他正在运行的服务器存档。公网监听和资源包地址需要按实际部署修改；详细步骤见 [安装说明](docs/V14-README.md)。
+**G → 显示设置**：切换轻岚（2060 参考）、烟雨（4060 参考）、云阙（5070 参考），或关闭光影；初始使用轻岚。显卡档名不代表各型号都做过实测。
+
+**光影署名：EminGT / Complementary Development**，[官方主页](https://www.complementary.dev/) · [r5.3 官方版本](https://modrinth.com/shader/complementary-reimagined/version/71Hn3myZ)。使用原光影与独立参数预设，整合问题由 DuskRain 项目维护方负责。[第三方许可证](docs/第三方模组与许可证.md)
 
 ### 常用操作
 
 | 按键或入口 | 用途 |
 |---|---|
 | `G` / `/dr menu` | 主菜单 |
-| `Z / X / C` | 三个主动技能，状态位于右下角 |
+| `Z / X / C` | 三个主动技能；右下小格短线表示就绪、数字表示冷却、锁形表示未解锁 |
+| `J` / `F8` | 2.2 山河全图 / 小地图收展，替代行旅录 |
 | `R`、空格、Shift | 御剑起落、上升、下降 |
-| `F9` / `F8` | 卷轴与透明HUD切换 / 左上信息开关 |
+| `F9` | 卷轴与轻量 HUD 切换 |
 | `/dr spawn` / `/dr warp` | 引导回城 / 分区传送 |
 | `/dr enchant` | 到铭灵轩办理附魔 |
 | `/dr guild` / `/dr claim` | 宗门 / 住宅 |
@@ -82,13 +84,12 @@ https://skin.duskrain.cn/authlib-injector
 
 ## 本版修复与验证
 
-- 修复收剑后视角和移动被骑乘状态卡住的问题；连续起落后已实机验证转向与步行。
-- 修补铭灵轩悬空地基，调整宗门水岸、曲桥端部与不合法植物落点。
-- 原生 **48项必要GameTests通过**；成品服务端在干净安装目录连续启动、保存、重启通过。
-- 原有玩家进度、装备、住宅和商铺寄售已比对；58页新指南原位更新。
-- 更新包已通过ZIP CRC及全部文件SHA-256校验。
+- 同步 2.2 地图、小技能栏、技能表现、自定义建筑、水庭与岸景修缮，以及皮肤站会话补丁；详见 [更新日志](CHANGELOG.md)。
+- 自研最终构建 **65 项必要 Forge GameTests 通过**，独立服务端保存和重启检查通过。
+- PCL2 + Java 17 已实际登录公网服，J/F8/G 和左上地图、坐标显示已检查；本次光影交付结果另见 [发行检查](docs/releases/2.2.0-preview.md)。
+- **地图仍有未解决项：**公网旧世界迁移保留 25,743 个冲突计数，未完成逐项实景确认。本次发布不将其描述为全城修缮完成。
 
-### 性能实测范围
+### 历史性能实测（2.1，不能代表本版）
 
 2026-09-16，**Core Ultra 7 265K / 16 GB RAM / RTX 4060**，客户端与集成服务端同机。固定已加载场景中使用20个模拟角色：10个御剑、10个施法，另有一个真实观察客户端。每轮记录1200个服务端tick；客户端预热10秒后采样约30秒，开启垂直同步。
 
@@ -111,7 +112,7 @@ https://skin.duskrain.cn/authlib-injector
 .\mod\gradlew.bat -p .\mod runGameTestServer
 ```
 
-产物为 `mod/build/libs/duskrain-2.1.0-preview.jar`。首次构建需要网络下载Gradle、Forge和声明的依赖。[开发说明](docs/DEVELOPMENT.md) 包含开发客户端、测试目录与本机工具的区别。
+当前开发产物为 `mod/build/libs/duskrain-2.2.0-preview.jar`。首次构建需要网络下载Gradle、Forge和声明的依赖。[开发说明](docs/DEVELOPMENT.md) 包含开发客户端、测试目录与本机工具的区别。
 
 ```text
 mod/src/        自研模组、维度定义、玩法数据、原创模型贴图
@@ -121,7 +122,7 @@ tools/          资源生成、打包、安装及本机验收工具
 docs/           中文手册、版本规则、素材署名与验收说明
 ```
 
-Git仓库存放源码、说明与精选实机证据；玩家世界、备份、运行缓存和完整安装包不进入Git历史。完整体验包通过当前私有仓库的Release提供。
+Git仓库存放源码、说明与精选实机证据；玩家世界、备份、运行缓存和安装包不进入Git历史。2.2 Release 仅提供客户端模组包，服务器运维文件留在本地或独立部署环境。
 
 ## 署名与使用范围
 

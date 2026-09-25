@@ -1,0 +1,9 @@
+newmtl wood
+Kd 1 1 1
+map_Kd duskrain:block/carved_timber
+newmtl gold
+Kd 1 1 1
+map_Kd duskrain:block/aged_bronze
+newmtl silk
+Kd 1 1 1
+map_Kd duskrain:block/silk

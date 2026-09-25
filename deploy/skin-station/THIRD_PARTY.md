@@ -8,6 +8,7 @@
 | Mojang 皮肤服务 | [Minecraft 皮肤设置](https://www.minecraft.net/msaprofile/mygames/editskin) | 查询公开的 Java 玩家档案及 textures.minecraft.net 皮肤与当前披风。Mojang 服务并非开源皮肤库；通过 Drasl 的皮肤转发功能提供跟随更新，未启用混合账号登录。 |
 | authlib-injector | [官方仓库](https://github.com/yushijinhun/authlib-injector)，1.2.8 / build 56 | 外置认证 Java agent；遵循官方 GPL-3.0 及仓库所列附加条款。通过官方源安装。 |
 | PCL2 | [官方仓库](https://github.com/Meloong-Git/PCL) | 使用用户本地启动器，仅配置新增版本；不打包启动器二进制。 |
+| CustomSkinLoader | [官方仓库 v14.28](https://github.com/xfl03/MCCustomSkinLoader/tree/v14.28)、[ForgeV2 发行版](https://modrinth.com/mod/customskinloader/version/Rcbx2QhV) | GPL-3.0-only；客户端高清皮肤与披风解码。提供官方源安装脚本，未修改或重新打包其 JAR。版本、来源和 SHA-512 见 `assets/third-party/customskinloader-metadata.json`。 |
 | Certbot | [官方仓库](https://github.com/certbot/certbot)，5.8.0 | 独立环境申请及续期 HTTPS 证书。 |
 | DuskRain 主题 | 本项目原创 CSS、SVG 标志与首页内容 | 宣纸、青玉与印章主题；不使用第三方图片作为背景。 |
 

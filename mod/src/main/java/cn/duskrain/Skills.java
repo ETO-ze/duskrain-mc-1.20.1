@@ -106,8 +106,8 @@ public final class Skills {
             case 2->{GUARD.put(p.getUUID(),p.serverLevel().getGameTime()+c.guardTicks);fx(p,SpellFx.GUARD,p.position().add(0,1,0),1,20);}
         }else switch(slot){
             case 0->FLIGHTS.add(new Flight(p,range,.9,hit,SpellFx.FIRE,1));
-            case 1->{Vec3 at=aim(p,12);PULSES.add(new Pulse(p,at,range,hit,2,c.frostTicks/20,20,0));fx(p,SpellFx.FROST,at,range,c.frostTicks);}
-            case 2->{Vec3 at=aim(p,range);PULSES.add(new Pulse(p,at,3,hit,3,1,1,c.chargeTicks));fx(p,SpellFx.FROST,at,3,c.chargeTicks);Gameplay.say(p,"九霄雷诀 · 蓄法 1.2 秒");}
+            case 1->{Vec3 at=groundAim(p,c.frostCastRange);PULSES.add(new Pulse(p,at,range,hit,2,c.frostTicks/20,20,0));fx(p,SpellFx.FROST,at,range,c.frostTicks);}
+            case 2->{Vec3 at=groundAim(p,range);PULSES.add(new Pulse(p,at,c.lightningRadius,hit,3,1,1,c.chargeTicks));SpellFx.send(p.serverLevel(),new SpellFx.Event(SpellFx.LIGHTNING,at,at,(float)c.lightningRadius,c.chargeTicks,-1));Gameplay.say(p,"九霄雷诀 · 蓄法 1.2 秒");}
         }
         if(r.stage>=18)SpellFx.send(p.serverLevel(),8+r.school-1,p.position().add(0,.15,0),p.position().add(0,.15,0),4+AscensionRules.rank(r),60);
         p.swing(net.minecraft.world.InteractionHand.MAIN_HAND,true);Store.get(p.server).setDirty();Network.sync(p);
@@ -115,6 +115,10 @@ public final class Skills {
     static boolean charging(ServerPlayer p){return PULSES.stream().anyMatch(t->t.owner.equals(p.getUUID())&&t.kind==3);}
     static void fx(ServerPlayer p,int type,Vec3 at,double radius,int ticks){SpellFx.send(p.serverLevel(),type,at,at,radius,ticks);}
     static Vec3 aim(ServerPlayer p,double range){Vec3 a=p.getEyePosition(),end=a.add(p.getLookAngle().scale(range));BlockHitResult hit=p.serverLevel().clip(new ClipContext(a,end,ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,p));return hit.getType()==HitResult.Type.MISS?end:hit.getLocation().subtract(p.getLookAngle().scale(.15));}
+    static Vec3 groundAim(ServerPlayer p,double range){
+        Vec3 at=aim(p,range);var hit=p.serverLevel().clip(new ClipContext(at,at.add(0,-8,0),ClipContext.Block.COLLIDER,ClipContext.Fluid.NONE,p));
+        return hit.getType()==HitResult.Type.MISS?at:hit.getLocation().add(0,.06,0);
+    }
     public static double dash(ServerPlayer p,double range){Vec3 start=p.position(),direction=new Vec3(p.getLookAngle().x,0,p.getLookAngle().z).normalize(),last=start;double travelled=0;
         for(double d=.2;d<=range+.001;d+=.2){Vec3 next=start.add(direction.scale(d));AABB box=p.getBoundingBox().move(next.subtract(start));if(!p.serverLevel().noCollision(p,box)||!p.serverLevel().getWorldBorder().isWithinBounds(BlockPos.containing(next))||p.level().dimension().equals(Guilds.DIM)&&!Guilds.allowed(p,next))break;last=next;travelled=d;}
         p.connection.teleport(last.x,last.y,last.z,p.getYRot(),p.getXRot());p.fallDistance=0;p.connection.send(new ClientboundSetEntityMotionPacket(p));SpellFx.send(p.serverLevel(),Store.of(p).school==3?SpellFx.BODY:SpellFx.SWORD,start.add(0,1,0),last.add(0,1,0),0,8);return travelled;

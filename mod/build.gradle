@@ -124,6 +124,7 @@ minecraft {
 sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
+    maven { url 'https://maven.blamejared.com'; content { includeGroup 'info.journeymap' } }
     maven { url 'https://api.modrinth.com/maven' }
     // Put repositories for dependencies here
     // ForgeGradle automatically adds the Forge maven and Maven Central for you
@@ -136,6 +137,8 @@ repositories {
 }
 
 dependencies {
+    // Optional JourneyMap integration; API classes are never shaded into our JAR.
+    compileOnly(fg.deobf('info.journeymap:journeymap-api-forge:1.20.1-2.0.0')) { transitive = false }
     runtimeOnly fg.deobf("maven.modrinth:ferrite-core:DG5Fn9Sz")
     implementation fg.deobf("maven.modrinth:geckolib:aC5KMoNg")
     // Opt in only for client visual QA; never add rendering mods to server tests.

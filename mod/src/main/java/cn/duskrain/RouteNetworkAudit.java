@@ -11,7 +11,7 @@ public final class RouteNetworkAudit {
         var l=server.getLevel(Gameplay.CITY);Set<Node> nodes=new HashSet<>(),centers=new HashSet<>();List<String> blocked=new ArrayList<>();
         for(var r:CityPlan.ROUTES){int n=Math.max(Math.abs(r.bx()-r.ax()),Math.abs(r.bz()-r.az())),dx=Integer.signum(r.bx()-r.ax()),dz=Integer.signum(r.bz()-r.az());
             for(int i=0;i<=n;i++){int x=r.ax()+i*dx,z=r.az()+i*dz;int radius=r.bridge()?2:1;
-                for(int lane=-radius;lane<=radius;lane++){int xx=x+lane*dz,zz=z+lane*dx;double y=WalkAudit.surface(l,xx,zz,CityPlan.pathY(r,i)+1);
+                for(int lane=-radius;lane<=radius;lane++){int xx=x+lane*dz,zz=z+lane*dx;var grade=CourtGarden.walk.get(CourtGarden.key(xx,zz));double y=WalkAudit.surface(l,xx,zz,grade==null?CityPlan.pathY(r,i)+1:grade.top());
                     if(Double.isNaN(y)){blocked.add(xx+","+zz+": lane "+lane);continue;}
                     Node node=new Node(xx,zz,(int)Math.round(y*2));nodes.add(node);if(lane==0)centers.add(node);
                 }

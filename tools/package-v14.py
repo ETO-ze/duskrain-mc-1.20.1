@@ -34,6 +34,7 @@ if '--archive' not in sys.argv:
  copy(base/'third-party',out/'third-party')
  for p in (root/'assets/third-party').glob('*.json'):copy(p,out/'third-party'/p.name)
  copy(root/'tools/install-skinlayers.ps1',out/'client/install-skinlayers.ps1')
+ copy(root/'tools/install-hd-skins.ps1',out/'client/install-hd-skins.ps1')
  copy(root/'docs/V14-README.md',out/'README.md')
  # Preserve the original player's ledger, tasks, claims, inventory and overworld.
  # Test actors and test purchases are confined to run-v14-qa and are not published.
@@ -57,6 +58,7 @@ else:
  assert all(sha(out/n/'mods'/jar.name)==jar_hash for n in ('client','server'))
  # Refresh reports after installed-server validation, without replacing world/player data.
  copy(root/'docs',out/'docs');copy(root/'docs/V14-README.md',out/'README.md')
+ copy(root/'tools/install-hd-skins.ps1',out/'client/install-hd-skins.ps1')
  copy(root/'mod/src',out/'source/mod/src');copy(root/'tools',out/'source/tools')
  obsolete=out/'source/mod/src/main/java/cn/duskrain/mixin/QaPlayers.java'
  if obsolete.exists():obsolete.unlink()

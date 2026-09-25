@@ -1,12 +1,325 @@
 [
   {
-    "project": "embeddium",
-    "version": "0.3.31+mc1.20.1",
+    "project": "3dskinlayers",
+    "project_id": "zV5r3pPn",
+    "version": "1.11.2",
+    "version_id": "4oWvC9eo",
+    "version_type": "release",
+    "published": "2026-06-18T18:52:25.550652Z",
+    "file": "skinlayers3d-forge-1.11.2-mc1.20.1.jar",
+    "url": "https://cdn.modrinth.com/data/zV5r3pPn/versions/4oWvC9eo/skinlayers3d-forge-1.11.2-mc1.20.1.jar",
+    "size": 2168901,
+    "sha1": "473b49e775f4c9dd746929f20c33f8132b86f235",
+    "sha512": "87f06a52665d5eec7cf7d9dcd73a94ba9aa2d0f1651578d3852afab128e17836cff76e40aa5661915ba106910cef0104a00ef04883977af74de1acc02bcecc1d",
+    "sides": [
+      "client"
+    ],
+    "default": false,
+    "kind": "mod",
     "side": "client",
+    "license": {
+      "id": "LicenseRef-tr7zw-Protective-License",
+      "name": "",
+      "url": "https://github.com/tr7zw/3d-Skin-Layers/blob/1.17/LICENSE"
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/tr7zw/3d-skin-layers",
+    "homepage": "https://modrinth.com/mod/3dskinlayers",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "https://github.com/tr7zw/3d-Skin-Layers ; official downloads only",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "tr7zw"
+    ],
+    "sha256": "2d35eff3e2642e8a6f7fb4cc7461211699ee2e32b9644e0d3b3bd6ba1574551c",
+    "mod_ids": [
+      "skinlayers3d"
+    ],
+    "forge_dependencies": {
+      "skinlayers3d": [
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "1.20.1",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "clumps",
+    "project_id": "Wnxd13zP",
+    "version": "12.0.0.4",
+    "version_id": "nAHGB5ls",
+    "version_type": "release",
+    "published": "2024-04-21T05:04:09.708311Z",
+    "file": "Clumps-forge-1.20.1-12.0.0.4.jar",
+    "url": "https://cdn.modrinth.com/data/Wnxd13zP/versions/nAHGB5ls/Clumps-forge-1.20.1-12.0.0.4.jar",
+    "size": 20300,
+    "sha1": "8809c7aa6c71389e9c59abfe5def52c1cb8d4f1c",
+    "sha512": "ffd8ff2438e9f9d260d3926ccdd0cccc4772c6f99f29715690aed4f6e97a76035f3aeaa78168e2a458bc4cccf521e97ebdb6e0b61c819facb04af9ebb3638383",
+    "sides": [
+      "server"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "server",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/jaredlll08/Clumps",
+    "homepage": "https://modrinth.com/mod/clumps",
+    "metadata_sides": {
+      "client": "optional",
+      "server": "optional"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "jaredlll08"
+    ],
+    "sha256": "8af01712c0dc32cebaff31795ca6d223fddff2ea9b1f5efbd9c3a586a0dacbc0",
+    "mod_ids": [
+      "clumps"
+    ],
+    "forge_dependencies": {},
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "complementary-reimagined",
+    "project_id": "HVnmMxH1",
+    "version": "r5.3",
+    "version_id": "71Hn3myZ",
+    "version_type": "release",
+    "published": "2024-09-23T00:10:11.625472Z",
+    "file": "ComplementaryReimagined_r5.3.zip",
+    "url": "https://cdn.modrinth.com/data/HVnmMxH1/versions/71Hn3myZ/ComplementaryReimagined_r5.3.zip",
+    "size": 446656,
+    "sha1": "4dfb4278bdca478cb0a8c185ff8a3d2d1c646c86",
+    "sha512": "57fc12546636403971b0ef842755bfc8c80fc08f6843e55660b5d2c72db6e682b34cbd38c27148b5835c6d634def16fa78f56df20cb7fb498447effd28f288b4",
+    "sides": [
+      "client"
+    ],
+    "default": false,
+    "kind": "shader",
+    "side": "client",
+    "license": {
+      "id": "LicenseRef-Custom",
+      "name": "",
+      "url": "https://github.com/ComplementaryDevelopment/ComplementaryReimagined/blob/main/License.txt"
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/ComplementaryDevelopment/ComplementaryReimagined",
+    "homepage": "https://modrinth.com/shader/complementary-reimagined",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "EminGT"
+    ],
+    "sha256": "6e8234a2213c5a35238582d15dcc286584a029fbf42a993c1220188054799224"
+  },
+  {
+    "project": "controlling",
+    "project_id": "xv94TkTM",
+    "version": "12.0.2",
+    "version_id": "LH6Bi6Am",
+    "version_type": "release",
+    "published": "2023-07-16T04:39:30.644589Z",
+    "file": "Controlling-forge-1.20.1-12.0.2.jar",
+    "url": "https://cdn.modrinth.com/data/xv94TkTM/versions/LH6Bi6Am/Controlling-forge-1.20.1-12.0.2.jar",
+    "size": 115280,
+    "sha1": "6195a3d1464f8fb641d7e165163aea1a857ce08e",
+    "sha512": "3945bf3f6d843957f13584dfc70bede253d1e48f0dcb96f647fbcc6fcd3d1748a0dd9c6ca5c882e07a41f98eb84057934f51e43ab6023ed0a19695de2e6fe9f5",
+    "sides": [
+      "client"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "fuuu3xnx",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "source": "modrinth",
+    "source_url": "https://github.com/jaredlll08/Controlling",
+    "homepage": "https://modrinth.com/mod/controlling",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "jaredlll08"
+    ],
+    "sha256": "cff8c3426a77f9e7412262b6d79e423979eff3831e010b3b1ea9677e1ecd74cd",
+    "mod_ids": [
+      "controlling"
+    ],
+    "forge_dependencies": {
+      "controlling": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[41,)",
+          "ordering": "NONE",
+          "side": "CLIENT"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT"
+        },
+        {
+          "modId": "searchables",
+          "mandatory": true,
+          "versionRange": "[1.0,)",
+          "ordering": "NONE",
+          "side": "CLIENT"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "customskinloader",
+    "project_id": "idMHQ4n2",
+    "version": "14.28-ForgeV2",
+    "version_id": "Rcbx2QhV",
+    "version_type": "release",
+    "published": "2026-03-27T12:41:03.427752Z",
+    "file": "CustomSkinLoader_ForgeV2-14.28.jar",
+    "url": "https://cdn.modrinth.com/data/idMHQ4n2/versions/Rcbx2QhV/CustomSkinLoader_ForgeV2-14.28.jar",
+    "size": 153877,
+    "sha1": "c7e87169bd8b59a9414620dd0fd63ca5a17c235d",
+    "sha512": "88c70a0b6fd1e8b7d6eb50776d1533bdf5f0c2459c0c473cca71669130fe046ca39985a3f7010c81fb39a3f7fc2f1a34a593a4aed96a1fa80948f7e63f3eec5b",
+    "sides": [
+      "client"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client",
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/xfl03/MCCustomSkinLoader",
+    "homepage": "https://modrinth.com/mod/customskinloader",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "Preserve authenticated server GameProfile and HD skin/cape support.",
+    "authors": [
+      "zekerzhayard",
+      "xfl03"
+    ],
+    "sha256": "2edbc47d4cb378d4cab9a7968b578e9f9dd4aad1dcb7400a9b7af29eda89bd3f",
+    "mod_ids": [
+      "customskinloader"
+    ],
+    "forge_dependencies": {
+      "customskinloader": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[37,)",
+          "ordering": "NONE",
+          "side": "CLIENT"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.17.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT"
+        }
+      ]
+    },
+    "class_version_max": 52,
+    "java17_bytecode": true
+  },
+  {
+    "project": "embeddium",
+    "project_id": "sk9rgfiA",
+    "version": "0.3.31+mc1.20.1",
+    "version_id": "UTbfe5d1",
+    "version_type": "release",
+    "published": "2024-08-31T23:11:49.184634Z",
     "file": "embeddium-0.3.31+mc1.20.1.jar",
     "url": "https://cdn.modrinth.com/data/sk9rgfiA/versions/UTbfe5d1/embeddium-0.3.31%2Bmc1.20.1.jar",
-    "sha256": "eed3d1325f2acc2fd4e69bb495e5ccb91d962126ac5330f0582ebc2a3daf47fb",
+    "size": 1320675,
+    "sha1": "bb2fa8f3e493af16af9160d049f96c614a1faf2f",
     "sha512": "ffbf2da4685260a4d5c14c621708bd20722563f084f042d3dfb0a7b87f048e39299648c854a93939129da0d23a15a91ec628560d601e76074b08e275f6e132e9",
+    "sides": [
+      "client"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client",
     "license": {
       "id": "LGPL-3.0-only",
       "name": "GNU Lesser General Public License v3.0 only",
@@ -25,84 +338,679 @@
         "file_name": null,
         "dependency_type": "incompatible"
       }
-    ]
+    ],
+    "source": "modrinth",
+    "source_url": "https://github.com/FiniteReality/embeddium",
+    "homepage": "https://modrinth.com/mod/embeddium",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "FiniteReality",
+      "Asek3"
+    ],
+    "sha256": "eed3d1325f2acc2fd4e69bb495e5ccb91d962126ac5330f0582ebc2a3daf47fb",
+    "mod_ids": [
+      "embeddium",
+      "rubidium"
+    ],
+    "forge_dependencies": {
+      "embeddium": [
+        {
+          "modId": "oculus",
+          "mandatory": false,
+          "versionRange": "(1.6.15,)",
+          "ordering": "BEFORE",
+          "side": "CLIENT"
+        },
+        {
+          "modId": "textrues_embeddium_options",
+          "mandatory": false,
+          "versionRange": "[0.0.0-NOT-COMPATIBLE]",
+          "ordering": "BEFORE",
+          "side": "CLIENT"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
   },
   {
-    "project": "oculus",
-    "version": "1.20.1-1.8.0",
+    "project": "entityculling",
+    "project_id": "NNAgCjsB",
+    "version": "1.10.5",
+    "version_id": "MloBcsQQ",
+    "version_type": "release",
+    "published": "2026-06-20T14:41:39.040375Z",
+    "file": "entityculling-forge-1.10.5-mc1.20.1.jar",
+    "url": "https://cdn.modrinth.com/data/NNAgCjsB/versions/MloBcsQQ/entityculling-forge-1.10.5-mc1.20.1.jar",
+    "size": 1590221,
+    "sha1": "b818f6d792b79f4ec116c89704e70292bd6f72b5",
+    "sha512": "00f4d6987a7902597e6e3f178f77308d795b2e1c46a2bfdad79f718e8a7417373971b83004cbbe491582d91d1658718187383a368a813af0266ba99804746814",
+    "sides": [
+      "client"
+    ],
+    "default": true,
+    "kind": "mod",
     "side": "client",
-    "file": "oculus-mc1.20.1-1.8.0.jar",
-    "url": "https://cdn.modrinth.com/data/GchcoXML/versions/iQ1SwGc3/oculus-mc1.20.1-1.8.0.jar",
-    "sha256": "0945df0cba0f62b3901dd80c3268e5311b770ece78c78037a45db12ac0425fef",
-    "sha512": "1bb4ac77400d6684347988ed298a692c2cb15cf7923693607eb8739b171a20fef7412259e9e157111d9ce21779badab386029956f7d2283a9e611722a373e9d5",
     "license": {
-      "id": "LGPL-3.0-only",
-      "name": "GNU Lesser General Public License v3.0 only",
-      "url": null
-    },
-    "dependencies": [
-      {
-        "version_id": null,
-        "project_id": "sk9rgfiA",
-        "file_name": null,
-        "dependency_type": "required"
-      }
-    ]
-  },
-  {
-    "project": "complementary-reimagined",
-    "version": "r5.3",
-    "side": "shader",
-    "file": "ComplementaryReimagined_r5.3.zip",
-    "url": "https://cdn.modrinth.com/data/HVnmMxH1/versions/71Hn3myZ/ComplementaryReimagined_r5.3.zip",
-    "sha256": "6e8234a2213c5a35238582d15dcc286584a029fbf42a993c1220188054799224",
-    "sha512": "57fc12546636403971b0ef842755bfc8c80fc08f6843e55660b5d2c72db6e682b34cbd38c27148b5835c6d634def16fa78f56df20cb7fb498447effd28f288b4",
-    "license": {
-      "id": "LicenseRef-Custom",
+      "id": "LicenseRef-tr7zw-Protective-License",
       "name": "",
-      "url": "https://github.com/ComplementaryDevelopment/ComplementaryReimagined/blob/main/License.txt"
+      "url": "https://github.com/tr7zw/EntityCulling/blob/1.18/LICENSE-EntityCulling"
     },
-    "dependencies": []
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/tr7zw/EntityCulling",
+    "homepage": "https://modrinth.com/mod/entityculling",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "https://github.com/tr7zw/EntityCulling ; protective license; do not rehost JAR",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "vicisacat",
+      "Pelotrio",
+      "tr7zw"
+    ],
+    "sha256": "db0ee6aaf7e78d758885969e1d237e6efef07109195d4bb81fa06b304ddc12aa",
+    "mod_ids": [
+      "entityculling"
+    ],
+    "forge_dependencies": {
+      "entityculling": [
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "1.20.1",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
   },
   {
-    "project": "geckolib",
-    "version": "4.8.4",
-    "side": "both",
-    "file": "geckolib-forge-1.20.1-4.8.4.jar",
-    "url": "https://cdn.modrinth.com/data/8BmcQJ2H/versions/aC5KMoNg/geckolib-forge-1.20.1-4.8.4.jar",
-    "sha256": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
-    "sha512": "443a321a293e3cb92fbbc3c97a38b179a45d1db703cd7bdb123270a9e04e7b7d67d5b06cd8e77a6d4d9139e033e901b9660cccf53ad5f9beaae6d06eae68febf",
+    "project": "fastsuite",
+    "project_id": "roccmqou",
+    "version": "5.1.2",
+    "version_id": "nhk4VpGm",
+    "version_type": "release",
+    "published": "2026-06-19T01:46:23.045917Z",
+    "file": "FastSuite-1.20.1-5.1.2.jar",
+    "url": "https://cdn.modrinth.com/data/roccmqou/versions/nhk4VpGm/FastSuite-1.20.1-5.1.2.jar",
+    "size": 26600,
+    "sha1": "32ea4495b0e646f8f060e4e97d17044dd9fdefbd",
+    "sha512": "5c41292a26c7a42ba462d92005afef0df80ce62714d3d47034be4a488c4632dcbf41d647a7825980008bf3970a14dd3cf181063f511231a8d55c235be0db1729",
+    "sides": [
+      "client",
+      "server"
+    ],
+    "default": false,
+    "kind": "mod",
+    "side": "client+server",
     "license": {
       "id": "MIT",
       "name": "MIT License",
       "url": null
     },
-    "dependencies": []
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "tCkE8p2N",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "source": "modrinth",
+    "source_url": "https://github.com/Shadows-of-Fire/FastSuite",
+    "homepage": "https://modrinth.com/mod/fastsuite",
+    "metadata_sides": {
+      "client": "required",
+      "server": "required"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "Metadata requests both sides; evaluate Placebo and server-only behavior before promoting.",
+    "authors": [
+      "Shadows-of-Fire"
+    ],
+    "sha256": "5e05cb3ce05785a0061a41b7a83443074a6c26dd7d9db75c453fa2487481d54e",
+    "mod_ids": [
+      "fastsuite"
+    ],
+    "forge_dependencies": {
+      "fastsuite": [
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20.1,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        },
+        {
+          "modId": "placebo",
+          "mandatory": true,
+          "versionRange": "[8.2.0,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
   },
   {
     "project": "ferrite-core",
+    "project_id": "uXXizFIs",
     "version": "6.0.1",
-    "side": "client+server",
+    "version_id": "DG5Fn9Sz",
+    "version_type": "release",
+    "published": "2023-10-22T13:40:26.306516Z",
     "file": "ferritecore-6.0.1-forge.jar",
     "url": "https://cdn.modrinth.com/data/uXXizFIs/versions/DG5Fn9Sz/ferritecore-6.0.1-forge.jar",
-    "sha256": "9c2c9396a49e796d88497758caa4637d2bcbb433c318e2dd9cebcffbaf0f6c54",
+    "size": 123034,
+    "sha1": "417fb6ce8f52abf40bd9d0390371790f9576f8ba",
     "sha512": "a1960a7c03dc32d4ccaccaf28afdd9b078758bbd62d15a91d4039a83fa9397a098e89b69591f6bd5190254d9ee97e502504154b9aec764adb8c65f000b75ba2c",
+    "sides": [
+      "client",
+      "server"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client+server",
     "license": {
       "id": "MIT",
       "name": "MIT License",
-      "url": "https://github.com/malte0811/FerriteCore/blob/main/LICENSE"
+      "url": null
     },
-    "author": "malte0811",
-    "dependencies": []
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/malte0811/FerriteCore",
+    "homepage": "https://modrinth.com/mod/ferrite-core",
+    "metadata_sides": {
+      "client": "optional",
+      "server": "optional"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "malte0811"
+    ],
+    "sha256": "9c2c9396a49e796d88497758caa4637d2bcbb433c318e2dd9cebcffbaf0f6c54",
+    "mod_ids": [
+      "ferritecore"
+    ],
+    "forge_dependencies": {
+      "ferritecore": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[46.0.1,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20,1.21)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
   },
   {
-    "project": "sodium-options-api",
-    "version": "forge-1.20.1-1.0.10",
+    "project": "geckolib",
+    "project_id": "8BmcQJ2H",
+    "version": "4.8.4",
+    "version_id": "aC5KMoNg",
+    "version_type": "release",
+    "published": "2026-06-20T11:07:31.386330Z",
+    "file": "geckolib-forge-1.20.1-4.8.4.jar",
+    "url": "https://cdn.modrinth.com/data/8BmcQJ2H/versions/aC5KMoNg/geckolib-forge-1.20.1-4.8.4.jar",
+    "size": 1038209,
+    "sha1": "50e1407869ef0e909e3bdda9328b8bd7db03fdc0",
+    "sha512": "443a321a293e3cb92fbbc3c97a38b179a45d1db703cd7bdb123270a9e04e7b7d67d5b06cd8e77a6d4d9139e033e901b9660cccf53ad5f9beaae6d06eae68febf",
+    "sides": [
+      "client",
+      "server"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client+server",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/bernie-g/geckolib",
+    "homepage": "https://modrinth.com/mod/geckolib",
+    "metadata_sides": {
+      "client": "required",
+      "server": "optional"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "DerToaster98",
+      "mchorse",
+      "KyoSleep",
+      "Gecko",
+      "ZigyTheBird",
+      "Tslat"
+    ],
+    "sha256": "4518779a31b6c2abb92c98b5ad17ef3d60177df68626bfc86c44de2764913c2b",
+    "mod_ids": [
+      "geckolib"
+    ],
+    "forge_dependencies": {
+      "geckolib": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[47.1,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20.1,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        },
+        {
+          "modId": "geckoanimfix",
+          "mandatory": false,
+          "versionRange": "[9.removeoculusgeckolibcompat,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "jade",
+    "project_id": "nvQzSEkH",
+    "version": "11.13.3+forge",
+    "version_id": "xJQHCmWJ",
+    "version_type": "release",
+    "published": "2026-07-21T11:08:31.396433Z",
+    "file": "Jade-1.20.1-Forge-11.13.3.jar",
+    "url": "https://cdn.modrinth.com/data/nvQzSEkH/versions/xJQHCmWJ/Jade-1.20.1-Forge-11.13.3.jar",
+    "size": 553487,
+    "sha1": "d08e64e66521d69e083c8525f1fc507f1c202384",
+    "sha512": "72025c4ad6d26522bafe3d5d6ac9d4702c006a868312cb34df8a7a2398a4618205839607b129c167fd176e58cb7655f08e3afbf1993925c80d4fcc559c45a037",
+    "sides": [
+      "client",
+      "server"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client+server",
+    "license": {
+      "id": "CC-BY-NC-SA-4.0",
+      "name": "Creative Commons Attribution Non Commercial Share Alike 4.0 International",
+      "url": null
+    },
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "u6dRKJwZ",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "source": "modrinth",
+    "source_url": "https://github.com/Snownee/Jade",
+    "homepage": "https://modrinth.com/mod/jade",
+    "metadata_sides": {
+      "client": "optional",
+      "server": "optional"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "CC-BY-NC-SA: official source only; commercial redistribution not authorized.",
+    "authors": [
+      "Snownee"
+    ],
+    "sha256": "a632c77975e5aedff6322b0072f8b0db3f5d4bf914df6bdcc87d1aea4d5f55f4",
+    "mod_ids": [
+      "jade"
+    ],
+    "forge_dependencies": {
+      "jade": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[46, )",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "jei",
+    "project_id": "u6dRKJwZ",
+    "version": "15.56.0.205",
+    "version_id": "9jqubC9n",
+    "version_type": "release",
+    "published": "2026-08-31T13:57:20.356805Z",
+    "file": "jei-1.20.1-forge-15.56.0.205.jar",
+    "url": "https://cdn.modrinth.com/data/u6dRKJwZ/versions/9jqubC9n/jei-1.20.1-forge-15.56.0.205.jar",
+    "size": 1778129,
+    "sha1": "7f64b7f8fde7f001ef054dabe3618a8780ba2650",
+    "sha512": "1306fe15c81d54aa9ff8f3d9f04812c0d61ffaaae433c29621f926db8f8e2c898669ccdd99e025849859d38b7a2eac170c466390b467f4dfa77542b5dbdd1678",
+    "sides": [
+      "client"
+    ],
+    "default": true,
+    "kind": "mod",
     "side": "client",
-    "file": "sodiumoptionsapi-forge-1.0.10-1.20.1.jar",
-    "url": "https://cdn.modrinth.com/data/Es5v4eyq/versions/d0EFLitO/sodiumoptionsapi-forge-1.0.10-1.20.1.jar",
-    "sha256": "37ec0b6248f04e856e6e5ba2066c4ded9981ce128282a9b45cdb10b67b9c8415",
-    "sha512": "20b11f1582df3df3d351e0cffcfc8b97453e2d73164fbad46d3f4eb960cab57d8f708d84b818782ef019d5cd9494ce001161f753623680516a191d6f510ebb79",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/mezz/JustEnoughItems",
+    "homepage": "https://modrinth.com/mod/jei",
+    "metadata_sides": {
+      "client": "optional",
+      "server": "optional"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "mezz"
+    ],
+    "sha256": "6b251e60a4719c874da89d750af97aa6498f6f4475e3ae79cb1288c7bf0cb65c",
+    "mod_ids": [
+      "jei"
+    ],
+    "forge_dependencies": {
+      "jei": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[47.0,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20.1, 1.20.2)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "journeymap",
+    "project_id": "lfHFW1mp",
+    "version": "1.20.1-6.0.5+forge",
+    "version_id": "3pOseiLA",
+    "version_type": "release",
+    "published": "2026-09-09T17:20:17.751021Z",
+    "file": "journeymap-forge-1.20.1-6.0.5.jar",
+    "url": "https://cdn.modrinth.com/data/lfHFW1mp/versions/3pOseiLA/journeymap-forge-1.20.1-6.0.5.jar",
+    "size": 4331916,
+    "sha1": "a9fde70199b09c60f51a3b3e91ef782d8ad6897a",
+    "sha512": "aee203332a92b56305ccafcabaaaa4faa15dc2c743b89c0fd3ce014b22a970b8dc61724f628e5ae53df98408e0553ca5a6a5d5f20ce03f171eabc3d132f28c56",
+    "sides": [
+      "client",
+      "server"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client+server",
+    "license": {
+      "id": "LicenseRef-All-Rights-Reserved",
+      "name": "",
+      "url": null
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/TeamJM/journeymap",
+    "homepage": "https://modrinth.com/mod/journeymap",
+    "metadata_sides": {
+      "client": "optional",
+      "server": "optional"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "https://teamjm.github.io/journeymap-docs/latest/about/licensing/ ; modpacks may download from Modrinth during install; JAR redistribution prohibited.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "mysticdrew"
+    ],
+    "sha256": "859b5ecd2f6b6c283b0e4bf4363bfe6ad160add389ebc4bab279c2c60302512a",
+    "mod_ids": [
+      "journeymap"
+    ],
+    "forge_dependencies": {
+      "journeymap": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[47,)"
+        },
+        {
+          "modId": "commonnetworking",
+          "mandatory": true,
+          "versionRange": "[1.0.5,)"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "modernfix",
+    "project_id": "nmDcB62a",
+    "version": "5.27.83+mc1.20.1",
+    "version_id": "jAZ7Ge3d",
+    "version_type": "release",
+    "published": "2026-08-31T02:28:56.728812Z",
+    "file": "modernfix-forge-5.27.83+mc1.20.1.jar",
+    "url": "https://cdn.modrinth.com/data/nmDcB62a/versions/jAZ7Ge3d/modernfix-forge-5.27.83%2Bmc1.20.1.jar",
+    "size": 1003230,
+    "sha1": "24109106b51846d387aa00c06d1445c35410c31c",
+    "sha512": "2987d43ab991c31c94e53d16fe0694dd29a405fc7cdf6be69f5bf5b3d6a06a5d1b82ba8f5d8ecb4df45e592c649e39bc69787caa62b3417b5548392793be6e55",
+    "sides": [
+      "client",
+      "server"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client+server",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/embeddedt/ModernFix",
+    "homepage": "https://modrinth.com/mod/modernfix",
+    "metadata_sides": {
+      "client": "optional",
+      "server": "optional"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "embeddedt"
+    ],
+    "sha256": "954ff22f601be8de3978a0d7636a138dc93801c6ac55cfd71ef1cd2895de8e5f",
+    "mod_ids": [
+      "modernfix"
+    ],
+    "forge_dependencies": {
+      "modernfix": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[46.0.1,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20, 1.21)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        },
+        {
+          "modId": "jei",
+          "mandatory": false,
+          "versionRange": "[15.8.0.11,)",
+          "ordering": "NONE",
+          "side": "CLIENT"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "mouse-tweaks",
+    "project_id": "aC3cM3Vq",
+    "version": "1.20.1-2.25.1-forge",
+    "version_id": "7JVXOe3K",
+    "version_type": "release",
+    "published": "2024-05-12T16:27:50.280746Z",
+    "file": "MouseTweaks-forge-mc1.20.1-2.25.1.jar",
+    "url": "https://cdn.modrinth.com/data/aC3cM3Vq/versions/7JVXOe3K/MouseTweaks-forge-mc1.20.1-2.25.1.jar",
+    "size": 76237,
+    "sha1": "d751153e722a4e014691c83f39f5b07c6ec5333c",
+    "sha512": "a3bb0272c0a1a3be9250dfee030bb8f86217fa6a32bd534be8c940fdd8c466c800c2df85874877983ced36ecfc28c8ced6c0d42107c1ab621385b4be9a7c65eb",
+    "sides": [
+      "client"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client",
+    "license": {
+      "id": "BSD-3-Clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+      "url": null
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/YaLTeR/MouseTweaks",
+    "homepage": "https://modrinth.com/mod/mouse-tweaks",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "YaLTeR"
+    ],
+    "sha256": "6c27d16aa715ac6613a55fc463739e2c7b78279e4e4c4cede299e4a2d4a70f08",
+    "mod_ids": [
+      "mousetweaks"
+    ],
+    "forge_dependencies": {},
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "oculus",
+    "project_id": "GchcoXML",
+    "version": "1.20.1-1.8.0",
+    "version_id": "iQ1SwGc3",
+    "version_type": "release",
+    "published": "2024-12-24T23:33:42.216148Z",
+    "file": "oculus-mc1.20.1-1.8.0.jar",
+    "url": "https://cdn.modrinth.com/data/GchcoXML/versions/iQ1SwGc3/oculus-mc1.20.1-1.8.0.jar",
+    "size": 2851119,
+    "sha1": "984f774e71790deaec674c7587bd24e0711871b2",
+    "sha512": "1bb4ac77400d6684347988ed298a692c2cb15cf7923693607eb8739b171a20fef7412259e9e157111d9ce21779badab386029956f7d2283a9e611722a373e9d5",
+    "sides": [
+      "client"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client",
     "license": {
       "id": "LGPL-3.0-only",
       "name": "GNU Lesser General Public License v3.0 only",
@@ -115,16 +1023,194 @@
         "file_name": null,
         "dependency_type": "required"
       }
-    ]
+    ],
+    "source": "modrinth",
+    "source_url": "https://github.com/Asek3/Oculus",
+    "homepage": "https://modrinth.com/mod/oculus",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "Asek3"
+    ],
+    "sha256": "0945df0cba0f62b3901dd80c3268e5311b770ece78c78037a45db12ac0425fef",
+    "mod_ids": [
+      "oculus"
+    ],
+    "forge_dependencies": {
+      "oculus": [
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20.1]",
+          "ordering": "NONE",
+          "side": "BOTH"
+        },
+        {
+          "modId": "embeddium",
+          "mandatory": false,
+          "versionRange": "[0.3.1,)",
+          "ordering": "NONE",
+          "side": "CLIENT"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "placebo",
+    "project_id": "tCkE8p2N",
+    "version": "8.6.3",
+    "version_id": "6SkuAGoz",
+    "version_type": "release",
+    "published": "2026-06-14T08:31:50.827163Z",
+    "file": "Placebo-1.20.1-8.6.3.jar",
+    "url": "https://cdn.modrinth.com/data/tCkE8p2N/versions/6SkuAGoz/Placebo-1.20.1-8.6.3.jar",
+    "size": 282474,
+    "sha1": "e85f53de2e582a79ce25ff1df1e7b5b5fc08440f",
+    "sha512": "c23990465e26336f476c3b05a897bcf0c8660ae7338756b325f6bf81d0dee34b609474c62293f394acac818637ab03f92c776d104c8b8e86f3786395f5c4d623",
+    "sides": [
+      "client",
+      "server"
+    ],
+    "default": false,
+    "kind": "mod",
+    "side": "client+server",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/Shadows-of-Fire/Placebo",
+    "homepage": "https://modrinth.com/mod/placebo",
+    "metadata_sides": {
+      "client": "optional",
+      "server": "optional"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "Shadows-of-Fire"
+    ],
+    "sha256": "1cdf906cfbcbb5e5be2ef1bb721f79a24b01bd2ac559c8cdbfb7693f62421571",
+    "mod_ids": [
+      "placebo"
+    ],
+    "forge_dependencies": {
+      "placebo": [
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20.1,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "searchables",
+    "project_id": "fuuu3xnx",
+    "version": "1.0.3",
+    "version_id": "PM9yAW1G",
+    "version_type": "release",
+    "published": "2024-04-23T06:56:56.381361Z",
+    "file": "Searchables-forge-1.20.1-1.0.3.jar",
+    "url": "https://cdn.modrinth.com/data/fuuu3xnx/versions/PM9yAW1G/Searchables-forge-1.20.1-1.0.3.jar",
+    "size": 77732,
+    "sha1": "5b976f6e76ec74cdef21865e31f56bcb11558db7",
+    "sha512": "185617d6d446f3d4ef6c7d5c6ee4e2fb731a89f7495157313b21292ec6b8e3dbcc10c0379ab49ecb2d0c64d0a78df74750d7f7336d5e6c43516a7c92f278c0a2",
+    "sides": [
+      "client"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client",
+    "license": {
+      "id": "MIT",
+      "name": "MIT License",
+      "url": null
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/jaredlll08/searchables",
+    "homepage": "https://modrinth.com/mod/searchables",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "jaredlll08"
+    ],
+    "sha256": "461add180eb595004d3c9f5ac0ce337752e403077f96b38304800eadf01fb825",
+    "mod_ids": [
+      "searchables"
+    ],
+    "forge_dependencies": {
+      "searchables": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[41,)",
+          "ordering": "NONE"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20.1,)",
+          "ordering": "NONE"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
   },
   {
     "project": "sodium-dynamic-lights",
+    "project_id": "PxQSWIcD",
     "version": "forge-1.20.1-1.0.10",
-    "side": "client",
+    "version_id": "I156ee3A",
+    "version_type": "release",
+    "published": "2025-01-02T01:22:44.551718Z",
     "file": "sodiumdynamiclights-forge-1.0.10-1.20.1.jar",
     "url": "https://cdn.modrinth.com/data/PxQSWIcD/versions/I156ee3A/sodiumdynamiclights-forge-1.0.10-1.20.1.jar",
-    "sha256": "dff5325abb58c0c8526dffb80e764188bde045fd02ca6ed5e2bb76f0897d46f4",
+    "size": 511601,
+    "sha1": "d27524e85bed0f0af83c03be46f9ca3eb02a1be9",
     "sha512": "b8527199be5a8b4bc758a4f320586b5886e6ff657718f52d464386b1e3c695d7bfe644e2ef9487a869c93c0866818995ecd47b9e1a19054929242682e37f58b7",
+    "sides": [
+      "client"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client",
     "license": {
       "id": "MIT",
       "name": "MIT License",
@@ -137,6 +1223,262 @@
         "file_name": null,
         "dependency_type": "required"
       }
-    ]
+    ],
+    "source": "modrinth",
+    "source_url": "https://github.com/txnimc/SodiumDynamicLights",
+    "homepage": "https://modrinth.com/mod/sodium-dynamic-lights",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "Txni"
+    ],
+    "sha256": "dff5325abb58c0c8526dffb80e764188bde045fd02ca6ed5e2bb76f0897d46f4",
+    "mod_ids": [
+      "sodiumdynamiclights"
+    ],
+    "forge_dependencies": {
+      "sodiumdynamiclights": [
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20.1]",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "sodium-options-api",
+    "project_id": "Es5v4eyq",
+    "version": "forge-1.20.1-1.0.10",
+    "version_id": "d0EFLitO",
+    "version_type": "release",
+    "published": "2025-01-18T20:48:20.566320Z",
+    "file": "sodiumoptionsapi-forge-1.0.10-1.20.1.jar",
+    "url": "https://cdn.modrinth.com/data/Es5v4eyq/versions/d0EFLitO/sodiumoptionsapi-forge-1.0.10-1.20.1.jar",
+    "size": 443978,
+    "sha1": "7529fbf938787ed13a251cbf40936f8c29ec4b6c",
+    "sha512": "20b11f1582df3df3d351e0cffcfc8b97453e2d73164fbad46d3f4eb960cab57d8f708d84b818782ef019d5cd9494ce001161f753623680516a191d6f510ebb79",
+    "sides": [
+      "client"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "client",
+    "license": {
+      "id": "LGPL-3.0-only",
+      "name": "GNU Lesser General Public License v3.0 only",
+      "url": null
+    },
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "sk9rgfiA",
+        "file_name": null,
+        "dependency_type": "required"
+      }
+    ],
+    "source": "modrinth",
+    "source_url": "https://github.com/txnimc/SodiumOptionsAPI",
+    "homepage": "https://modrinth.com/mod/sodium-options-api",
+    "metadata_sides": {
+      "client": "required",
+      "server": "unsupported"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "Txni"
+    ],
+    "sha256": "37ec0b6248f04e856e6e5ba2066c4ded9981ce128282a9b45cdb10b67b9c8415",
+    "mod_ids": [
+      "sodiumoptionsapi"
+    ],
+    "forge_dependencies": {
+      "sodiumoptionsapi": [
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20.1]",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "sound-physics-remastered",
+    "project_id": "qyVF9oeo",
+    "version": "forge-1.20.1-1.4.10",
+    "version_id": "qeWNOzYk",
+    "version_type": "beta",
+    "published": "2025-03-26T20:48:12.125863Z",
+    "file": "sound-physics-remastered-forge-1.20.1-1.4.10.jar",
+    "url": "https://cdn.modrinth.com/data/qyVF9oeo/versions/qeWNOzYk/sound-physics-remastered-forge-1.20.1-1.4.10.jar",
+    "size": 203819,
+    "sha1": "6a1d847f7ec05e96ba3c33cc81fb8dce4c718c44",
+    "sha512": "920fd454aab89b05e80f4b697e28f0e1c608d8af5123a1c246b5317851fd0fda6b140830e7249fbf1b7ef9f4ee71bb1648defbe48a14349e5f410aad13c31001",
+    "sides": [
+      "client"
+    ],
+    "default": false,
+    "kind": "mod",
+    "side": "client",
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": null
+    },
+    "dependencies": [
+      {
+        "version_id": null,
+        "project_id": "9s6osm5g",
+        "file_name": null,
+        "dependency_type": "optional"
+      },
+      {
+        "version_id": null,
+        "project_id": "9eGKb6K1",
+        "file_name": null,
+        "dependency_type": "optional"
+      }
+    ],
+    "source": "modrinth",
+    "source_url": "https://github.com/henkelmax/sound-physics-remastered",
+    "homepage": "https://modrinth.com/mod/sound-physics-remastered",
+    "metadata_sides": {
+      "client": "required",
+      "server": "optional"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "No release for Forge 1.20.1; optional beta, key-sound QA required.",
+    "authors": [
+      "henkelmax"
+    ],
+    "sha256": "5919cd2f2d7deea798d22cdf91cdf06bd5d7393a640ca8e6861873fd7ddc37e7",
+    "mod_ids": [
+      "sound_physics_remastered"
+    ],
+    "forge_dependencies": {
+      "sound_physics_remastered": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[47.0.0,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        },
+        {
+          "modId": "minecraft",
+          "mandatory": true,
+          "versionRange": "[1.20.1]",
+          "ordering": "NONE",
+          "side": "BOTH"
+        },
+        {
+          "modId": "cloth_config",
+          "mandatory": false,
+          "versionRange": "[11.0.99,)",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        },
+        {
+          "modId": "voicechat",
+          "mandatory": false,
+          "versionRange": "[1.20.1-2.3.0,)",
+          "ordering": "AFTER",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
+  },
+  {
+    "project": "spark",
+    "project_id": "l6YH9Als",
+    "version": "1.10.53-forge",
+    "version_id": "4FXHDE9F",
+    "version_type": "release",
+    "published": "2023-09-05T08:02:29.569207Z",
+    "file": "spark-1.10.53-forge.jar",
+    "url": "https://cdn.modrinth.com/data/l6YH9Als/versions/4FXHDE9F/spark-1.10.53-forge.jar",
+    "size": 3114590,
+    "sha1": "231fb325368c0660954f47bfb03493f5246fa4d1",
+    "sha512": "15c6a3753dcba380624643a1e19c856240e8f6bed280f908e1be12c6154a86284ac86405c806273842975e0b7270af93ea9b1db5cf575a3853e54e1088cf7343",
+    "sides": [
+      "server"
+    ],
+    "default": true,
+    "kind": "mod",
+    "side": "server",
+    "license": {
+      "id": "GPL-3.0-only",
+      "name": "GNU General Public License v3.0 only",
+      "url": "https://github.com/lucko/spark/blob/master/LICENSE.txt"
+    },
+    "dependencies": [],
+    "source": "modrinth",
+    "source_url": "https://github.com/lucko/spark",
+    "homepage": "https://modrinth.com/mod/spark",
+    "metadata_sides": {
+      "client": "optional",
+      "server": "optional"
+    },
+    "redistribution": "official_download_only",
+    "permission_review": "Official source download; no third-party JAR rehosting.",
+    "hash_sources": {
+      "sha1": "modrinth-api",
+      "sha512": "modrinth-api",
+      "sha256": "computed-after-official-hash-verification"
+    },
+    "note": "",
+    "authors": [
+      "lucko"
+    ],
+    "sha256": "eba275ba9bb0cb5b542913c3138c6eeff6a752898266d63d125d185f26ac99ed",
+    "mod_ids": [
+      "spark"
+    ],
+    "forge_dependencies": {
+      "spark": [
+        {
+          "modId": "forge",
+          "mandatory": true,
+          "versionRange": "[34,)",
+          "ordering": "NONE",
+          "side": "BOTH"
+        }
+      ]
+    },
+    "class_version_max": 61,
+    "java17_bytecode": true
   }
 ]

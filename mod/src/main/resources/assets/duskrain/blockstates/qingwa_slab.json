@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "duskrain:block/qingwa_slab"
+    },
+    "type=double": {
+      "model": "duskrain:block/qingwa_slab_double"
+    },
+    "type=top": {
+      "model": "duskrain:block/qingwa_slab_top"
+    }
+  }
+}

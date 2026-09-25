@@ -1,0 +1,17 @@
+{
+  "general": {
+    "bossBarOverlapMode": "PUSH_DOWN",
+    "itemModNameTooltip": false,
+    "hideFromDebug": true,
+    "hideFromTabList": true
+  },
+  "overlay": {
+    "alpha": 0.6,
+    "overlayScale": 0.8,
+    "overlayPosX": 0.5,
+    "overlayPosY": 1.0,
+    "overlayAnchorX": 0.5,
+    "overlayAnchorY": 0.0,
+    "activeTheme": "jade:dark"
+  }
+}

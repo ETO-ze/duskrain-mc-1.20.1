@@ -1,0 +1,109 @@
+{
+  "date": "2026-09-25",
+  "minecraft": "1.20.1",
+  "forge": "47.4.10",
+  "java": 17,
+  "protocol": 8,
+  "artifacts": [
+    {
+      "file": "DuskRain-2.2.0-client-Visual-r3.zip",
+      "bytes": 2960664,
+      "sha256": "b852954594af355f987de18eda465548fb31aee1bcdc66b8e43fb040014fbb31"
+    },
+    {
+      "file": "DuskRain-2.2.0-PCL2-Visual-r3.mrpack",
+      "bytes": 2950108,
+      "sha256": "ee0566792b4ef889513db8c9912ab415e98ad3f1dc27819c0b3abdee7db0c2f0"
+    }
+  ],
+  "mod_sha256": "d4eac2c263e1f06309cb9d1582d03b35196b29a096a08463e8b8c92a43c7cf84",
+  "supply_chain_and_delivery_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "forge_required_tests": {
+    "passed": 65,
+    "source": "2026-09-25 00:32 final mod test run"
+  },
+  "source_rebuild": "passed; all entries match release except Implementation-Timestamp; preserved public-server matching JAR",
+  "shader": {
+    "name": "Complementary Reimagined r5.3",
+    "official_download": true,
+    "zip_rehosted": false,
+    "default_profile": "rtx2060",
+    "runtime_checks": [
+      {
+        "scene": "visual-r3-4060",
+        "gpu": "NVIDIA GeForce RTX 4060/PCIe/SSE2",
+        "visual": {
+          "profile": "rtx4060",
+          "pack": "ComplementaryReimagined_r5.3.zip",
+          "inUse": true,
+          "fallback": false,
+          "error": "Optional.empty"
+        },
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "scene": "visual-r3-5070",
+        "gpu": "NVIDIA GeForce RTX 4060/PCIe/SSE2",
+        "visual": {
+          "profile": "rtx5070",
+          "pack": "ComplementaryReimagined_r5.3.zip",
+          "inUse": true,
+          "fallback": false,
+          "error": "Optional.empty"
+        },
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "scene": "visual-r3-2060",
+        "gpu": "NVIDIA GeForce RTX 4060/PCIe/SSE2",
+        "visual": {
+          "profile": "rtx2060",
+          "pack": "ComplementaryReimagined_r5.3.zip",
+          "inUse": true,
+          "fallback": false,
+          "error": "Optional.empty"
+        },
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "scene": "visual-r3-final-startup",
+        "gpu": "NVIDIA GeForce RTX 4060/PCIe/SSE2",
+        "visual": {
+          "profile": "rtx2060",
+          "pack": "ComplementaryReimagined_r5.3.zip",
+          "inUse": true,
+          "fallback": false,
+          "error": "Optional.empty"
+        },
+        "width": 1280,
+        "height": 720
+      },
+      {
+        "scene": "visual-r3-final-startup",
+        "gpu": "NVIDIA GeForce RTX 4060/PCIe/SSE2",
+        "visual": {
+          "profile": "rtx2060",
+          "pack": "ComplementaryReimagined_r5.3.zip",
+          "inUse": true,
+          "fallback": false,
+          "error": "Optional.empty"
+        },
+        "width": 1280,
+        "height": 720
+      }
+    ]
+  },
+  "scope": "Client packaging and shader loading smoke test; not a multiplayer load or full map audit",
+  "architecture_conflict_count": 25743,
+  "installer": {
+    "fresh_official_download": "passed",
+    "repeat_install": "passed",
+    "existing_config_preserved": true
+  }
+}

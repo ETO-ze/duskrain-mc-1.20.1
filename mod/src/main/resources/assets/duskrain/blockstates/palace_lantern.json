@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "duskrain:block/palace_lantern"
+    },
+    "hanging=true": {
+      "model": "duskrain:block/palace_lantern_hanging"
+    }
+  }
+}

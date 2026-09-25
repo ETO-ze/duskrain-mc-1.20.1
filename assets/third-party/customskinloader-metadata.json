@@ -1,0 +1,51 @@
+{
+  "game_versions": [
+    "1.17.1",
+    "1.18",
+    "1.18.1",
+    "1.18.2",
+    "1.19",
+    "1.19.1",
+    "1.19.2",
+    "1.19.3",
+    "1.19.4",
+    "1.20",
+    "1.20.1",
+    "1.20.2",
+    "1.20.3",
+    "1.20.4"
+  ],
+  "loaders": [
+    "forge",
+    "neoforge"
+  ],
+  "environment": "client_only",
+  "id": "Rcbx2QhV",
+  "project_id": "idMHQ4n2",
+  "author_id": "hxyzeb4C",
+  "featured": false,
+  "name": "CustomSkinLoader_ForgeV2_14.28",
+  "version_number": "14.28-ForgeV2",
+  "changelog": "## What's Changed\r\n* Fix an issue where incorrect skins were loaded in multiplayer mode. by @ZekerZhayard in https://github.com/xfl03/MCCustomSkinLoader/pull/364\r\n* Support 26.1 by @ZekerZhayard in https://github.com/xfl03/MCCustomSkinLoader/pull/368\r\n\r\n\r\n**Full Changelog**: https://github.com/xfl03/MCCustomSkinLoader/compare/v14.27...v14.28",
+  "changelog_url": null,
+  "date_published": "2026-03-27T12:41:03.427752Z",
+  "downloads": 643284,
+  "version_type": "release",
+  "status": "listed",
+  "requested_status": null,
+  "files": [
+    {
+      "id": "GUKg4hxB",
+      "hashes": {
+        "sha1": "c7e87169bd8b59a9414620dd0fd63ca5a17c235d",
+        "sha512": "88c70a0b6fd1e8b7d6eb50776d1533bdf5f0c2459c0c473cca71669130fe046ca39985a3f7010c81fb39a3f7fc2f1a34a593a4aed96a1fa80948f7e63f3eec5b"
+      },
+      "url": "https://cdn.modrinth.com/data/idMHQ4n2/versions/Rcbx2QhV/CustomSkinLoader_ForgeV2-14.28.jar",
+      "filename": "CustomSkinLoader_ForgeV2-14.28.jar",
+      "primary": true,
+      "size": 153877,
+      "file_type": null
+    }
+  ],
+  "dependencies": []
+}

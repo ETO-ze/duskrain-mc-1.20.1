@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "duskrain:block/jade_smooth_slab"
+    },
+    "type=double": {
+      "model": "duskrain:block/jade_smooth_slab_double"
+    },
+    "type=top": {
+      "model": "duskrain:block/jade_smooth_slab_top"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "duskrain:block/chiseled_quartz_block",
+    "side": "duskrain:block/chiseled_quartz_block"
+  }
+}

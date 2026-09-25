@@ -11,7 +11,7 @@ import java.util.*;
 import java.util.function.Supplier;
 
 public final class Network {
-    public static final String PROTOCOL="7";
+    public static final String PROTOCOL="8";
     public static final int MAX_MENU_ENTRIES=60;
     public static final SimpleChannel CHANNEL=NetworkRegistry.newSimpleChannel(new ResourceLocation(DuskRain.ID,"main"),()->PROTOCOL,PROTOCOL::equals,PROTOCOL::equals);
     public record Snapshot(String player,int stage,int school,int xp,int needed,int mana,int manaMax,long money,String region,boolean pvp,int online,boolean visible,float scale,int main,int progress,int cooldown0,int cooldown1,int cooldown2,int combo) {

@@ -57,11 +57,11 @@ public final class CityPlan {
         route(14,28,SPAWN_Y-1,0,28,SPAWN_Y-1,false);
         route(0,28,SPAWN_Y-1,0,-88,Terrain.ground(0,-88)+1,false);
         for(int side:new int[]{-1,1}){
-            for(int z=-80;z<145;z+=15)route(side*109,z,Terrain.ground(side*109,z)+1,side*109,z+15,Terrain.ground(side*109,z+15)+1,false);
-            route(0,160,Terrain.ground(0,160)+1,side*109,160,Terrain.ground(side*109,160)+1,false);
+            for(int z=-80;z<145;z+=15)route((side<0?-109:115),z,Terrain.ground((side<0?-109:115),z)+1,(side<0?-109:115),z+15,Terrain.ground((side<0?-109:115),z+15)+1,false);
+            route(0,160,Terrain.ground(0,160)+1,(side<0?-109:115),160,Terrain.ground((side<0?-109:115),160)+1,false);
         }
         for(Building b:BUILDINGS){if(b.variant==21||b.variant==0||b.variant==8||b.variant==9||b.variant==11||b.variant>=18&&b.variant<=20)continue;
-            int ez=b.z+b.d+5,ey=b.y(),hubX=Math.abs(b.x)>90?Integer.signum(b.x)*109:0;
+            int ez=b.z+b.d+5,ey=b.y(),hubX=Math.abs(b.x)>90?(b.x<0?-109:115):0;
             route(b.x,b.z+b.d+1,ey,b.x,ez,ey,false);
             int hy=hubHeight(hubX,ez);
             if(Math.abs(hubX-b.x)<Math.abs(ey-hy)*2+8&&Math.abs(ey-hy)>2){
@@ -79,21 +79,21 @@ public final class CityPlan {
         route(-149,-118,126,-177,-118,128,true);
         route(-177,-118,128,-177,-130,128,false);
         var tide=Landscape.LANDMARKS.get(1);var bell=Landscape.LANDMARKS.get(2);
-        route(109,145,Terrain.ground(109,145)+1,109,199,Terrain.ground(109,199)+1,false);
-        route(109,199,Terrain.ground(109,199)+1,196,199,tide.y(),false);
+        route(115,145,Terrain.ground(115,145)+1,115,199,Terrain.ground(115,199)+1,false);
+        route(115,199,Terrain.ground(115,199)+1,196,199,tide.y(),false);
         route(196,199,tide.y(),196,193,tide.y(),false);
         route(-109,145,Terrain.ground(-109,145)+1,-109,190,Terrain.ground(-109,190)+1,false);
         route(-109,190,Terrain.ground(-109,190)+1,-222,190,bell.y(),false);
         route(-222,190,bell.y(),-222,178,bell.y(),false);
         PlayerMarket.routes();
         route(0,266,Terrain.ground(0,266)+1,0,280,Terrain.ground(0,280)+1,false);
-        route(0,280,Terrain.ground(0,280)+1,109,280,Terrain.ground(109,280)+1,false);
-        route(109,199,Terrain.ground(109,199)+1,109,280,Terrain.ground(109,280)+1,false);
+        route(0,280,Terrain.ground(0,280)+1,115,280,Terrain.ground(115,280)+1,false);
+        route(115,199,Terrain.ground(115,199)+1,115,280,Terrain.ground(115,280)+1,false);
         for(String id:List.of("guildhall","guildgate_west","guildgate_east")){var b=find(id);route(b.x,b.z+b.d+1,b.y(),b.x,280,hubHeight(0,280),false);}
         var en=find("enchanter");var fg=find("forge");route(en.x,en.z+en.d+1,en.y(),en.x,-9,en.y(),false);route(en.x,-9,en.y(),103,-9,en.y(),false);route(103,-9,en.y(),103,32,fg.y(),false);route(103,32,fg.y(),79,32,fg.y(),false);
         ROUTES_READY=true;
     }
-    static void add(String id,String n,int x,int z,int w,int d,int f,int v,int y){BUILDINGS.add(new Building(id,n,x,z,w,d,f,v,y==0?Terrain.ground(x,z)+2:y));}
+    static void add(String id,String n,int x,int z,int w,int d,int f,int v,int y){BUILDINGS.add(new Building(id,n,x,z,w,d,f,v,y==0?Math.max(Terrain.ground(x,z)+2,Terrain.water(x,z)+2):y));}
     static int counterX(Building b){return b.id.equals("enchanter")?0:b.id.equals("quests")?6:5;}
     static int hubHeight(int x,int z){if(x==0&&z>=15&&z<=34)return SPAWN_Y-1;for(Route r:ROUTES)if(!r.bridge&&r.ax==x&&r.bx==x&&z>=Math.min(r.az,r.bz)&&z<=Math.max(r.az,r.bz))return pathY(r,Math.abs(z-r.az));return Terrain.ground(x,z)+1;}
     static void route(int x,int z,int y,int bx,int bz,int by,boolean bridge){ROUTES.add(new Route(x,z,y,bx,bz,by,bridge));}
@@ -106,6 +106,7 @@ public final class CityPlan {
     static boolean nearPlot(int x,int z,int margin){for(Building b:BUILDINGS)if(Math.abs(x-b.x)<=b.w+margin&&Math.abs(z-b.z)<=b.d+margin)return true;for(var s:PlayerMarket.SITES)if(Math.abs(x-s.x())<=7+margin&&Math.abs(z-s.z())<=7+margin)return true;return false;}
     public static boolean road(int x,int z){for(Route r:ROUTES){if(r.ax==r.bx&&Math.abs(x-r.ax)<=3&&z>=Math.min(r.az,r.bz)-3&&z<=Math.max(r.az,r.bz)+3)return true;if(r.az==r.bz&&Math.abs(z-r.az)<=3&&x>=Math.min(r.ax,r.bx)-3&&x<=Math.max(r.ax,r.bx)+3)return true;}return false;}
     public static void paint(Sink s,int cx,int cz,int phase){
+        if(!Architecture.LEGACY.get())s=Architecture.wrap(s);
         int x0=cx*16,z0=cz*16;
         if(phase==0)SiteTerrain.paint(s,cx,cz);
         for(Building b:BUILDINGS)if(b.x+b.w+14>=x0&&b.x-b.w-14<x0+16&&b.z+b.d+14>=z0&&b.z-b.d-14<z0+16)building(s,b,phase);
@@ -121,7 +122,7 @@ public final class CityPlan {
             }
         }
         Landscape.paint(s,cx,cz,phase);
-        if(phase==5)SkyDetails.paint(s,cx,cz);
+        if(phase==5){SkyDetails.paint(s,cx,cz);for(Route r:ROUTES)path(s,cx,cz,r);SkyBridges.junctions(s,cx,cz);if(!Architecture.LEGACY.get()){WaterCourt.paint(s,cx,cz);ArchitectureFinishes.paint(s,cx,cz);CourtGarden.paint(s,cx,cz);}}
     }
 
     public static void building(Sink s,Building b,int phase){
@@ -196,7 +197,17 @@ public final class CityPlan {
                 if(!open)box(s,x-fw+1,fy+7,z-fd+1,x+fw-1,fy+7,z+fd-1,DARK);
                 for(int ix=-fw+2;ix<=fw-2;ix+=4)s.block(x+ix,fy+5,z+fd+1,Blocks.LANTERN.defaultBlockState().setValue(LanternBlock.HANGING,true));
             }
-            if(phase==2)roof(s,x,fy+7,z,fw+3,fd+3,f<floors-1?fw: -1,f<floors-1?fd:-1,roofType);
+            if(phase==2){roof(s,x,fy+7,z,fw+3,fd+3,f<floors-1?fw: -1,f<floors-1?fd:-1,roofType);
+                if(!Architecture.LEGACY.get()&&!open){
+                    // Enclose only wall lines; room ceilings and staircase cutouts stay separate.
+                    for(int ix=-fw;ix<=fw;ix++)for(int iz=-fd;iz<=fd;iz++)if(Math.abs(ix)==fw||Math.abs(iz)==fd){
+                        int dep=roofType==1?fd+3-Math.abs(iz):Math.min(fw+3-Math.abs(ix),fd+3-Math.abs(iz));
+                        int top=fy+6+Math.max(0,(dep-1)/2);
+                        if(f<floors-1)top=fy+7;
+                        for(int yy=fy+7;yy<=top;yy++)s.block(x+ix,yy,z+iz,yy==fy+7?DARK:WALL);
+                    }
+                }
+            }
             if(phase==3){
                 for(int lx=-fw+1;lx<=fw-1;lx+=4)for(int lz=-fd+1;lz<=fd-1;lz+=4){
                     s.block(x+lx,fy,z+lz,Blocks.SEA_LANTERN.defaultBlockState());
@@ -276,6 +287,11 @@ public final class CityPlan {
                 for(int h=1;h<=3;h++)s.block(px,y+h,pz,AIR);
                 if(r.bridge&&Math.abs(w)==3&&!crossingWalkway(px,pz,y,r)){s.block(px,y+1,pz,Blocks.DARK_OAK_FENCE.defaultBlockState().setValue(FenceBlock.EAST,true).setValue(FenceBlock.WEST,true).setValue(FenceBlock.NORTH,true).setValue(FenceBlock.SOUTH,true));if(i%12==6)s.block(px,y+2,pz,Blocks.LANTERN.defaultBlockState());}
                 if(!r.bridge)SiteTerrain.foundation(s,px,y-1,pz);
+                if(!r.bridge&&Math.abs(w)==2&&Terrain.ground(px,pz)<Terrain.water(px,pz)&&y<=Terrain.water(px,pz)+4&&!crossingWalkway(px,pz,y,r)&&!nearPlot(px,pz,2)){
+                    s.block(px,y,pz,Blocks.CHISELED_STONE_BRICKS.defaultBlockState());
+                    s.block(px,y+1,pz,Blocks.STONE_BRICK_WALL.defaultBlockState());
+                    if(i%12==6)s.block(px,y+2,pz,Blocks.LANTERN.defaultBlockState());
+                }
                 if(!r.bridge&&Math.abs(w)==2&&i%4==2&&ny==y&&py==y)s.block(px,y,pz,Blocks.SEA_LANTERN.defaultBlockState());
             }
         }
@@ -300,7 +316,7 @@ public final class CityPlan {
     static void stall(Sink s,int x,int y,int z,int v){for(int ix=-2;ix<=2;ix++){s.block(x+ix,y,z,Blocks.BARREL.defaultBlockState());s.block(x+ix,y+3,z,(v%2==0?Blocks.CYAN_WOOL:Blocks.WHITE_WOOL).defaultBlockState());s.block(x+ix,y+3,z+1,slab(Blocks.SPRUCE_SLAB,false));}for(int side:new int[]{-1,1})box(s,x+side*2,y+1,z,x+side*2,y+2,z,fence());s.block(x,y+1,z,Blocks.LANTERN.defaultBlockState());}
     static void lamp(Sink s,int x,int y,int z){
         if(road(x,z)){boolean moved=false;int originX=x,originZ=z;for(int radius=1;radius<=7&&!moved;radius++)for(int dz=radius;dz>=-radius&&!moved;dz--)for(int dx=-radius;dx<=radius;dx++){if(Math.max(Math.abs(dx),Math.abs(dz))!=radius)continue;int nx=originX+dx,nz=originZ+dz;if(!road(nx,nz)&&!nearPlot(nx,nz,0)){x=nx;z=nz;moved=true;break;}}if(!moved)return;}
-        s.fixture(x,y,z);SiteTerrain.foundation(s,x,y,z);s.block(x,y-1,z,Blocks.STONE_BRICKS.defaultBlockState());s.block(x,y,z,Blocks.CHISELED_STONE_BRICKS.defaultBlockState());box(s,x,y+1,z,x,y+4,z,WOOD);beamX(s,x-1,x+1,y+4,z);for(int side:new int[]{-1,1})s.block(x+side,y+3,z,Blocks.LANTERN.defaultBlockState().setValue(LanternBlock.HANGING,true));for(int i=-1;i<=1;i++)s.block(x+i,y+5,z,slab(Blocks.DARK_PRISMARINE_SLAB,false));}
+        s.fixture(x,y,z);SiteTerrain.foundation(s,x,y,z);if(!Architecture.LEGACY.get()){Architecture.lamp(s,x,y,z);return;}s.block(x,y-1,z,Blocks.STONE_BRICKS.defaultBlockState());s.block(x,y,z,Blocks.CHISELED_STONE_BRICKS.defaultBlockState());box(s,x,y+1,z,x,y+4,z,WOOD);beamX(s,x-1,x+1,y+4,z);for(int side:new int[]{-1,1})s.block(x+side,y+3,z,Blocks.LANTERN.defaultBlockState().setValue(LanternBlock.HANGING,true));for(int i=-1;i<=1;i++)s.block(x+i,y+5,z,slab(Blocks.DARK_PRISMARINE_SLAB,false));}
     static void garden(Sink s,int cx,int cz,int x,int z,int rx,int rz){
         if(cx*16>x+rx+5||cx*16+15<x-rx-5||cz*16>z+rz+5||cz*16+15<z-rz-5)return;int y=terrace(z);
         for(int ix=-rx;ix<=rx;ix++)for(int iz=-rz;iz<=rz;iz++){double r=ix*ix/(double)(rx*rx)+iz*iz/(double)(rz*rz);if(r<.75){s.block(x+ix,y-1,z+iz,(ix+iz)%7==0?Blocks.SEA_LANTERN.defaultBlockState():Blocks.CLAY.defaultBlockState());s.block(x+ix,y,z+iz,Blocks.WATER.defaultBlockState());s.block(x+ix,y+1,z+iz,AIR);if(Math.floorMod(ix*7+iz*11,43)==0)s.block(x+ix,y+1,z+iz,Blocks.LILY_PAD.defaultBlockState());}else if(r<1){s.block(x+ix,y,z+iz,Blocks.MOSSY_STONE_BRICKS.defaultBlockState());if(Math.floorMod(ix+iz,11)==0)s.block(x+ix,y+1,z+iz,Blocks.AZALEA.defaultBlockState());}}

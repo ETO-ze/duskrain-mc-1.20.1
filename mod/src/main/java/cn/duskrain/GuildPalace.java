@@ -17,12 +17,12 @@ public final class GuildPalace {
     static final Set<BlockPos> BRIDGE_DECK=new HashSet<>();
     static boolean planned;
     static final BlockState JADE=Blocks.DARK_PRISMARINE.defaultBlockState(),WHITE=Blocks.SMOOTH_QUARTZ.defaultBlockState(),TIMBER=Blocks.STRIPPED_MANGROVE_LOG.defaultBlockState(),WALL=Blocks.CALCITE.defaultBlockState();
-    static final CityPlan.Sink S=new CityPlan.Sink(){public void block(int x,int y,int z,BlockState b){if(Math.abs(x)>111||Math.abs(z)>111||y<62||y>160)return;var pos=new BlockPos(x,y,z);BLOCKS.computeIfAbsent(key(x>>4,z>>4),k->new LinkedHashMap<>()).put(pos,b);}public void entity(CompoundTag n){TAGS.computeIfAbsent(key(n.getInt("x")>>4,n.getInt("z")>>4),k->new ArrayList<>()).add(n.copy());}};
+    static final CityPlan.Sink S=new CityPlan.Sink(){public void block(int x,int y,int z,BlockState b){if(Math.abs(x)>111||Math.abs(z)>111||y<62||y>160)return;var pos=new BlockPos(x,y,z);BLOCKS.computeIfAbsent(key(x>>4,z>>4),k->new LinkedHashMap<>()).put(pos,Architecture.material(b));}public void entity(CompoundTag n){TAGS.computeIfAbsent(key(n.getInt("x")>>4,n.getInt("z")>>4),k->new ArrayList<>()).add(n.copy());}};
     static long key(int x,int z){return net.minecraft.world.level.ChunkPos.asLong(x,z);}
     static void box(int ax,int ay,int az,int bx,int by,int bz,BlockState b){CityPlan.box(S,ax,ay,az,bx,by,bz,b);}
     static void block(int x,int y,int z,Block b){S.block(x,y,z,b.defaultBlockState());}
     static void lane(int ax,int az,int bx,int bz){int n=Math.max(Math.abs(bx-ax),Math.abs(bz-az));for(int i=0;i<=n;i++){int x=ax+(bx-ax)*i/Math.max(1,n),z=az+(bz-az)*i/Math.max(1,n);for(int k=-2;k<=2;k++){int px=x+(az!=bz?k:0),pz=z+(ax!=bx?k:0);block(px,64,pz,Math.abs(k)==2?Blocks.SMOOTH_QUARTZ:Blocks.STONE_BRICKS);box(px,65,pz,px,68,pz,Blocks.AIR.defaultBlockState());if(i%9==4&&Math.abs(k)==2)block(px,64,pz,Blocks.SEA_LANTERN);}}}
-    static void lamp(int x,int z){block(x,64,z,Blocks.STONE_BRICKS);block(x,65,z,Blocks.CHISELED_STONE_BRICKS);box(x,66,z,x,68,z,TIMBER);block(x,69,z,Blocks.DARK_PRISMARINE_SLAB);S.block(x+1,68,z,Blocks.LANTERN.defaultBlockState());}
+    static void lamp(int x,int z){if(!Architecture.LEGACY.get()){Architecture.lamp(S,x,65,z);return;}block(x,64,z,Blocks.STONE_BRICKS);block(x,65,z,Blocks.CHISELED_STONE_BRICKS);box(x,66,z,x,68,z,TIMBER);block(x,69,z,Blocks.DARK_PRISMARINE_SLAB);S.block(x+1,68,z,Blocks.LANTERN.defaultBlockState());}
     public static void plan(){if(planned)return;planned=true;
         // Existing level ground remains outside foundations; northern hills and western water change the silhouette.
         for(int x=-110;x<=110;x++)for(int z=-110;z<=-80;z++){double height=23*Math.exp(-Math.pow((x+32)/35d,2)-Math.pow((z+96)/13d,2))+18*Math.exp(-Math.pow((x-45)/29d,2)-Math.pow((z+100)/17d,2));int h=(int)height;if(h>0){box(x,64,z,x,64+h,z,Math.floorMod(x+z,7)==0?Blocks.ANDESITE.defaultBlockState():Blocks.STONE.defaultBlockState());block(x,65+h,z,Math.floorMod(x*3+z,11)==0?Blocks.MOSS_BLOCK:Blocks.GRASS_BLOCK);}}
@@ -75,6 +75,7 @@ public final class GuildPalace {
             else if(use.equals("forge")){for(int j=-d+2;j<0;j+=3){block(x+w-2,fy+1,z+j,Blocks.BLAST_FURNACE);block(x+w-3,fy+1,z+j,Blocks.ANVIL);}block(x-w+3,fy+1,z-d+3,Blocks.SMITHING_TABLE);CityPlan.table(S,x+2,fy+1,z+2,3);}
             else if(!use.equals("gate")){for(int side:new int[]{-1,1})for(int j=-d+4;j<d-3;j+=5)CityPlan.table(S,x+side*(w-7),fy+1,z+j,4);box(x-4,fy+1,z-d+2,x+4,fy+4,z-d+2,Blocks.CYAN_TERRACOTTA.defaultBlockState());block(x,fy+1,z-d+4,Blocks.LECTERN);}
             roof(x,fy+8,z,w+3,d+3,f<floors-1);
+            if(!Architecture.LEGACY.get())for(int ix=-w;ix<=w;ix++)for(int iz=-d;iz<=d;iz++)if(Math.abs(ix)==w||Math.abs(iz)==d)S.block(x+ix,fy+8,z+iz,TIMBER);
         }
         if(floors>1){int sx=x-w+3,sz=z-d+3;for(int j=0;j<9;j++){box(sx,66+j,sz+j,sx+2,69+j,sz+j,Blocks.AIR.defaultBlockState());for(int i=0;i<3;i++)S.block(sx+i,65+j,sz+j,CityPlan.stairs(Blocks.SPRUCE_STAIRS,Direction.SOUTH,false));}box(sx,73,sz+9,sx+2,73,sz+11,Blocks.SPRUCE_PLANKS.defaultBlockState());box(sx,74,sz+9,sx+2,77,sz+11,Blocks.AIR.defaultBlockState());}
         if(use.equals("gate")||use.equals("palace"))box(x-2,65,z-d,x+2,68,z-d,Blocks.AIR.defaultBlockState());

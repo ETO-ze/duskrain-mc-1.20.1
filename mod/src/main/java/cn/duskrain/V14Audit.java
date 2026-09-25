@@ -17,11 +17,19 @@ public final class V14Audit {
   @SuppressWarnings("unchecked") List<ServerPlayer> duskrainPlayers(){return (List<ServerPlayer>)field("players","f_11196_");}
   @SuppressWarnings("unchecked") Map<UUID,ServerPlayer> duskrainPlayersById(){return (Map<UUID,ServerPlayer>)field("playersByUUID","f_11197_");}
  }
+ static net.minecraft.nbt.CompoundTag fxProfile;static net.minecraft.nbt.ListTag fxInventory;
  static final List<NativeAcceptanceTests.Peer> actors=new ArrayList<>();
  static final List<net.minecraft.world.entity.monster.Zombie> targets=new ArrayList<>();
  static final List<Double> costs=new ArrayList<>();static int ticks,casts;static long tickStart,started;static ServerPlayer operator;
  static void report(ServerPlayer p,String name,Object value){try{Files.writeString(p.server.getServerDirectory().toPath().resolve(name+".json"),Rules.JSON.toJson(value));}catch(Exception e){DuskRain.LOG.error("V14 audit report",e);}}
  public static void run(ServerPlayer p,String op){if(!Boolean.getBoolean("duskrain.director")||p==null)return;
+  if(op.startsWith("fxschool ")){
+   if(fxProfile==null){fxProfile=Store.of(p).save();fxInventory=p.getInventory().save(new net.minecraft.nbt.ListTag());}
+   var r=Store.of(p);r.school=Integer.parseInt(op.substring(9));if(r.school<1||r.school>3)throw new IllegalArgumentException("school");r.stage=17;r.mana=Skills.manaMax(r);Skills.clear(p.getUUID());p.setGameMode(net.minecraft.world.level.GameType.CREATIVE);
+   p.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND,r.school==3?net.minecraft.world.item.ItemStack.EMPTY:new net.minecraft.world.item.ItemStack(Content.ARTIFACTS.get((r.school-1)*6).get()));Skills.attributes(p);Network.sync(p);return;
+  }
+  if(op.equals("fxrestore")&&fxProfile!=null){Skills.clear(p.getUUID());Store.get(p.server).players.put(p.getUUID(),Profile.load(fxProfile));p.getInventory().load(fxInventory);fxProfile=null;fxInventory=null;Skills.attributes(p);Network.sync(p);return;}
+  if(op.equals("normalqi")){Skills.normalSwing(p,-1);return;}
   if(op.equals("palace")){palace(p);return;}
   if(op.equals("snapshot")){var r=Store.of(p);report(p,"v14-player-check",Map.of("profile",r.save().toString(),"guild",GuildData.get(p.server).save(new net.minecraft.nbt.CompoundTag()).toString(),"inventory",p.getInventory().save(new net.minecraft.nbt.ListTag()).toString(),"flight",SwordFlight.flying(p)));return;}
   if(op.equals("load")&&actors.isEmpty()){operator=p;p.setGameMode(net.minecraft.world.level.GameType.SPECTATOR);var l=p.server.overworld();for(int x=23972;x<=24036;x++)for(int z=23972;z<=24036;z++){l.setBlock(new BlockPos(x,160,z),net.minecraft.world.level.block.Blocks.STONE.defaultBlockState(),2);for(int y=161;y<=177;y++)l.setBlock(new BlockPos(x,y,z),net.minecraft.world.level.block.Blocks.AIR.defaultBlockState(),2);}

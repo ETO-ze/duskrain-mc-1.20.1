@@ -59,7 +59,7 @@ public final class ClientUI {
         @SubscribeEvent public static void emptySwing(net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickEmpty e){var mc=Minecraft.getInstance();if(e.getEntity()==mc.player&&snapshot!=null&&snapshot.school()==1&&mc.screen==null&&mc.player.getAttackStrengthScale(0)>=.999f)Network.CHANNEL.sendToServer(new Network.EmptySwing());}
         static boolean jumpDown,groundedAtStart;
         @SubscribeEvent public static void frame(TickEvent.RenderTickEvent e){if(e.phase==TickEvent.Phase.START)Cinema.camera();else{FrameProbe.frame();Cinema.frame();}}
-        @SubscribeEvent public static void tick(TickEvent.ClientTickEvent e){var mc=Minecraft.getInstance();if(e.phase==TickEvent.Phase.START){groundedAtStart=mc.player!=null&&mc.player.onGround();return;}Director.tick();if(mc.player==null){jumpDown=false;return;}while(INFO.consumeClick())ClientHud.toggle();while(LAYOUT.consumeClick())HudLayout.toggle();while(MENU.consumeClick())Network.action("dr menu");for(int i=0;i<3;i++)while(SKILL[i].consumeClick())Network.action("dr skills cast "+i);
+        @SubscribeEvent public static void tick(TickEvent.ClientTickEvent e){var mc=Minecraft.getInstance();if(e.phase==TickEvent.Phase.START){groundedAtStart=mc.player!=null&&mc.player.onGround();return;}Director.tick();if(mc.player==null){jumpDown=false;return;}while(INFO.consumeClick())ClientHud.toggle();while(LAYOUT.consumeClick())HudLayout.toggle();while(MENU.consumeClick())Network.action("dr menu");for(int i=0;i<3;i++)while(SKILL[i].consumeClick())if(mc.screen==null)Network.action("dr skills cast "+i);
             boolean down=mc.options.keyJump.isDown();if(mc.screen==null&&down&&!jumpDown&&!groundedAtStart&&!mc.player.onGround()&&CityMobility.city(mc.player))Network.action("dr city_jump");jumpDown=down;Capture.tick();}
         @SubscribeEvent public static void jump(net.minecraftforge.event.entity.living.LivingEvent.LivingJumpEvent e){if(e.getEntity()==Minecraft.getInstance().player&&(CityMobility.city(e.getEntity())||snapshot!=null&&snapshot.school()==3)){var p=e.getEntity();var v=p.getDeltaMovement();p.setDeltaMovement(v.x,Math.max(v.y,.58),v.z);}}
         @SubscribeEvent public static void logout(ClientPlayerNetworkEvent.LoggingOut e){snapshot=null;}
@@ -67,12 +67,18 @@ public final class ClientUI {
 
     static final int INK=0xFF253B3D,TEAL=0xFF376C6D,GOLD=0xFFB29A65,PAPER=0xFFF0ECDf,MUTED=0xFF697E7A;
     static final class DRScreen extends Screen {
-        final Network.Menu menu;int page,left,top,pw,ph,nav,cx,cw,rows,cols,size,body;
+        final Network.Menu menu;int page,left,top,pw,ph,nav,cx,cw,rows,cols,size,body;float scale=1;
         final String[][] tabs={{"仙途首页","menu"},{"修炼境界","profile"},{"六章纪事","quests"},{"每日委托","daily"},{"云渡山河","warp"},{"道友队伍","party"},{"住宅领地","claim"},{"显示设置","sidebar"}};
         boolean journal,profile,shop,skill;
         DRScreen(Network.Menu menu){super(Component.literal(menu.title()));this.menu=menu;journal=menu.title().startsWith("烟雨纪事");profile=menu.title().startsWith("修炼功法");shop=menu.title().startsWith("灵石商店")||menu.title().startsWith("商品");skill=menu.title().startsWith("流派技能");if(journal&&snapshot!=null)page=Math.min(5,snapshot.main()/4);}
         @Override protected void init(){
-            pw=Math.min(width-12,740);ph=Math.min(height-12,414);left=(width-pw)/2;top=(height-ph)/2;nav=pw>460?94:68;cx=left+nav+18;cw=pw-nav-34;
+            // Lay out a complete readable page, then fit it inside the physical window.
+            // Vanilla GUI scale must not turn the journal into a near-fullscreen panel.
+            pw=640;ph=360;
+            double guiScale=minecraft.getWindow().getGuiScale();
+            scale=(float)Math.min(Math.min(width*.82/pw,height*.82/ph),1280.0/(guiScale*pw));
+            left=Math.round((width/scale-pw)/2);top=Math.round((height/scale-ph)/2);
+            nav=94;cx=left+nav+18;cw=pw-nav-34;
             body=top+134;cols=cw>=285?2:1;rows=Math.max(1,(ph-178)/49);size=cols*rows;
             if(journal){cols=2;rows=2;size=4;}
             if(shop&&cw>=440){cols=3;size=rows*cols;}
@@ -85,9 +91,12 @@ public final class ClientUI {
             if((page+1)*size<menu.entries().size())addRenderableWidget(new Tile(cx+63,top+ph-29,57,20,new Network.Entry("下一页 →",""),()->{page++;rebuildWidgets();},true));
             addRenderableWidget(new Tile(left+pw-54,top+12,37,18,new Network.Entry("收卷",""),this::onClose,true));
             if(journal)for(int i=0;i<6;i++){final int chapter=i;addRenderableWidget(new Tile(cx+i*cw/6,top+66,cw/6-3,20,new Network.Entry(new String[]{"一·入山","二·问心","三·凝丹","四·游神","五·证道","六·问劫"}[i],""),()->{page=chapter;rebuildWidgets();},true));}
+            // Screen's deferred tooltips use unscaled coordinates; draw those separately.
+            for(var child:children())if(child instanceof Tile tile)tile.setTooltip(null);
         }
         @Override public void render(GuiGraphics g,int mx,int my,float partial){
-            g.fill(0,0,width,height,0x8A0C2029);InkStyle.sheet(g,left-2,top-2,pw+4,ph+4);
+            int screenMx=mx,screenMy=my;mx=(int)(mx/scale);my=(int)(my/scale);
+            g.fill(0,0,width,height,0x450C2029);g.pose().pushPose();g.pose().scale(scale,scale,1);InkStyle.sheet(g,left-2,top-2,pw+4,ph+4);
             // An original ink landscape is drawn beneath the paper, independent of shaders.
             for(int xx=0;xx<pw;xx++){double ridge=8*Math.sin(xx*.032)+6*Math.sin(xx*.079);int yy=top+ph-16-(int)ridge;g.fill(left+xx,yy,left+xx+1,top+ph,0x12396969);}
             for(int yy=top+7;yy<top+ph;yy+=7)g.fill(left+2,yy,left+pw-2,yy+1,0x04735236);
@@ -101,11 +110,19 @@ public final class ClientUI {
             int yy=journal?top+96:profile||skill?top+102:top+88;
             int maxLines=profile||skill||journal?2:3;
             for(var line:font.split(Component.literal(menu.description()),cw-4)){if(maxLines--<=0)break;g.drawString(font,line,cx,yy,MUTED,false);yy+=10;}
-            if(mx>=cx&&mx<=cx+cw&&my>=top+88&&my<body-4)g.renderTooltip(font,font.split(Component.literal(menu.description()),Math.min(360,width-40)),mx,my);
             int total=Math.max(1,(menu.entries().size()+size-1)/size);g.drawString(font,(journal?"卷":"页")+" "+(page+1)+" / "+total,cx+cw-65,top+ph-22,MUTED,false);
             if(System.currentTimeMillis()<messageUntil){g.fill(cx-2,top+ph-47,cx+cw,top+ph-33,0xFFE3D8B9);g.drawString(font,font.plainSubstrByWidth(message,cw-5),cx,top+ph-44,INK,false);}
             super.render(g,mx,my,partial);
+            g.pose().popPose();
+            String tip=null;
+            if(mx>=cx&&mx<=cx+cw&&my>=top+96&&my<body-4)tip=menu.description();
+            for(var child:children())if(child instanceof Tile tile&&tile.isMouseOver(mx,my))tip=tile.entry.label()+(tile.entry.detail().isBlank()?"":"\n"+tile.entry.detail());
+            if(tip!=null)g.renderTooltip(font,font.split(Component.literal(tip),Math.max(80,Math.min(280,width-32))),screenMx,screenMy);
         }
+        @Override public boolean mouseClicked(double x,double y,int button){return super.mouseClicked(x/scale,y/scale,button);}
+        @Override public boolean mouseReleased(double x,double y,int button){return super.mouseReleased(x/scale,y/scale,button);}
+        @Override public boolean mouseDragged(double x,double y,int button,double dx,double dy){return super.mouseDragged(x/scale,y/scale,button,dx/scale,dy/scale);}
+        @Override public void mouseMoved(double x,double y){super.mouseMoved(x/scale,y/scale);}
         void realm(GuiGraphics g){int active=snapshot==null?0:snapshot.stage()/3;int step=cw/7;
             g.fill(cx+step/2,top+76,cx+cw-step/2,top+77,0xFFBFC2AC);
             for(int i=0;i<7;i++){int x=cx+i*step+step/2;g.fill(x-3,top+73,x+4,top+80,i<=active?TEAL:0xFFB6BCA9);g.drawCenteredString(font,Rules.current.realms[i],x,top+86,i==active?0xFFE0AD53:0xFF526D65);}

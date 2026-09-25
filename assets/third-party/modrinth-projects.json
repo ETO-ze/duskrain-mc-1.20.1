@@ -1,0 +1,26 @@
+{
+  "policy": "Freeze working visual baseline. New release candidates require runtime QA. All third-party JARs download from official sources; none are rehosted.",
+  "projects": [
+    {"project_id":"sk9rgfiA","version_id":"UTbfe5d1","sides":["client"],"default":true},
+    {"project_id":"GchcoXML","version_id":"iQ1SwGc3","sides":["client"],"default":true},
+    {"project_id":"HVnmMxH1","version_id":"71Hn3myZ","sides":["client"],"default":false},
+    {"project_id":"8BmcQJ2H","version_id":"aC5KMoNg","sides":["client","server"],"default":true},
+    {"project_id":"uXXizFIs","version_id":"DG5Fn9Sz","sides":["client","server"],"default":true},
+    {"project_id":"Es5v4eyq","version_id":"d0EFLitO","sides":["client"],"default":true},
+    {"project_id":"PxQSWIcD","version_id":"I156ee3A","sides":["client"],"default":true},
+    {"project_id":"idMHQ4n2","version_id":"Rcbx2QhV","sides":["client"],"default":true,"note":"Preserve authenticated server GameProfile and HD skin/cape support."},
+    {"project_id":"zV5r3pPn","version_id":"4oWvC9eo","sides":["client"],"default":false,"permission_review":"https://github.com/tr7zw/3d-Skin-Layers ; official downloads only"},
+    {"project_id":"nmDcB62a","sides":["client","server"],"default":true},
+    {"project_id":"NNAgCjsB","sides":["client"],"default":true,"permission_review":"https://github.com/tr7zw/EntityCulling ; protective license; do not rehost JAR"},
+    {"project_id":"xv94TkTM","sides":["client"],"default":true},
+    {"project_id":"fuuu3xnx","sides":["client"],"default":true},
+    {"project_id":"aC3cM3Vq","sides":["client"],"default":true},
+    {"project_id":"u6dRKJwZ","sides":["client"],"default":true},
+    {"project_id":"nvQzSEkH","sides":["client","server"],"default":true,"note":"CC-BY-NC-SA: official source only; commercial redistribution not authorized."},
+    {"project_id":"qyVF9oeo","sides":["client"],"default":false,"allow_beta":true,"note":"No release for Forge 1.20.1; optional beta, key-sound QA required."},
+    {"project_id":"Wnxd13zP","sides":["server"],"default":true},
+    {"project_id":"roccmqou","sides":["client","server"],"default":false,"note":"Metadata requests both sides; evaluate Placebo and server-only behavior before promoting."},
+    {"project_id":"l6YH9Als","sides":["server"],"default":true},
+    {"project_id":"lfHFW1mp","sides":["client","server"],"default":true,"permission_review":"https://teamjm.github.io/journeymap-docs/latest/about/licensing/ ; modpacks may download from Modrinth during install; JAR redistribution prohibited."}
+  ]
+}

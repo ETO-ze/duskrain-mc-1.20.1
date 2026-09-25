@@ -1,11 +1,11 @@
 {
   "textures": {
-    "particle": "minecraft:block/dark_oak_planks",
+    "particle": "duskrain:block/dark_oak_planks",
     "wood": "duskrain:block/carved_timber",
     "tile": "duskrain:block/qingwa_detail",
     "gold": "duskrain:block/aged_bronze",
-    "jade": "minecraft:block/sea_lantern",
-    "paper": "minecraft:block/white_wool"
+    "jade": "duskrain:block/sea_lantern",
+    "paper": "duskrain:block/silk"
   },
   "elements": [
     {

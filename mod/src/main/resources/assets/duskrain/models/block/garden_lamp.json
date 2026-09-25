@@ -1,0 +1,141 @@
+{
+  "textures": {
+    "jade": "duskrain:block/quartz_block_top",
+    "wood": "duskrain:block/carved_timber",
+    "gold": "duskrain:block/aged_bronze",
+    "silk": "duskrain:block/silk",
+    "leaf": "duskrain:block/leaf",
+    "pink": "duskrain:block/lotus",
+    "particle": "duskrain:block/carved_timber"
+  },
+  "elements": [
+    {
+      "from": [
+        2,
+        0,
+        2
+      ],
+      "to": [
+        14,
+        3,
+        14
+      ],
+      "faces": {
+        "north": {
+          "texture": "#jade"
+        },
+        "south": {
+          "texture": "#jade"
+        },
+        "east": {
+          "texture": "#jade"
+        },
+        "west": {
+          "texture": "#jade"
+        },
+        "up": {
+          "texture": "#jade"
+        },
+        "down": {
+          "texture": "#jade"
+        }
+      }
+    },
+    {
+      "from": [
+        4,
+        3,
+        4
+      ],
+      "to": [
+        12,
+        11,
+        12
+      ],
+      "faces": {
+        "north": {
+          "texture": "#silk"
+        },
+        "south": {
+          "texture": "#silk"
+        },
+        "east": {
+          "texture": "#silk"
+        },
+        "west": {
+          "texture": "#silk"
+        },
+        "up": {
+          "texture": "#silk"
+        },
+        "down": {
+          "texture": "#silk"
+        }
+      }
+    },
+    {
+      "from": [
+        2,
+        11,
+        2
+      ],
+      "to": [
+        14,
+        13,
+        14
+      ],
+      "faces": {
+        "north": {
+          "texture": "#jade"
+        },
+        "south": {
+          "texture": "#jade"
+        },
+        "east": {
+          "texture": "#jade"
+        },
+        "west": {
+          "texture": "#jade"
+        },
+        "up": {
+          "texture": "#jade"
+        },
+        "down": {
+          "texture": "#jade"
+        }
+      }
+    },
+    {
+      "from": [
+        5,
+        13,
+        5
+      ],
+      "to": [
+        11,
+        15,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "#gold"
+        },
+        "south": {
+          "texture": "#gold"
+        },
+        "east": {
+          "texture": "#gold"
+        },
+        "west": {
+          "texture": "#gold"
+        },
+        "up": {
+          "texture": "#gold"
+        },
+        "down": {
+          "texture": "#gold"
+        }
+      }
+    }
+  ]
+}

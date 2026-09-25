@@ -1,0 +1,21 @@
+{
+  "configVersion": 8,
+  "renderNametagsThroughWalls": false,
+  "entityWhitelist": [
+    "duskrain:resident",
+    "duskrain:flying_sword",
+    "duskrain:wood_guardian",
+    "duskrain:rock_guardian",
+    "duskrain:storm_dragon",
+    "duskrain:divine_sentinel"
+  ],
+  "tickCulling": false,
+  "tickCullingWhitelist": [
+    "duskrain:resident",
+    "duskrain:flying_sword",
+    "duskrain:wood_guardian",
+    "duskrain:rock_guardian",
+    "duskrain:storm_dragon",
+    "duskrain:divine_sentinel"
+  ]
+}

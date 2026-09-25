@@ -40,7 +40,7 @@ for name,base in [('qingwa_detail',(51,73,78)),('carved_timber',(75,55,38)),('ag
         for x,y in [(20,20),(44,44)]:d.arc((x-8,y-8,x+8,y+8),20,330,fill=(194,169,104),width=2)
     im.save(texture/(name+'.png'))
 for name,elements in models.items():
-    write(Path('models/block')/(name+'.json'),{'textures':{'particle':'minecraft:block/dark_oak_planks','wood':'duskrain:block/carved_timber','tile':'duskrain:block/qingwa_detail','gold':'duskrain:block/aged_bronze','jade':'minecraft:block/sea_lantern','paper':'minecraft:block/white_wool'},'elements':elements})
+    write(Path('models/block')/(name+'.json'),{'textures':{'particle':'duskrain:block/dark_oak_planks','wood':'duskrain:block/carved_timber','tile':'duskrain:block/qingwa_detail','gold':'duskrain:block/aged_bronze','jade':'duskrain:block/sea_lantern','paper':'duskrain:block/silk'},'elements':elements})
     write(Path('blockstates')/(name+'.json'),{'variants':{f'facing={d}':{'model':'duskrain:block/'+name,'y':a} for d,a in [('north',0),('east',90),('south',180),('west',270)]}})
     write(Path('models/item')/(name+'.json'),{'parent':'duskrain:block/'+name})
 lang=R/'lang/zh_cn.json';texts=json.loads(lang.read_text(encoding='utf-8')) if lang.exists() else {}

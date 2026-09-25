@@ -27,6 +27,13 @@ public final class RoadGrades {
             for(int i=1;i<h.length;i++)h[i]=Math.max(h[i-1]-1,Math.min(h[i-1]+1,h[i]));
             for(int i=h.length-2;i>=0;i--)h[i]=Math.max(h[i+1]-1,Math.min(h[i+1]+1,h[i]));
         }
+        for(var r:routes)if(!r.bridge()){
+            var h=out.get(r);int dx=Integer.signum(r.bx()-r.ax()),dz=Integer.signum(r.bz()-r.az());
+            for(int i=0;i<h.length;i++){int x=r.ax()+dx*i,z=r.az()+dz*i;for(int lane=-3;lane<=3;lane++)h[i]=Math.max(h[i],Terrain.water(x+dz*lane,z+dx*lane)+1);}
+            // Raise neighboring grades only: smoothing must never lower a deck into water.
+            for(int i=1;i<h.length;i++)h[i]=Math.max(h[i],h[i-1]-1);
+            for(int i=h.length-2;i>=0;i--)h[i]=Math.max(h[i],h[i+1]-1);
+        }
         return out;
     }
 }

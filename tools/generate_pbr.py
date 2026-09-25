@@ -119,7 +119,7 @@ def build(name, kind, base):
 def generate():
     report=[]; sheets=[]
     for name,(kind,base) in MATERIALS.items():
-        namespace='duskrain' if name in ('qingwa_detail','carved_timber','aged_bronze') else 'minecraft'
+        namespace='duskrain'
         out=ROOT/f'assets/jade-city/assets/{namespace}/textures/block'; out.mkdir(parents=True,exist_ok=True)
         albedo,normal,spec,height=build(name,kind,base)
         for suffix,im in (('',albedo),('_n',normal),('_s',spec)):

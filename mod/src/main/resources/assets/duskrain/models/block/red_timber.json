@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "duskrain:block/stripped_dark_oak_log_top",
+    "side": "duskrain:block/red_timber"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "duskrain:cedar_boards",
+    "duskrain:dark_boards",
+    "duskrain:timber",
+    "duskrain:red_timber",
+    "duskrain:cedar_stairs",
+    "duskrain:cedar_slab",
+    "duskrain:dark_stairs",
+    "duskrain:dark_slab",
+    "duskrain:carved_railing",
+    "duskrain:carved_door"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "loader": "forge:obj",
+  "model": "duskrain:models/block/palace_lantern.obj",
+  "flip_v": true,
+  "automatic_culling": false,
+  "shade_quads": true,
+  "textures": {
+    "particle": "duskrain:block/carved_timber"
+  }
+}

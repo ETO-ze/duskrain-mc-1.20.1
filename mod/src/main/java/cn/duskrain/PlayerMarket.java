@@ -12,7 +12,7 @@ import java.util.*;
 public final class PlayerMarket {
     public record Site(int id,int x,int z,int y){public BlockPos counter(){return new BlockPos(x+3,y+1,z+1);}public String name(){return "烟雨小集 · "+(id+1)+"号铺";}}
     public static final List<Site> SITES=new ArrayList<>();
-    static{for(int row=0;row<6;row++)for(int side:new int[]{-1,1}){int z=178+row*16;SITES.add(new Site(SITES.size(),side*16,z,Terrain.ground(0,z+7)+1));}}
+    static{for(int row=0;row<6;row++)for(int side:new int[]{-1,1}){int z=178+row*16;SITES.add(new Site(SITES.size(),side*16,z,Math.max(Terrain.ground(0,z+7)+1,Terrain.water(side*16,z)+2)));}}
     public static final class Shop {UUID owner;String ownerName="";final Map<UUID,Listing> listings=new LinkedHashMap<>();final Map<UUID,MarketStock.Stock> stock=new LinkedHashMap<>();long revision;}
     public record Listing(UUID id,ItemStack stack,long price){}
     public static Site at(BlockPos pos){return SITES.stream().filter(s->s.counter().equals(pos)).findFirst().orElse(null);}
@@ -56,12 +56,19 @@ public final class PlayerMarket {
     static void routes(){CityPlan.route(0,160,Terrain.ground(0,160)+1,0,267,Terrain.ground(0,267)+1,false);for(Site s:SITES)CityPlan.route(0,s.z+7,CityPlan.hubHeight(0,s.z+7),s.x,s.z+7,s.y,false);}
     static void paint(CityPlan.Sink sink,int cx,int cz,int phase){for(Site s:SITES){if(Math.abs(s.x-(cx*16+8))>17||Math.abs(s.z-(cz*16+8))>18)continue;
         if(phase==0)sink.room("player_shop_"+s.id,s.x,s.y,s.z,5,5,1);
-        if(phase==0)for(int x=s.x-5;x<=s.x+5;x++)for(int z=s.z-5;z<=s.z+6;z++){SiteTerrain.foundation(sink,x,s.y,z);sink.block(x,s.y,z,CityPlan.WHITE);CityPlan.box(sink,x,s.y+1,z,x,s.y+7,z,Blocks.AIR.defaultBlockState());}
+        if(phase==0)for(int x=s.x-5;x<=s.x+5;x++)for(int z=s.z-5;z<=s.z+8;z++){SiteTerrain.foundation(sink,x,s.y,z);sink.block(x,s.y,z,CityPlan.WHITE);CityPlan.box(sink,x,s.y+1,z,x,s.y+7,z,Blocks.AIR.defaultBlockState());}
         if(phase==1){for(int dx:new int[]{-5,5})for(int dz:new int[]{-5,5})CityPlan.column(sink,s.x+dx,s.y,s.z+dz,6);
             for(int x=-4;x<=4;x++)for(int y=1;y<=5;y++){sink.block(s.x+x,s.y+y,s.z-5,CityPlan.WALL);if(Math.abs(x)>1)sink.block(s.x+x,s.y+y,s.z+5,CityPlan.WALL);}
             for(int z=-4;z<=4;z++)for(int side:new int[]{-1,1})for(int y=1;y<=5;y++)sink.block(s.x+side*5,s.y+y,s.z+z,y>=2&&y<=3&&Math.abs(z)<=2?Decor.LATTICE.get().defaultBlockState():CityPlan.WALL);
         }
-        if(phase==2)CityPlan.roof(sink,s.x,s.y+7,s.z,7,7,-1,-1,s.id%2);
+        if(phase==2){CityPlan.roof(sink,s.x,s.y+7,s.z,7,7,-1,-1,s.id%2);
+            if(!Architecture.LEGACY.get()){
+                for(int x=-5;x<=5;x++)for(int z=-5;z<=5;z++){
+                    if(Math.abs(x)==5||Math.abs(z)==5){int dep=s.id%2==1?7-Math.abs(z):Math.min(7-Math.abs(x),7-Math.abs(z));int top=s.y+6+(dep-1)/2;for(int y=s.y+6;y<=top;y++)sink.block(s.x+x,y,s.z+z,CityPlan.DARK);}
+                    else sink.block(s.x+x,s.y+6,s.z+z,CityPlan.DARK);
+                }
+            }
+        }
         if(phase==3){Interiors.desk(sink,s.x-3,s.y+1,s.z+1,2);Interiors.cabinet(sink,s.x+2,s.y+1,s.z-4,2,s.id%3==0);sink.block(s.x-4,s.y+1,s.z+3,Blocks.CHISELED_QUARTZ_BLOCK.defaultBlockState());sink.block(s.x-4,s.y+2,s.z+3,s.id%3==0?Blocks.POTTED_AZALEA.defaultBlockState():s.id%3==1?Blocks.BREWING_STAND.defaultBlockState():Blocks.GRINDSTONE.defaultBlockState());}
         if(phase==3){for(int dx:new int[]{-3,0,3})for(int dz:new int[]{-3,0,3})sink.block(s.x+dx,s.y,s.z+dz,Blocks.SEA_LANTERN.defaultBlockState());sink.block(s.counter().getX(),s.counter().getY(),s.counter().getZ(),Blocks.BARREL.defaultBlockState());CityPlan.box(sink,s.x-4,s.y+1,s.z-3,s.x-3,s.y+2,s.z-3,Blocks.BOOKSHELF.defaultBlockState());sink.block(s.x,s.y+5,s.z,Decor.LANTERN.get().defaultBlockState());CityPlan.sign(sink,s.x+3,s.y+1,s.z+6,s.name(),"右键铺内货柜","购铺 · 寄售 · 购买","DuskRain 205255670");}
     }}

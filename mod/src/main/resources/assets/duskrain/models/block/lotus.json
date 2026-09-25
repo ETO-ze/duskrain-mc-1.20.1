@@ -1,0 +1,109 @@
+{
+  "textures": {
+    "jade": "duskrain:block/quartz_block_top",
+    "wood": "duskrain:block/carved_timber",
+    "gold": "duskrain:block/aged_bronze",
+    "silk": "duskrain:block/silk",
+    "leaf": "duskrain:block/leaf",
+    "pink": "duskrain:block/lotus",
+    "particle": "duskrain:block/carved_timber"
+  },
+  "elements": [
+    {
+      "from": [
+        1,
+        0,
+        1
+      ],
+      "to": [
+        15,
+        1,
+        15
+      ],
+      "faces": {
+        "north": {
+          "texture": "#leaf"
+        },
+        "south": {
+          "texture": "#leaf"
+        },
+        "east": {
+          "texture": "#leaf"
+        },
+        "west": {
+          "texture": "#leaf"
+        },
+        "up": {
+          "texture": "#leaf"
+        },
+        "down": {
+          "texture": "#leaf"
+        }
+      }
+    },
+    {
+      "from": [
+        5,
+        1,
+        5
+      ],
+      "to": [
+        11,
+        3,
+        11
+      ],
+      "faces": {
+        "north": {
+          "texture": "#pink"
+        },
+        "south": {
+          "texture": "#pink"
+        },
+        "east": {
+          "texture": "#pink"
+        },
+        "west": {
+          "texture": "#pink"
+        },
+        "up": {
+          "texture": "#pink"
+        },
+        "down": {
+          "texture": "#pink"
+        }
+      }
+    },
+    {
+      "from": [
+        6,
+        3,
+        6
+      ],
+      "to": [
+        10,
+        5,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#pink"
+        },
+        "south": {
+          "texture": "#pink"
+        },
+        "east": {
+          "texture": "#pink"
+        },
+        "west": {
+          "texture": "#pink"
+        },
+        "up": {
+          "texture": "#pink"
+        },
+        "down": {
+          "texture": "#pink"
+        }
+      }
+    }
+  ]
+}

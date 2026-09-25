@@ -13,11 +13,11 @@ import net.minecraftforge.gametest.*;
 @GameTestHolder(DuskRain.ID) @PrefixGameTestTemplate(false)
 public final class OnboardingTests {
     @GameTest(template="empty") public static void existing_guides_refresh_in_place_including_offhand(GameTestHelper h){
-        var p=IntegrationTests.player(h,"DRGuideUpdate");var book=Onboarding.book();book.getTag().putInt("DuskRainGuideVersion",13);
+        var p=IntegrationTests.player(h,"DRGuideUpdate");var book=Onboarding.book();book.getTag().putInt("DuskRainGuideVersion",Onboarding.GUIDE_VERSION-1);
         p.getInventory().setItem(0,book.copy());p.setItemSlot(EquipmentSlot.OFFHAND,book.copy());p.getEnderChestInventory().setItem(0,book.copy());
         var personal=new ItemStack(Items.WRITTEN_BOOK);personal.getOrCreateTag().putString("title","Personal journal");p.getInventory().setItem(1,personal);
         Onboarding.refreshGuide(p);Onboarding.refreshGuide(p);
-        h.assertTrue(p.getInventory().getItem(0).getTag().getInt("DuskRainGuideVersion")==15&&p.getOffhandItem().getTag().getInt("DuskRainGuideVersion")==15&&p.getEnderChestInventory().getItem(0).getTag().getInt("DuskRainGuideVersion")==15,"Carried, offhand and ender-chest guides upgrade in place");
+        h.assertTrue(p.getInventory().getItem(0).getTag().getInt("DuskRainGuideVersion")==Onboarding.GUIDE_VERSION&&p.getOffhandItem().getTag().getInt("DuskRainGuideVersion")==Onboarding.GUIDE_VERSION&&p.getEnderChestInventory().getItem(0).getTag().getInt("DuskRainGuideVersion")==Onboarding.GUIDE_VERSION,"Carried, offhand and ender-chest guides upgrade in place");
         h.assertTrue(p.getInventory().getItem(0).getCount()==1&&p.getOffhandItem().getCount()==1&&p.getInventory().getItem(1)==personal,"Upgrade does not duplicate books or change personal books");h.succeed();
     }
     @GameTest(template="empty") public static void newcomer_grants_once_and_starts_with_city_respawn(GameTestHelper h){

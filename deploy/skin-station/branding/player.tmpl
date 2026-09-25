@@ -57,6 +57,7 @@
     {{ if or .App.Config.AllowSkins .User.IsAdmin }}
       <h4>{{ call .T "Skin" }}</h4>
       <p><a class="dr-button" href="{{ .App.FrontEndURL }}/library/?player={{ .Player.UUID }}">浏览皮肤与披风库 · 3D 试衣</a></p>
+      <p>保存外观后请重新进入服务器。128×128 等高清皮肤需要客户端高清组件；只安装外置登录或 3D Skin Layers 仍会显示默认皮肤。<a href="https://github.com/ETO-ze/duskrain-mc-1.20.1/blob/main/docs/账号与外置登录.md#高清皮肤显示" target="_blank" rel="noopener noreferrer">高清皮肤安装说明</a></p>
       {{ if .SkinURL }}
         <p>
           <span style="vertical-align: top">{{ call .T "Current skin:" }}</span>

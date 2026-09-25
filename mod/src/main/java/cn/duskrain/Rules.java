@@ -73,6 +73,10 @@ public final class Rules {
             }
             if(candidate.contentVersion<3){Path backup=f.resolveSibling("rules-before-outfits.json");if(!Files.exists(backup))Files.copy(f,backup);addOutfits(candidate);candidate.contentVersion=3;}
             if(candidate.contentVersion<4){Files.copy(f,f.resolveSibling("rules-before-ascension-"+System.currentTimeMillis()+".json"));candidate.stageXp=Arrays.copyOf(candidate.stageXp,21);candidate.stageXp[17]=60000;candidate.stageXp[18]=120000;candidate.stageXp[19]=240000;candidate.stageXp[20]=0;candidate.realms=Arrays.copyOf(candidate.realms,7);candidate.realms[6]="登神";addOutfits(candidate);addDivine(candidate);candidate.contentVersion=4;candidate.validate();Files.writeString(f,JSON.toJson(candidate),StandardCharsets.UTF_8);}
+            if(candidate.shops.stream().noneMatch(o->o.id().startsWith("architecture_"))){
+                for(String id:Architecture.ALL.keySet())candidate.shops.add(new Offer("architecture_"+id,"material","duskrain:"+id,8,id.contains("lamp")||id.contains("lantern")?32:16,0,0));
+                Files.writeString(f,JSON.toJson(candidate),StandardCharsets.UTF_8);
+            }
             candidate.validate(); current=candidate;
         } catch(Exception ex) { DuskRain.LOG.error("DuskRain rules rejected; using previous valid rules",ex); }
     }

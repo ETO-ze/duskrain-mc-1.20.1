@@ -1,0 +1,77 @@
+{
+  "textures": {
+    "jade": "duskrain:block/quartz_block_top",
+    "wood": "duskrain:block/carved_timber",
+    "gold": "duskrain:block/aged_bronze",
+    "silk": "duskrain:block/silk",
+    "leaf": "duskrain:block/leaf",
+    "pink": "duskrain:block/lotus",
+    "particle": "duskrain:block/carved_timber"
+  },
+  "elements": [
+    {
+      "from": [
+        6,
+        0,
+        6
+      ],
+      "to": [
+        10,
+        16,
+        10
+      ],
+      "faces": {
+        "north": {
+          "texture": "#wood"
+        },
+        "south": {
+          "texture": "#wood"
+        },
+        "east": {
+          "texture": "#wood"
+        },
+        "west": {
+          "texture": "#wood"
+        },
+        "up": {
+          "texture": "#wood"
+        },
+        "down": {
+          "texture": "#wood"
+        }
+      }
+    },
+    {
+      "from": [
+        5.5,
+        0,
+        5.5
+      ],
+      "to": [
+        10.5,
+        1,
+        10.5
+      ],
+      "faces": {
+        "north": {
+          "texture": "#gold"
+        },
+        "south": {
+          "texture": "#gold"
+        },
+        "east": {
+          "texture": "#gold"
+        },
+        "west": {
+          "texture": "#gold"
+        },
+        "up": {
+          "texture": "#gold"
+        },
+        "down": {
+          "texture": "#gold"
+        }
+      }
+    }
+  ]
+}

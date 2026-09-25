@@ -1,0 +1,20 @@
+{
+  "version": "14.28",
+  "buildNumber": 0,
+  "loadlist": [
+    {
+      "name": "ServerProfile",
+      "type": "GameProfile"
+    },
+    {
+      "name": "DuskRain",
+      "type": "MojangAPI",
+      "apiRoot": "https://skin.duskrain.cn/account/",
+      "sessionRoot": "https://skin.duskrain.cn/session/"
+    }
+  ],
+  "enableCape": true,
+  "enableTransparentSkin": true,
+  "enableLogStdOut": false,
+  "enableLocalProfileCache": false
+}

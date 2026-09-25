@@ -15,7 +15,7 @@ public final class DuskRain {
     public static final Logger LOG = LogUtils.getLogger();
     public DuskRain() {
         var bus = FMLJavaModLoadingContext.get().getModEventBus();
-        Decor.BLOCKS.register(bus);
+        Architecture.init();Decor.BLOCKS.register(bus);
         Ascension.init();MysticEnchants.init();MysticEnchants.REGISTRY.register(bus);
         Outfits.init();
         Boosts.init();
@@ -41,10 +41,11 @@ public final class DuskRain {
     private void started(ServerStartedEvent e) {
         Rules.load();CombatRules.load();Boosts.load();AscensionRules.load();Onboarding.prepare(e.getServer());
         Transactions.recover(e.getServer());Trials.recover(e.getServer());Guilds.recover(e.getServer());CityUpgrade.install(e.getServer());
-        LOG.info("DuskRain 2.1.0 preview | group 205255670 | started");
+        ArchitectureDeployment.start(e.getServer());
+        LOG.info("DuskRain 2.2.0 preview | group 205255670 | started");
     }
     private void stopping(ServerStoppingEvent e) {
-        SkyBridges.reset(e.getServer());
+        ArchitectureRepair.stop(e.getServer());SkyBridges.reset(e.getServer());
         WildernessTravel.reset();CityMobility.READY.clear();
         Trials.shutdown(e.getServer());
         Store.get(e.getServer()).setDirty();

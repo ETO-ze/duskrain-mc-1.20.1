@@ -140,7 +140,7 @@ async function openPreview(item) {
   $('preview-source').textContent=item.source==='mojang'?'MOJANG / 正版外观':'LITTLESKIN / 社区作品';
   $('preview-author').textContent=item.author;
   $('preview-model').textContent=item.kind==='cape'?'披风':item.model==='slim'?'纤细 · 细臂':'经典 · 宽臂';
-  $('preview-resolution').textContent=item.hd?'HD 材质':'';
+  $('preview-resolution').textContent=item.hd?'HD 高清 · 需客户端高清组件':'';
   $('source-link').href=item.sourceUrl;
   $('follow-label').hidden=$('scope-field').hidden=item.source!=='mojang';
   $('follow-official').checked=false;

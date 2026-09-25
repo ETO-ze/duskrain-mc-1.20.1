@@ -12,7 +12,7 @@ import java.util.*;
 /** Audits real chunk collision shapes at building entrances and stairs. No source-only pass. */
 public final class WalkAudit {
     static boolean clear(ServerLevel l,double x,double y,double z){return l.noCollision(new AABB(x-.29,y+.01,z-.29,x+.29,y+1.81,z+.29));}
-    static double surface(ServerLevel l,int x,int z,double hint){double best=Double.NaN;for(int y=(int)Math.floor(hint)-2;y<=(int)Math.ceil(hint)+1;y++){BlockPos p=new BlockPos(x,y,z);BlockState b=l.getBlockState(p);var shape=b.getCollisionShape(l,p,CollisionContext.empty());if(shape.isEmpty())continue;for(AABB box:shape.toAabbs()){double h=y+box.maxY;if(box.minX<=.5&&box.maxX>=.5&&box.minZ<=.5&&box.maxZ>=.5&&h>=hint-1.01&&h<=hint+1.01&&clear(l,x+.5,h,z+.5)&&(Double.isNaN(best)||Math.abs(h-hint)<Math.abs(best-hint)))best=h;}}return best;}
+    static double surface(ServerLevel l,int x,int z,double hint){double best=Double.NaN;for(int y=(int)Math.floor(hint)-2;y<=(int)Math.ceil(hint)+1;y++){BlockPos p=new BlockPos(x,y,z);BlockState b=l.getBlockState(p);var shape=b.getCollisionShape(l,p,CollisionContext.empty());if(shape.isEmpty())continue;for(AABB box:shape.toAabbs()){double h=y+box.maxY;if(box.minX<=.5&&box.maxX>=.5&&box.minZ<=.5&&box.maxZ>=.5&&h>=hint-1.01&&h<=hint+1.01&&clear(l,x+.5,h,z+.5)&&!CityConditionAudit.wet(l,x,z,h)&&(Double.isNaN(best)||Math.abs(h-hint)<Math.abs(best-hint)))best=h;}}return best;}
     public static boolean run(MinecraftServer server){ServerLevel l=server.getLevel(Gameplay.CITY);List<Map<String,Object>> buildings=new ArrayList<>();List<String> errors=new ArrayList<>();
         for(var b:CityPlan.BUILDINGS){List<String> issues=new ArrayList<>();
             // Follow the 3-wide entry axis from the public road into each plot.

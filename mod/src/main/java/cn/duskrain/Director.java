@@ -12,6 +12,7 @@ import java.util.*;
 
 /** Opt-in local integrated-server QA harness; never active on production servers. */
 public final class Director {
+    static String delayedShot;static int delayedShotTicks;
     static boolean attempted;static long seen;static int ticks,walkTicks;static net.minecraft.world.phys.Vec3 walkStart;static boolean walkAborted;
     public static void tick(){
         if(!Boolean.getBoolean("duskrain.director"))return;Minecraft mc=Minecraft.getInstance();ticks++;DirectorProbe.tick();
@@ -20,12 +21,13 @@ public final class Director {
             mc.options.keyUp.setDown(!walkAborted);
             if(--walkTicks==0){mc.options.keyUp.setDown(false);try{var p=mc.player;Files.writeString(mc.gameDirectory.toPath().resolve("duskrain-walk-probe.json"),Rules.JSON.toJson(Map.of("start",List.of(walkStart.x,walkStart.y,walkStart.z),"end",List.of(p.getX(),p.getY(),p.getZ()),"distance",p.position().distanceTo(walkStart),"onGround",p.onGround(),"flying",p.getAbilities().flying,"aborted",walkAborted)));}catch(Exception ex){DuskRain.LOG.error("Walk probe",ex);}}
         }
-        if(!attempted&&mc.screen instanceof TitleScreen&&ticks>60){attempted=true;
+        if(!attempted&&mc.screen instanceof TitleScreen&&ticks>60&&!Boolean.getBoolean("duskrain.director.titleOnly")){attempted=true;
             mc.options.languageCode="zh_cn";mc.options.pauseOnLostFocus=false;mc.options.save();mc.resizeDisplay();
             if(!System.getProperty("duskrain.join", "").isEmpty()){String address=System.getProperty("duskrain.join");net.minecraft.client.gui.screens.ConnectScreen.startConnecting(mc.screen,mc,net.minecraft.client.multiplayer.resolver.ServerAddress.parseString(address),new net.minecraft.client.multiplayer.ServerData("DuskRain 本地联调",address,false),false);}
             else if(Files.exists(mc.gameDirectory.toPath().resolve("saves/DuskRainRemake/level.dat")))mc.createWorldOpenFlows().loadLevel(mc.screen,"DuskRainRemake");
             else mc.createWorldOpenFlows().createFreshLevel("DuskRainRemake",new LevelSettings("DuskRain · 烟雨仙城",GameType.CREATIVE,false,Difficulty.NORMAL,true,new GameRules(),WorldDataConfiguration.DEFAULT),new WorldOptions(1946372105L,true,false),WorldPresets::createNormalWorldDimensions);
         }
+        if(delayedShot!=null&&--delayedShotTicks<=0){Screenshot.grab(mc.gameDirectory,delayedShot+".png",mc.getMainRenderTarget(),c->{});delayedShot=null;}
         if(ticks%20!=0)return;
         try{
             Map<String,Object> status=new LinkedHashMap<>();status.put("screen",mc.screen==null?"game":mc.screen.getClass().getSimpleName());status.put("player",mc.player==null?null:mc.player.getName().getString());status.put("frameTime",mc.getFrameTime());status.put("recording",Capture.recording);status.put("frames",Capture.frame);
@@ -34,11 +36,13 @@ public final class Director {
             if(mc.screen!=null){status.put("widgets",mc.screen.children().stream().filter(c->c instanceof net.minecraft.client.gui.components.AbstractWidget).map(c->{var w=(net.minecraft.client.gui.components.AbstractWidget)c;return Map.of("label",w.getMessage().getString(),"x",w.getX(),"y",w.getY(),"width",w.getWidth(),"height",w.getHeight(),"active",w.active);}).toList());}
             if(mc.player!=null){status.put("vehicle",mc.player.getVehicle()==null?"none":mc.player.getVehicle().getType().toString());status.put("mana",ClientUI.snapshot==null?0:ClientUI.snapshot.mana());status.put("titles",FlightClient.titles.values());}
             if(mc.screen instanceof MarketChestScreen s){status.put("market",Map.of("money",s.view.money(),"revision",s.view.revision(),"owner",s.view.owner(),"rows",s.view.rows().stream().map(r->Map.of("name",r.sample().getHoverName().getString(),"quantity",r.quantity(),"price",r.price(),"legacy",r.legacy())).toList()));}
+            status.put("map",ClientMapHooks.diagnostics.get());
             Files.writeString(mc.gameDirectory.toPath().resolve("duskrain-director-status.json"),Rules.JSON.toJson(status));
             Path commandFile=mc.gameDirectory.toPath().resolve("duskrain-director.txt");if(!Files.exists(commandFile))return;long t=Files.getLastModifiedTime(commandFile).toMillis();if(t==seen)return;seen=t;
             for(String command:Files.readAllLines(commandFile)){
                 if(command.equals("prepare_film_build")){var id=mc.player.getUUID();var server=mc.getSingleplayerServer();server.execute(()->{var p=server.getPlayerList().getPlayer(id);if(p!=null){Construction.start(p,"palace");Construction.pauseAfterReset=true;Construction.budget=8000;}});}
                 else if(command.equals("close"))mc.setScreen(null);
+                else if(command.startsWith("press ")){String name=command.substring(6);for(var key:mc.options.keyMappings)if(key.getName().equals(name))net.minecraft.client.KeyMapping.click(key.getKey());}
                 else if(command.startsWith("cinema "))Cinema.command(command.substring(7));
                 else if(command.startsWith("motion "))DirectorProbe.start(command.substring(7));
                 else if(command.equals("bookcheck"))DirectorProbe.book();
@@ -63,6 +67,7 @@ public final class Director {
                 else if(command.startsWith("fullscreen ")){boolean wanted=Boolean.parseBoolean(command.substring(11));if(mc.getWindow().isFullscreen()!=wanted)mc.getWindow().toggleFullScreen();}
                 else if(command.equals("hidehud"))mc.options.hideGui=true;
                 else if(command.equals("showhud"))mc.options.hideGui=false;
+                else if(command.startsWith("shot_after ")){var a=command.substring(11).split(" ");delayedShot=a[0];delayedShotTicks=Integer.parseInt(a[1]);}
                 else if(command.startsWith("shot "))Screenshot.grab(mc.gameDirectory,command.substring(5)+".png",mc.getMainRenderTarget(),c->{});
                 else if(command.startsWith("record "))Capture.start(Boolean.parseBoolean(command.substring(7)));
                 else if(command.startsWith("cmd ")){String cmd=command.substring(4);var id=mc.player.getUUID();var server=mc.getSingleplayerServer();if(server==null)mc.player.connection.sendCommand(cmd);else server.execute(()->{var p=server.getPlayerList().getPlayer(id);if(p!=null){if(cmd.startsWith("publish "))server.setUsesAuthentication(false);server.getCommands().performPrefixedCommand(p.createCommandSourceStack().withPermission(4),cmd);}});}

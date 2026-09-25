@@ -80,6 +80,9 @@ public final class DRCommands {
                 .then(literal("palace").executes(c->doPlayer(c,GuildPalace::begin)))
                 .then(literal("walk_audit").executes(c->{WalkAudit.run(c.getSource().getServer());return 1;}))
                 .then(literal("fixture_audit").executes(c->{FixtureAudit.run(c.getSource().getServer());return 1;}))
+                .then(literal("architecture").then(argument("action",StringArgumentType.word()).executes(c->{ArchitectureRepair.start(c.getSource().getServer(),StringArgumentType.getString(c,"action"));c.getSource().sendSuccess(()->Component.literal(ArchitectureRepair.status()),false);return 1;})))
+                .then(literal("site_repair").executes(c->{CityRepair.run(c.getSource().getServer());c.getSource().sendSuccess(()->Component.literal("主城修补完成，请运行 site_detail 与 route_audit 复查。"),false);return 1;}))
+                .then(literal("site_detail").executes(c->{CityConditionAudit.run(c.getSource().getServer());return 1;}))
                 .then(literal("site_audit").executes(c->{SiteAudit.run(c.getSource().getServer());return 1;}))
                 .then(literal("route_audit").executes(c->{RouteNetworkAudit.run(c.getSource().getServer());return 1;}))
                 .then(literal("stage").then(argument("player",EntityArgument.player()).then(argument("stage",IntegerArgumentType.integer(0,20)).executes(c->{ServerPlayer p=EntityArgument.getPlayer(c,"player");Store.of(p).stage=IntegerArgumentType.getInteger(c,"stage");Network.sync(p);return 1;}))))
@@ -113,7 +116,7 @@ public final class DRCommands {
     static void skills(ServerPlayer p){
         Profile r=Store.of(p);if(r.school==0){profile(p);return;}List<Network.Entry> es=new ArrayList<>();var c=CombatRules.current;
         String[][] names={{"破空","回风","追星"},{"离火灵弹","寒霜符阵","九霄雷诀"},{"撼岳","山鸣","金刚护体"}};
-        String[][] effects={{"14格直线贯穿，最多3目标","半径4.5格，三道剑斩（下列为每道伤害）","8格碰撞检测突进，终点斩击"},{"18格直线火符","半径4.5格持续6秒，每秒伤害并附霜印","蓄法1.2秒落雷；引爆霜印额外30%"},{"6格冲肩，推开沿途目标","半径5格震地、短暂击飞","6秒护体；PVE减伤50%、PVP25%；每秒至多反击一次"}};
+        String[][] effects={{c.ranges[0][0]+"格直线贯穿，最多3目标","半径"+c.ranges[0][1]+"格，三道剑斩（下列为每道伤害）",c.ranges[0][2]+"格碰撞检测突进，终点斩击"},{c.ranges[1][0]+"格直线火符","施法距离"+c.frostCastRange+"格，半径"+c.ranges[1][1]+"格，持续"+c.frostTicks/20+"秒并附霜印","施法距离"+c.ranges[1][2]+"格，半径"+c.lightningRadius+"格；蓄法落雷引爆霜印"},{c.ranges[2][0]+"格冲肩，推开沿途目标","半径"+c.ranges[2][1]+"格震地、短暂击飞","6秒护体；PVE减伤50%、PVP25%；每秒至多反击一次"}};
         for(int i=0;i<3;i++)es.add(card(names[r.school-1][i],"skills cast "+i,effects[r.school-1][i]+String.format(java.util.Locale.ROOT," · 伤害 %.1f",Skills.power(p)*c.damage[r.school-1][i]*(1+Boosts.damage(r))*AscensionRules.damage(r,false)*(1+(r.school==1?0:MysticEnchants.effect(p,r.school==2?1:2,false))))+" · "+Skills.cost(r,i)+"灵力 · "+c.cooldowns[r.school-1][i]+"秒冷却 · "+Rules.realm(i)+"解锁","duskrain:artifact_"+r.school+"_"+(r.stage/3),r.stage>=i&&!Skills.charging(p)));
         String passive=new String[]{"","持剑普攻4.5格、剑伤+15%；满蓄力挥剑发出6格剑气，耗2灵力。剑意 "+Skills.COMBO.getOrDefault(p.getUUID(),0)+"/5；满层下一技能+30%。","灵力上限+50%，回灵+50%，消耗-15%；霜印配合雷诀。"+(Skills.charging(p)?"正在蓄法。":""),"生命+10，移速+25%，普通跳跃约2格，抗击退60%；可空手施法。"}[r.school];
         Network.menu(p,"流派技能 · "+Rules.current.schools[r.school],passive+" 主动攻击对玩家伤害65%。 "+Boosts.summary(p),es);

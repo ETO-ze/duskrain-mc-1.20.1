@@ -34,7 +34,7 @@
 ## 部署结构
 
 - 应用：Drasl 4.0.1，官方源码标签 `v4.0.1`，提交 `823d8a21780d6b15f44aec3de68411a5c40e3fe2`。
-- 容器：`duskrain-skin`，使用 `compose.yaml` 中固定摘要的官方镜像。
+- 容器：`duskrain-skin`，基于固定摘要官方镜像构建会话验证修正；部署前按 [session-fix](session-fix/README.md) 构建本地镜像，完整保留上游资源。
 - 目录：`/srv/duskrain-skin`；数据库、签名私钥、皮肤位于 `data/`，配置位于 `config/config.toml`。
 - 仅监听宿主机 `127.0.0.1:25585`，由 Nginx 提供 HTTPS。容器限制为 256 MiB 内存、0.5 CPU。
 - Nginx 文件为 `/www/server/panel/vhost/nginx/duskrain-skin-domain.conf` 和 `duskrain-skin-ip.conf`。

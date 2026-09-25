@@ -14,7 +14,7 @@ import java.util.*;
 
 /** Isolated first-login reception. Existing UUIDs migrate without replaying grants. */
 public final class Onboarding {
-    public static final int GUIDE_VERSION=15;
+    public static final int GUIDE_VERSION=17;
     static final Set<UUID> SHOWN=new HashSet<>();
     public static void prepare(MinecraftServer server){ServerLevel l=server.getLevel(Gameplay.INTRO);if(l==null)return;
         BlockPos mark=new BlockPos(0,80,0);l.getChunkAt(mark);if(l.getBlockState(mark).is(Blocks.CHISELED_QUARTZ_BLOCK))return;

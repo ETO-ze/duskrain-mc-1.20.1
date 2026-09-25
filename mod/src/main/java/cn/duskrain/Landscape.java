@@ -96,7 +96,7 @@ public final class Landscape {
         for(Direction d:Direction.Plane.HORIZONTAL){int px=x+d.getStepX(),pz=z+d.getStepZ(),gy=Math.max(SiteTerrain.surface(px,pz),Terrain.skyTop(px,pz));if(gy<y-1&&gy>=y-4)CityPlan.box(s,px,gy+1,pz,px,y-1,pz,log);}
     }
     static void lamp(CityPlan.Sink s,Light l){
-        int x=l.x,y=l.y,z=l.z;CityPlan.box(s,x,SiteTerrain.surface(x,z)+1,z,x,y,z,Blocks.STONE_BRICKS.defaultBlockState());
+        int x=l.x,y=l.y,z=l.z;if(!Architecture.LEGACY.get()){SiteTerrain.foundation(s,x,y,z);Architecture.lamp(s,x,y,z);return;}CityPlan.box(s,x,SiteTerrain.surface(x,z)+1,z,x,y,z,Blocks.STONE_BRICKS.defaultBlockState());
         s.block(x,y,z,Blocks.CHISELED_STONE_BRICKS.defaultBlockState());CityPlan.box(s,x,y+1,z,x,y+3,z,CityPlan.WOOD);
         for(int i=-1;i<=1;i++){int px=x+(l.alongX?0:i),pz=z+(l.alongX?i:0);s.block(px,y+4,pz,CityPlan.slab(Blocks.DARK_PRISMARINE_SLAB,false));if(i!=0){s.block(px,y+3,pz,CityPlan.WOOD);s.block(px,y+2,pz,Blocks.LANTERN.defaultBlockState().setValue(LanternBlock.HANGING,true));}}
         s.block(x,y+4,z,Decor.RIDGE.get().defaultBlockState());

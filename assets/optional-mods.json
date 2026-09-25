@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "entries": [
+    {
+      "project_id": "MPCX6s5C",
+      "slug": "not-enough-animations",
+      "title": "Not Enough Animations",
+      "license": {
+        "id": "LicenseRef-tr7zw-Protective-License",
+        "name": "",
+        "url": "https://github.com/tr7zw/NotEnoughAnimations/blob/main/LICENSE"
+      },
+      "source_url": "https://github.com/tr7zw/NotEnoughAnimations",
+      "client_side": "required",
+      "server_side": "unsupported",
+      "enabled": false,
+      "version_id": null,
+      "download_url": null,
+      "reason": "尚未验证与法衣、御剑、GeckoLib、武器动作的兼容性；不默认安装。",
+      "redistribution": "not bundled"
+    },
+    {
+      "project_id": "9eGKb6K1",
+      "slug": "simple-voice-chat",
+      "title": "Simple Voice Chat",
+      "license": {
+        "id": "LicenseRef-All-Rights-Reserved",
+        "name": "",
+        "url": null
+      },
+      "source_url": "https://github.com/henkelmax/simple-voice-chat",
+      "client_side": "optional",
+      "server_side": "optional",
+      "enabled": false,
+      "version_id": null,
+      "download_url": null,
+      "reason": "需要双端安装、额外 UDP 端口与声音联调；本轮仅记录项目。",
+      "redistribution": "not bundled"
+    },
+    {
+      "project_id": "uCdwusMi",
+      "slug": "distanthorizons",
+      "title": "Distant Horizons",
+      "license": {
+        "id": "LGPL-3.0-only",
+        "name": "GNU Lesser General Public License v3.0 only",
+        "url": null
+      },
+      "source_url": "https://gitlab.com/distant-horizons-team/distant-horizons",
+      "client_side": "optional",
+      "server_side": "optional",
+      "enabled": false,
+      "version_id": null,
+      "download_url": null,
+      "reason": "本轮不加入；需要独立验证 Embeddium/Oculus/Complementary 组合。",
+      "redistribution": "not bundled"
+    }
+  ]
+}

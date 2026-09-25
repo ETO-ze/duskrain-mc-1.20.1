@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "duskrain:block/timber_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "duskrain:block/timber"
+    },
+    "axis=z": {
+      "model": "duskrain:block/timber_horizontal",
+      "x": 90
+    }
+  }
+}

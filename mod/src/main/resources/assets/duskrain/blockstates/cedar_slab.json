@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "duskrain:block/cedar_slab"
+    },
+    "type=double": {
+      "model": "duskrain:block/cedar_slab_double"
+    },
+    "type=top": {
+      "model": "duskrain:block/cedar_slab_top"
+    }
+  }
+}

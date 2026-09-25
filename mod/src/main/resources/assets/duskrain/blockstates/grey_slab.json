@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "duskrain:block/grey_slab"
+    },
+    "type=double": {
+      "model": "duskrain:block/grey_slab_double"
+    },
+    "type=top": {
+      "model": "duskrain:block/grey_slab_top"
+    }
+  }
+}

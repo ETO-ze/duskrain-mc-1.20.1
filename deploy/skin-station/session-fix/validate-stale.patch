@@ -1,0 +1,11 @@
+--- a/auth.go
++++ b/auth.go
+@@ -414,7 +414,7 @@
+ 				return err
+ 			}
+ 
+-			client, err := app.GetClient(req.AccessToken, mo.Some(req.ClientToken), StalePolicyAllow, false)
++			client, err := app.GetClient(req.AccessToken, mo.Some(req.ClientToken), StalePolicyDeny, false)
+ 			var userError *UserError
+ 			if err != nil && !errors.As(err, &userError) {
+ 				return err
